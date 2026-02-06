@@ -1,6 +1,17 @@
 {
   "description": "Workspace hooks for stable skill routing",
   "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": ".codex/hooks/session_start_check_index.sh"
+          }
+        ]
+      }
+    ],
     "UserPromptSubmit": [
       {
         "matcher": "*",

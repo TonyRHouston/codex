@@ -1,0 +1,56 @@
+{
+  "version": 1,
+  "updated_at": "2026-02-06",
+  "groups": {
+    "product_code": [
+      "codex-rs/",
+      "codex-cli/",
+      "sdk/",
+      "shell-tool-mcp/",
+      "thinkpdf/",
+      "third_party/"
+    ],
+    "build_and_tooling": [
+      "justfile",
+      "MODULE.bazel",
+      "BUILD.bazel",
+      "defs.bzl",
+      "rbe.bzl",
+      "package.json",
+      "pnpm-lock.yaml",
+      "pnpm-workspace.yaml",
+      ".github/",
+      ".githooks/"
+    ],
+    "docs": [
+      "README.md",
+      "CHANGELOG.md",
+      "docs/",
+      "reading-list/"
+    ],
+    "codex_runtime": [
+      ".codex/hooks/",
+      ".codex/scripts/",
+      ".codex/skill_index/",
+      ".codex/skills/",
+      ".codex/memories/",
+      ".codex/workspace_index/"
+    ],
+    "linked_sources": [
+      "partially-processed",
+      ".curated",
+      "tools",
+      "skills",
+      "claude-code"
+    ],
+    "transient": [
+      ".local/",
+      ".triage-artifacts/",
+      "out/",
+      "node_modules/",
+      ".codex/History/",
+      ".codex/logs/",
+      ".codex/sessions/"
+    ]
+  }
+}

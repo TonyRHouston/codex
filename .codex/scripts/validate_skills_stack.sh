@@ -10,6 +10,9 @@ cat /tmp/active_skills_registry.out
 
 echo "[2/5] Validating hook/config syntax"
 python3 -m json.tool .codex/hooks/hooks.json >/dev/null
+bash -n \
+  .codex/hooks/pre_task_validate_skills.sh \
+  .codex/hooks/session_start_check_index.sh
 python3 -m py_compile \
   .codex/hooks/pre_task_validate_skills.py \
   .codex/skill_index/build_active_skills_registry.py \
@@ -17,6 +20,7 @@ python3 -m py_compile \
 
 echo "[3/5] Checking executable bits"
 test -x .codex/hooks/pre_task_validate_skills.sh
+test -x .codex/hooks/session_start_check_index.sh
 test -x .codex/hooks/pre_task_validate_skills.py
 test -x .codex/skill_index/build_active_skills_registry.py
 test -x .codex/skill_index/lint_skills.py

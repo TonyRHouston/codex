@@ -13,6 +13,7 @@ echo "[1/5] Restoring executable bits"
 chmod +x \
   .codex/hooks/pre_task_validate_skills.py \
   .codex/hooks/pre_task_validate_skills.sh \
+  .codex/hooks/session_start_check_index.sh \
   .codex/skill_index/build_active_skills_registry.py \
   .codex/skill_index/lint_skills.py \
   .codex/scripts/validate_skills_stack.sh \
