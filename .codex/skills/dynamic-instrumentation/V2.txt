@@ -1,0 +1,2 @@
+Legacy source artifact was unavailable in this workspace.
+Canonical guidance for this skill is now embedded in SKILL.md.

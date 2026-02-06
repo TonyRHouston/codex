@@ -1,0 +1,322 @@
+canonical	preferred_dir	preferred_path	preferred_frontmatter_name	aliases
+actions-debugging	actions-debugging	.codex/skills/actions-debugging/SKILL.md	actions-debugging-722487	tools-copilot-toolkit-skills-actions-debugging-skill
+add-new-feature	add-new-feature	.codex/skills/add-new-feature/SKILL.md	add-new-feature-2d9f08	
+add-to-specification	add-to-specification	.codex/skills/add-to-specification/SKILL.md	add-to-specification-833834	
+agent-builder	agent-builder	.codex/skills/agent-builder/SKILL.md	agent-builder-92e98b	skills-agent-builder-skill
+agent-configuration	agent-configuration	.codex/skills/agent-configuration/SKILL.md	agent-configuration-78bcf6	
+agent-customization	agent-customization	.codex/skills/agent-customization/SKILL.md	agent-customization-c830d4	
+agent-development	agent-development	.codex/skills/agent-development/SKILL.md	agent-development	skills-agent-development-skill
+agent-orchestration	agent-orchestration	.codex/skills/agent-orchestration/SKILL.md	agent-orchestration-984e3f	
+agent-workflow-builder_ai_toolkit	agent-workflow-builder_ai_toolkit	.codex/skills/agent-workflow-builder_ai_toolkit/SKILL.md	agent-workflow-builder-ai-toolkit	
+agentic-eval	agentic-eval	.codex/skills/agentic-eval/SKILL.md	agentic-eval-40bffa	
+agents-overview	agents-overview	.codex/skills/agents-overview/SKILL.md	agents-overview-866945	
+ai-asset-cataloger	ai-asset-cataloger	.codex/skills/ai-asset-cataloger/SKILL.md	ai-asset-cataloger-bd9810	
+ai-logic	ai-logic	.codex/skills/ai-logic/SKILL.md	ai-logic-8ac66a	
+ai-pdf-reader	ai-pdf-reader	.codex/skills/ai-pdf-reader/SKILL.md	ai-pdf-reader-3cf50a	
+algorithms-optimization	algorithms-optimization	.codex/skills/algorithms-optimization/SKILL.md	algorithms-optimization-b670cb	skills-algorithms-optimization-skill
+analyze-project	analyze-project	.codex/skills/analyze-project/SKILL.md	analyze-project-69f2ae	
+api-design	api-design	.codex/skills/api-design/SKILL.md	api-design-5cbcbd	skills-api-design-skill
+appinsights-instrumentation	appinsights-instrumentation	.codex/skills/appinsights-instrumentation/SKILL.md	appinsights-instrumentation-3e9336	
+architect	architect	.codex/skills/architect/SKILL.md	architect-0b9520	
+architect-system-prompt	architect-system-prompt	.codex/skills/architect-system-prompt/SKILL.md	architect-system-prompt-ecb4ac	
+ask-a-question	ask-a-question	.codex/skills/ask-a-question/SKILL.md	ask-a-question-827b86	
+ask-questions	ask-questions	.codex/skills/ask-questions/SKILL.md	ask-questions-52b8b4	
+atlas	atlas	.codex/skills/atlas/SKILL.md	atlas-263b37	-curated-atlas-skill
+azure-deployment-preflight	azure-deployment-preflight	.codex/skills/azure-deployment-preflight/SKILL.md	azure-deployment-preflight-063fcc	
+azure-devops-cli	azure-devops-cli	.codex/skills/azure-devops-cli/SKILL.md	azure-devops-cli-db5bf2	
+azure-resource-visualizer	azure-resource-visualizer	.codex/skills/azure-resource-visualizer/SKILL.md	azure-resource-visualizer-3c5ee7	
+azure-role-selector	azure-role-selector	.codex/skills/azure-role-selector/SKILL.md	azure-role-selector-b86148	
+azure-static-web-apps	azure-static-web-apps	.codex/skills/azure-static-web-apps/SKILL.md	azure-static-web-apps-ee6066	
+backend-services	backend-services	.codex/skills/backend-services/SKILL.md	backend-services-e79f62	skills-backend-services-skill
+base	base	.codex/skills/base/SKILL.md	base-ad80ac	
+binary-analysis-playbook	binary-analysis-playbook	.codex/skills/binary-analysis-playbook/SKILL.md	binary-analysis-playbook-2c9c00	
+breakdown	breakdown	.codex/skills/breakdown/SKILL.md	breakdown-c6656c	
+breakdown-code-instructions	breakdown-code-instructions	.codex/skills/breakdown-code-instructions/SKILL.md	breakdown-code-instructions-106d91	
+bug-found-or-add-logs	bug-found-or-add-logs	.codex/skills/bug-found-or-add-logs/SKILL.md	bug-found-or-add-logs-ab13ec	
+bug-hunter	bug-hunter	.codex/skills/bug-hunter/SKILL.md	bug-hunter-3d6e09	
+bug-hunter-iteration-prompt	bug-hunter-iteration-prompt	.codex/skills/bug-hunter-iteration-prompt/SKILL.md	bug-hunter-iteration-prompt-900df7	
+bug-hunter-pro	bug-hunter-pro	.codex/skills/bug-hunter-pro/SKILL.md	bug-hunter-pro-9c00cc	
+bug-hunter-system-prompt	bug-hunter-system-prompt	.codex/skills/bug-hunter-system-prompt/SKILL.md	bug-hunter-system-prompt-ebca16	
+bug-investigation	bug-investigation	.codex/skills/bug-investigation/SKILL.md	bug-investigation-871246	skills-bug-investigation-skill
+bug-report	bug-report	.codex/skills/bug-report/SKILL.md	bug-report-04f934	
+bug-report-analyzer	bug-report-analyzer	.codex/skills/bug-report-analyzer/SKILL.md	bug-report-analyzer-b256ff	
+bug-report-review-prompt	bug-report-review-prompt	.codex/skills/bug-report-review-prompt/SKILL.md	bug-report-review-prompt-2423d6	
+build-champ-prompt	build-champ-prompt	.codex/skills/build-champ-prompt/SKILL.md	build-champ-prompt-62b925	
+build-frontend	build-frontend	.codex/skills/build-frontend/SKILL.md	build-frontend-e5a69d	
+build-full-specification	build-full-specification	.codex/skills/build-full-specification/SKILL.md	build-full-specification-b41a14	
+build-triage-master	build-triage-master	.codex/skills/build-triage-master/SKILL.md	build-triage-master-1f9ebd	
+cfg-disassembly-mapper	cfg-disassembly-mapper	.codex/skills/cfg-disassembly-mapper/SKILL.md	cfg-disassembly-mapper-7b3133	
+change-notification	change-notification	.codex/skills/change-notification/SKILL.md	change-notification-844064	
+chat	chat	.codex/skills/chat/SKILL.md	chat-f6143a	
+chat-agent-system-prompt	chat-agent-system-prompt	.codex/skills/chat-agent-system-prompt/SKILL.md	chat-agent-system-prompt-02ec56	
+checklist-driven-delivery	checklist-driven-delivery	.codex/skills/checklist-driven-delivery/SKILL.md	checklist-driven-delivery-336a70	skills-checklist-driven-delivery-skill
+chrome-devtools	chrome-devtools	.codex/skills/chrome-devtools/SKILL.md	chrome-devtools-99bddc	
+chrome-screen-ai	chrome-screen-ai	.codex/skills/chrome-screen-ai/SKILL.md	chrome-screen-ai-020f6d	
+chromium-docs	chromium-docs	.codex/skills/chromium-docs/SKILL.md	chromium-docs-7086de	
+claude-code	claude-code	.codex/skills/claude-code/SKILL.md	claude-code-263266	
+claude-code-action	claude-code-action	.codex/skills/claude-code-action/SKILL.md	claude-code-action-217885	
+claude-code-base-action	claude-code-base-action	.codex/skills/claude-code-base-action/SKILL.md	claude-code-base-action-692ddf	
+claude-code-plugins	claude-code-plugins	.codex/skills/claude-code-plugins/SKILL.md	claude-code-plugins-671e78	
+claude-opus-4-5-migration	claude-opus-4-5-migration	.codex/skills/claude-opus-4-5-migration/SKILL.md	claude-opus-4-5-migration-602bd8	skills-claude-opus-4-5-migration-skill
+cloudflare-deploy	cloudflare-deploy	.codex/skills/cloudflare-deploy/SKILL.md	cloudflare-deploy-ebfc82	-curated-cloudflare-deploy-skill
+code-linting	code-linting	.codex/skills/code-linting/SKILL.md	code-linting-4079e5	
+code-monkey	code-monkey	.codex/skills/code-monkey/SKILL.md	code-monkey-fe4d91	
+code-monkey-breakdown-prompt	code-monkey-breakdown-prompt	.codex/skills/code-monkey-breakdown-prompt/SKILL.md	code-monkey-breakdown-prompt-8b7ad4	
+code-monkey-iteration-prompt	code-monkey-iteration-prompt	.codex/skills/code-monkey-iteration-prompt/SKILL.md	code-monkey-iteration-prompt-a0d7fc	
+code-monkey-system-prompt	code-monkey-system-prompt	.codex/skills/code-monkey-system-prompt/SKILL.md	code-monkey-system-prompt-b70b57	
+code-review	code-review	.codex/skills/code-review/SKILL.md	code-review-abde6e	skills-code-review-skill
+code-review-structured	code-review-structured	.codex/skills/code-review-structured/SKILL.md	code-review-structured-abc390	skills-code-review-structured-skill
+codenotify-prompt	codenotify-prompt	.codex/skills/codenotify-prompt/SKILL.md	codenotify-prompt-191ba2	
+codex-tool-catalog	codex-tool-catalog	.codex/skills/codex-tool-catalog/SKILL.md	codex-tool-catalog-73e91f	
+coding-rules	coding-rules	.codex/skills/coding-rules/SKILL.md	coding-rules-cb3323	
+coding-tools	coding-tools	.codex/skills/coding-tools/SKILL.md	coding-tools-d1f49b	
+command-development	command-development	.codex/skills/command-development/SKILL.md	command-development	skills-command-development-skill
+command-executor	command-executor	.codex/skills/command-executor/SKILL.md	command-executor-1488a5	
+commit	commit	.codex/skills/commit/SKILL.md	commit-40d441	
+component-architecture	component-architecture	.codex/skills/component-architecture/SKILL.md	component-architecture-eba386	
+component-prompt	component-prompt	.codex/skills/component-prompt/SKILL.md	component-prompt-cf0e58	
+configure-template	configure-template	.codex/skills/configure-template/SKILL.md	configure-template-f740d5	
+convo	convo	.codex/skills/convo/SKILL.md	convo-1d1f43	
+copilot-sdk	copilot-sdk	.codex/skills/copilot-sdk/SKILL.md	copilot-sdk-243720	
+create-docs-queries	create-docs-queries	.codex/skills/create-docs-queries/SKILL.md	create-docs-queries-d65659	
+create-rag-query	create-rag-query	.codex/skills/create-rag-query/SKILL.md	create-rag-query-506156	
+create-readme	create-readme	.codex/skills/create-readme/SKILL.md	create-readme-d67595	
+crypto-pattern-id	crypto-pattern-id	.codex/skills/crypto-pattern-id/SKILL.md	crypto-pattern-id-f4aee1	
+data-about-logs	data-about-logs	.codex/skills/data-about-logs/SKILL.md	data-about-logs-936695	
+data-engineering	data-engineering	.codex/skills/data-engineering/SKILL.md	data-engineering-7ade47	
+data-prompt	data-prompt	.codex/skills/data-prompt/SKILL.md	data-prompt-db4658	
+database-design	database-design	.codex/skills/database-design/SKILL.md	database-design-4660c1	skills-database-design-skill
+debug	debug	.codex/skills/debug/SKILL.md	debug-f290c0	
+debugging	debugging	.codex/skills/debugging/SKILL.md	debugging-56a102	skills-debugging-skill
+deep-planning	deep-planning	.codex/skills/deep-planning/SKILL.md	deep-planning-0f20a0	
+default-issue-review-prompt	default-issue-review-prompt	.codex/skills/default-issue-review-prompt/SKILL.md	default-issue-review-prompt-180632	
+define-user-review-goal	define-user-review-goal	.codex/skills/define-user-review-goal/SKILL.md	define-user-review-goal-e7652a	
+describe-file	describe-file	.codex/skills/describe-file/SKILL.md	describe-file-bcdcd1	
+develop-web-game	develop-web-game	.codex/skills/develop-web-game/SKILL.md	develop-web-game-16efad	-curated-develop-web-game-skill
+developer	developer	.codex/skills/developer/SKILL.md	developer-11c1c9	
+developer-breakdown-prompt	developer-breakdown-prompt	.codex/skills/developer-breakdown-prompt/SKILL.md	developer-breakdown-prompt-9a3ba1	
+developer-filter-files-prompt	developer-filter-files-prompt	.codex/skills/developer-filter-files-prompt/SKILL.md	developer-filter-files-prompt-d9a062	
+developer-iteration-prompt	developer-iteration-prompt	.codex/skills/developer-iteration-prompt/SKILL.md	developer-iteration-prompt-164e2e	
+developer-system-prompt	developer-system-prompt	.codex/skills/developer-system-prompt/SKILL.md	developer-system-prompt-b905be	
+devops-ci-cd	devops-ci-cd	.codex/skills/devops-ci-cd/SKILL.md	devops-ci-cd-c021f0	skills-devops-ci-cd-skill
+diff-validator	diff-validator	.codex/skills/diff-validator/SKILL.md	diff-validator-20835c	
+disk-execution-env	disk-execution-env	.codex/skills/disk-execution-env/SKILL.md	disk-execution-env-76d7d8	
+doc	doc	.codex/skills/doc/SKILL.md	doc-7d9d93	-curated-doc-skill
+doc-snippets	doc-snippets	.codex/skills/doc-snippets/SKILL.md	doc-snippets-363a27	
+documentation-update	documentation-update	.codex/skills/documentation-update/SKILL.md	documentation-update-24d570	
+dynamic-instrumentation	dynamic-instrumentation	.codex/skills/dynamic-instrumentation/SKILL.md	dynamic-instrumentation-3d0d90	
+environment-setup	environment-setup	.codex/skills/environment-setup/SKILL.md	environment-setup-d662c2	
+epic-breakdown	epic-breakdown	.codex/skills/epic-breakdown/SKILL.md	epic-breakdown-523935	
+error-handler	error-handler	.codex/skills/error-handler/SKILL.md	error-handler-16735e	
+execution-order	execution-order	.codex/skills/execution-order/SKILL.md	execution-order-aab3cb	
+executor	executor	.codex/skills/executor/SKILL.md	executor-9b6688	
+external-docs	external-docs	.codex/skills/external-docs/SKILL.md	external-docs-482eb9	
+external-docs-system-prompt	external-docs-system-prompt	.codex/skills/external-docs-system-prompt/SKILL.md	external-docs-system-prompt-9209bb	
+fast-planning	fast-planning	.codex/skills/fast-planning/SKILL.md	fast-planning-536e92	
+features-list	features-list	.codex/skills/features-list/SKILL.md	features-list-3e74ac	
+figma	figma	.codex/skills/figma/SKILL.md	figma-1ef69b	-curated-figma-skill
+figma-implement-design	figma-implement-design	.codex/skills/figma-implement-design/SKILL.md	figma-implement-design-30c52c	-curated-figma-implement-design-skill
+file-naming	file-naming	.codex/skills/file-naming/SKILL.md	file-naming-f75897	
+file-size-limit	file-size-limit	.codex/skills/file-size-limit/SKILL.md	file-size-limit-258fc2	
+files	files	.codex/skills/files/SKILL.md	files-aed20c	
+files-descriptions	files-descriptions	.codex/skills/files-descriptions/SKILL.md	files-descriptions-1837eb	
+files-dict-manager	files-dict-manager	.codex/skills/files-dict-manager/SKILL.md	files-dict-manager-638444	
+files-list	files-list	.codex/skills/files-list/SKILL.md	files-list-56e5d6	
+files-list-relevant	files-list-relevant	.codex/skills/files-list-relevant/SKILL.md	files-list-relevant-5f16d2	
+filter-files	filter-files	.codex/skills/filter-files/SKILL.md	filter-files-da3e4f	
+fixissueno-prompt	fixissueno-prompt	.codex/skills/fixissueno-prompt/SKILL.md	fixissueno-prompt-f465d9	
+frontend	frontend	.codex/skills/frontend/SKILL.md	frontend-c0f2e7	
+frontend-builder	frontend-builder	.codex/skills/frontend-builder/SKILL.md	frontend-builder-b89a6f	
+frontend-design	frontend-design	.codex/skills/frontend-design/SKILL.md	frontend-design-ee6a99	skills-frontend-design-skill
+frontend-engineering	frontend-engineering	.codex/skills/frontend-engineering/SKILL.md	frontend-engineering-1268bc	skills-frontend-engineering-skill
+frontend-system-prompt	frontend-system-prompt	.codex/skills/frontend-system-prompt/SKILL.md	frontend-system-prompt-0941b1	
+frontend-wizard	frontend-wizard	.codex/skills/frontend-wizard/SKILL.md	frontend-wizard-231434	
+gdb-memory-dumper	gdb-memory-dumper	.codex/skills/gdb-memory-dumper/SKILL.md	gdb-memory-dumper-8046da	
+get-alternative-solutions	get-alternative-solutions	.codex/skills/get-alternative-solutions/SKILL.md	get-alternative-solutions-102915	
+get-bug-reproduction-instructions	get-bug-reproduction-instructions	.codex/skills/get-bug-reproduction-instructions/SKILL.md	get-bug-reproduction-instructions-2c583d	
+get-entrypoints	get-entrypoints	.codex/skills/get-entrypoints/SKILL.md	get-entrypoints-deb9de	
+get-route-files	get-route-files	.codex/skills/get-route-files/SKILL.md	get-route-files-11f0e1	
+get-run-command	get-run-command	.codex/skills/get-run-command/SKILL.md	get-run-command-725cb2	
+gh-address-comments	gh-address-comments	.codex/skills/gh-address-comments/SKILL.md	gh-address-comments-a9cb77	-curated-gh-address-comments-skill
+gh-cli	gh-cli	.codex/skills/gh-cli/SKILL.md	gh-cli-d2b9ad	
+gh-fix-ci	gh-fix-ci	.codex/skills/gh-fix-ci/SKILL.md	gh-fix-ci-c8b037	-curated-gh-fix-ci-skill
+git	git	.codex/skills/git/SKILL.md	git-d65bc5	
+git-automation	git-automation	.codex/skills/git-automation/SKILL.md	git-automation-d9340b	
+git-commit	git-commit	.codex/skills/git-commit/SKILL.md	git-commit-133cb6	
+github-actions-debugging	github-actions-debugging	.codex/skills/github-actions-debugging/SKILL.md	github-actions-debugging-000570	
+github-issues	github-issues	.codex/skills/github-issues/SKILL.md	github-issues-c8671b	
+github-mcp-server-cli	github-mcp-server-cli	.codex/skills/github-mcp-server-cli/SKILL.md	github-mcp-server-cli-29b7f0	
+gpt-engineer-acp	gpt-engineer-acp	.codex/skills/gpt-engineer-acp/SKILL.md	gpt-engineer-acp-e1d639	
+gpt-engineer-core	gpt-engineer-core	.codex/skills/gpt-engineer-core/SKILL.md	gpt-engineer-core-438553	
+hook-development	hook-development	.codex/skills/hook-development/SKILL.md	hook-development	skills-hook-development-skill
+human-input	human-input	.codex/skills/human-input/SKILL.md	human-input-78e7dc	
+human-intervention-explanation	human-intervention-explanation	.codex/skills/human-intervention-explanation/SKILL.md	human-intervention-explanation-0a1347	
+image-manipulation-image-magick	image-manipulation-image-magick	.codex/skills/image-manipulation-image-magick/SKILL.md	image-manipulation-image-magick-bb10ca	
+imagegen	imagegen	.codex/skills/imagegen/SKILL.md	imagegen-588fed	-curated-imagegen-skill
+implement-changes	implement-changes	.codex/skills/implement-changes/SKILL.md	implement-changes-7f75a5	
+implement-prompt	implement-prompt	.codex/skills/implement-prompt/SKILL.md	implement-prompt-0182ac	
+importer	importer	.codex/skills/importer/SKILL.md	importer-50b5e2	
+instructions-from-human-hint	instructions-from-human-hint	.codex/skills/instructions-from-human-hint/SKILL.md	instructions-from-human-hint-4a9f01	
+internal-overview	internal-overview	.codex/skills/internal-overview/SKILL.md	internal-overview-59b1d5	
+is-relevant-for-docs-search	is-relevant-for-docs-search	.codex/skills/is-relevant-for-docs-search/SKILL.md	is-relevant-for-docs-search-2a902f	
+issue-resolution	issue-resolution	.codex/skills/issue-resolution/SKILL.md	issue-resolution-ce8386	
+issue-triage	issue-triage	.codex/skills/issue-triage/SKILL.md	issue-triage-bb8d48	
+iterate-frontend	iterate-frontend	.codex/skills/iterate-frontend/SKILL.md	iterate-frontend-989243	
+iteration	iteration	.codex/skills/iteration/SKILL.md	iteration-13c503	
+json-validation	json-validation	.codex/skills/json-validation/SKILL.md	json-validation-04a300	
+jupyter-notebook	jupyter-notebook	.codex/skills/jupyter-notebook/SKILL.md	jupyter-notebook-7fc061	-curated-jupyter-notebook-skill
+kode-cli	kode-cli	.codex/skills/kode-cli/SKILL.md	kode-cli-bf39e7	
+legacy-circuit-mockups	legacy-circuit-mockups	.codex/skills/legacy-circuit-mockups/SKILL.md	legacy-circuit-mockups-5d90c6	
+legacy-handler	legacy-handler	.codex/skills/legacy-handler/SKILL.md	legacy-handler-d1e75a	
+linear	linear	.codex/skills/linear/SKILL.md	linear-1d58ec	-curated-linear-skill
+log-data	log-data	.codex/skills/log-data/SKILL.md	log-data-a9a3f5	
+log-extraction	log-extraction	.codex/skills/log-extraction/SKILL.md	log-extraction-688068	tools-copilot-toolkit-skills-log-extraction-skill
+make-skill-template	make-skill-template	.codex/skills/make-skill-template/SKILL.md	make-skill-template-eeb9fa	
+markdown-to-html	markdown-to-html	.codex/skills/markdown-to-html/SKILL.md	markdown-to-html-20c527	
+mcp	mcp	.codex/skills/mcp/SKILL.md	mcp	
+mcp-builder	mcp-builder	.codex/skills/mcp-builder/SKILL.md	mcp-builder-1a14cf	
+mcp-cli	mcp-cli	.codex/skills/mcp-cli/SKILL.md	mcp-cli-29be11	
+mcp-click	mcp-click	.codex/skills/mcp-click/SKILL.md	mcp-click-da20fa	skills-mcp-click-skill
+mcp-datagen	mcp-datagen	.codex/skills/mcp-datagen/SKILL.md	mcp-datagen-5a0bc7	skills-mcp-datagen-skill
+mcp-everything	mcp-everything	.codex/skills/mcp-everything/SKILL.md	mcp-everything-639ad4	skills-mcp-everything-skill
+mcp-fetch	mcp-fetch	.codex/skills/mcp-fetch/SKILL.md	mcp-fetch-d6e812	skills-mcp-fetch-skill
+mcp-filesystem	mcp-filesystem	.codex/skills/mcp-filesystem/SKILL.md	mcp-filesystem-3b8dec	skills-mcp-filesystem-skill
+mcp-ftp	mcp-ftp	.codex/skills/mcp-ftp/SKILL.md	mcp-ftp-3d3e8e	skills-mcp-ftp-skill
+mcp-git	mcp-git	.codex/skills/mcp-git/SKILL.md	mcp-git-a8911a	skills-mcp-git-skill
+mcp-integration	mcp-integration	.codex/skills/mcp-integration/SKILL.md	mcp-integration	skills-mcp-integration-skill
+mcp-local	mcp-local	.codex/skills/mcp-local/SKILL.md	mcp-local	
+mcp-memory	mcp-memory	.codex/skills/mcp-memory/SKILL.md	mcp-memory-256f36	skills-mcp-memory-skill
+mcp-remote	mcp-remote	.codex/skills/mcp-remote/SKILL.md	mcp-remote	
+mcp-sequentialthinking	mcp-sequentialthinking	.codex/skills/mcp-sequentialthinking/SKILL.md	mcp-sequentialthinking-b005d0	skills-mcp-sequentialthinking-skill
+mcp-time	mcp-time	.codex/skills/mcp-time/SKILL.md	mcp-time-555c71	skills-mcp-time-skill
+mcp-troubleshooting	mcp-troubleshooting	.codex/skills/mcp-troubleshooting/SKILL.md	mcp-troubleshooting	
+mcpcurl	mcpcurl	.codex/skills/mcpcurl/SKILL.md	mcpcurl-7ca7ef	
+media-writer	media-writer	.codex/skills/media-writer/SKILL.md	media-writer-37fd81	skills-media-writer-skill
+microsoft-code-reference	microsoft-code-reference	.codex/skills/microsoft-code-reference/SKILL.md	microsoft-code-reference-35d488	
+microsoft-docs	microsoft-docs	.codex/skills/microsoft-docs/SKILL.md	microsoft-docs-6e3f98	
+mixins	mixins	.codex/skills/mixins/SKILL.md	mixins-c785c0	
+need-auth	need-auth	.codex/skills/need-auth/SKILL.md	need-auth-57e28f	
+netlify-deploy	netlify-deploy	.codex/skills/netlify-deploy/SKILL.md	netlify-deploy-440153	-curated-netlify-deploy-skill
+no-any-prompt	no-any-prompt	.codex/skills/no-any-prompt/SKILL.md	no-any-prompt-b32f34	
+notion-knowledge-capture	notion-knowledge-capture	.codex/skills/notion-knowledge-capture/SKILL.md	notion-knowledge-capture-c97e2c	-curated-notion-knowledge-capture-skill
+notion-meeting-intelligence	notion-meeting-intelligence	.codex/skills/notion-meeting-intelligence/SKILL.md	notion-meeting-intelligence-117fec	-curated-notion-meeting-intelligence-skill
+notion-research-documentation	notion-research-documentation	.codex/skills/notion-research-documentation/SKILL.md	notion-research-documentation-d673db	-curated-notion-research-documentation-skill
+notion-spec-to-implementation	notion-spec-to-implementation	.codex/skills/notion-spec-to-implementation/SKILL.md	notion-spec-to-implementation-1143e6	-curated-notion-spec-to-implementation-skill
+nuget-manager	nuget-manager	.codex/skills/nuget-manager/SKILL.md	nuget-manager-cd7462	
+observability-monitoring	observability-monitoring	.codex/skills/observability-monitoring/SKILL.md	observability-monitoring-626f69	skills-observability-monitoring-skill
+openai-docs	openai-docs	.codex/skills/openai-docs/SKILL.md	openai-docs-efd12e	-curated-openai-docs-skill
+orchestrator	orchestrator	.codex/skills/orchestrator/SKILL.md	orchestrator-829a76	
+overview	tools-overview	.codex/skills/tools-overview/SKILL.md	tools-overview-fe85a1	
+packer-compression-triage	packer-compression-triage	.codex/skills/packer-compression-triage/SKILL.md	packer-compression-triage-5b663c	
+parse-task	parse-task	.codex/skills/parse-task/SKILL.md	parse-task-523cca	
+pdf	pdf	.codex/skills/pdf/SKILL.md	pdf-863b9f	-curated-pdf-skill
+pdf-io	pdf-io	.codex/skills/pdf-io/SKILL.md	pdf-io-937983	skills-pdf-io-skill
+performance-optimization	performance-optimization	.codex/skills/performance-optimization/SKILL.md	performance-optimization-3dd300	skills-performance-optimization-skill
+plan	plan	.codex/skills/plan/SKILL.md	plan-05516c	
+plan-deep-prompt	plan-deep-prompt	.codex/skills/plan-deep-prompt/SKILL.md	plan-deep-prompt-8bb9bc	
+plan-fast-prompt	plan-fast-prompt	.codex/skills/plan-fast-prompt/SKILL.md	plan-fast-prompt-296f85	
+plan-prompt	plan-prompt	.codex/skills/plan-prompt/SKILL.md	plan-prompt-76bf89	
+plantuml-ascii	plantuml-ascii	.codex/skills/plantuml-ascii/SKILL.md	plantuml-ascii-45e6f9	
+playwright	playwright	.codex/skills/playwright/SKILL.md	playwright-3c305d	-curated-playwright-skill
+plugin-settings	plugin-settings	.codex/skills/plugin-settings/SKILL.md	plugin-settings	skills-plugin-settings-skill
+plugin-structure	plugin-structure	.codex/skills/plugin-structure/SKILL.md	plugin-structure	skills-plugin-structure-skill
+prd	prd	.codex/skills/prd/SKILL.md	prd-534c8e	
+principled-implementation	principled-implementation	.codex/skills/principled-implementation/SKILL.md	principled-implementation-4db55e	
+problem-explanation	problem-explanation	.codex/skills/problem-explanation/SKILL.md	problem-explanation-cf792f	
+problem-solver	problem-solver	.codex/skills/problem-solver/SKILL.md	problem-solver-be6ec8	
+problem-solver-iteration-prompt	problem-solver-iteration-prompt	.codex/skills/problem-solver-iteration-prompt/SKILL.md	problem-solver-iteration-prompt-ae100e	
+problem-solver-system-prompt	problem-solver-system-prompt	.codex/skills/problem-solver-system-prompt/SKILL.md	problem-solver-system-prompt-86637d	
+project-configurator	project-configurator	.codex/skills/project-configurator/SKILL.md	project-configurator-7b6bca	
+project-details	project-details	.codex/skills/project-details/SKILL.md	project-details-12b1e7	
+project-name	project-name	.codex/skills/project-name/SKILL.md	project-name-5a618d	
+project-tasks	project-tasks	.codex/skills/project-tasks/SKILL.md	project-tasks-19c1dd	
+prompt-complexity	prompt-complexity	.codex/skills/prompt-complexity/SKILL.md	prompt-complexity-b0be35	
+prompt-design	prompt-design	.codex/skills/prompt-design/SKILL.md	prompt-design-6035c2	skills-prompt-design-skill
+ran-command	ran-command	.codex/skills/ran-command/SKILL.md	ran-command-66c94c	
+re-index	re-index	.codex/skills/re-index/SKILL.md	re-index	
+re-toolkit	re-toolkit	.codex/skills/re-toolkit/SKILL.md	re-toolkit-53597e	
+refactor	refactor	.codex/skills/refactor/SKILL.md	refactor-957c48	
+refactoring	refactoring	.codex/skills/refactoring/SKILL.md	refactoring-540919	skills-refactoring-skill
+relative-paths	relative-paths	.codex/skills/relative-paths/SKILL.md	relative-paths-cfdc16	
+relevant-files-navigator	relevant-files-navigator	.codex/skills/relevant-files-navigator/SKILL.md	relevant-files-navigator-dda69d	
+remove-mock	remove-mock	.codex/skills/remove-mock/SKILL.md	remove-mock-5edfa8	
+render-deploy	render-deploy	.codex/skills/render-deploy/SKILL.md	render-deploy-b24bfb	-curated-render-deploy-skill
+response	response	.codex/skills/response/SKILL.md	response-1023be	
+reverse-engineering	reverse-engineering	.codex/skills/reverse-engineering/SKILL.md	reverse-engineering-cffe6d	skills-reverse-engineering-skill
+review-changes	review-changes	.codex/skills/review-changes/SKILL.md	review-changes-a9019c	
+review-feedback	review-feedback	.codex/skills/review-feedback/SKILL.md	review-feedback-3f50a0	
+review-spec	review-spec	.codex/skills/review-spec/SKILL.md	review-spec-ca89a1	
+scoutqa-test	scoutqa-test	.codex/skills/scoutqa-test/SKILL.md	scoutqa-test-710e05	
+screenshot	screenshot	.codex/skills/screenshot/SKILL.md	screenshot-22a258	-curated-screenshot-skill
+security-best-practices	security-best-practices	.codex/skills/security-best-practices/SKILL.md	security-best-practices-55b7c4	-curated-security-best-practices-skill
+security-ownership-map	security-ownership-map	.codex/skills/security-ownership-map/SKILL.md	security-ownership-map-94f300	-curated-security-ownership-map-skill
+security-review	security-review	.codex/skills/security-review/SKILL.md	security-review-757015	skills-security-review-skill
+security-threat-model	security-threat-model	.codex/skills/security-threat-model/SKILL.md	security-threat-model-c8d1e9	-curated-security-threat-model-skill
+select-docset	select-docset	.codex/skills/select-docset/SKILL.md	select-docset-26ca0b	
+select-templates	select-templates	.codex/skills/select-templates/SKILL.md	select-templates-9cf6e0	
+sentry	sentry	.codex/skills/sentry/SKILL.md	sentry-2972aa	-curated-sentry-skill
+setup-environment-prompt	setup-environment-prompt	.codex/skills/setup-environment-prompt/SKILL.md	setup-environment-prompt-6aeb4b	
+shareskill	shareSkill	.codex/skills/shareSkill/SKILL.md	shareskill	
+simple-agent	simple-agent	.codex/skills/simple-agent/SKILL.md	simple-agent-bf4266	
+skill	skill	.codex/skills/skill/SKILL.md	skill-71c9c2	
+skill-creator	skill-creator	.codex/skills/skill-creator/SKILL.md	skill-creator	
+skill-creator-2	skill-creator-2	.codex/skills/skill-creator-2/SKILL.md	skill-creator-2-d76a3c	
+skill-development	skill-development	.codex/skills/skill-development/SKILL.md	skill-development	
+skill-development-2	skill-development-2	.codex/skills/skill-development-2/SKILL.md	skill-development-2-92a85b	
+skill-function-deduper	skill-function-deduper	.codex/skills/skill-function-deduper/SKILL.md	skill-function-deduper-ec3b5b	
+skill-installer	skill-installer	.codex/skills/skill-installer/SKILL.md	skill-installer	skills-skill-installer-skill
+skill-installer-2	skill-installer-2	.codex/skills/skill-installer-2/SKILL.md	skill-installer-2-25dce0	
+skill-judge	skill-judge	.codex/skills/skill-judge/SKILL.md	skill-judge-06cc39	skills-skill-judge-skill
+skill-marketplace	skill-marketplace	.codex/skills/skill-marketplace/SKILL.md	skill-marketplace-e9320c	
+snowflake-semanticview	snowflake-semanticview	.codex/skills/snowflake-semanticview/SKILL.md	snowflake-semanticview-017753	
+sora	sora	.codex/skills/sora/SKILL.md	sora-d11309	-curated-sora-skill
+spec-writer	spec-writer	.codex/skills/spec-writer/SKILL.md	spec-writer-be41fb	
+spec-writer-system-prompt	spec-writer-system-prompt	.codex/skills/spec-writer-system-prompt/SKILL.md	spec-writer-system-prompt-04492e	
+speech	speech	.codex/skills/speech/SKILL.md	speech-bc8562	-curated-speech-skill
+spreadsheet	spreadsheet	.codex/skills/spreadsheet/SKILL.md	spreadsheet-268897	-curated-spreadsheet-skill
+standard-planning	standard-planning	.codex/skills/standard-planning/SKILL.md	standard-planning-b39ad7	
+syscall-io-triage	syscall-io-triage	.codex/skills/syscall-io-triage/SKILL.md	syscall-io-triage-0a2e58	
+system	system	.codex/skills/system/SKILL.md	system-b5513b	
+system-architect	system-architect	.codex/skills/system-architect/SKILL.md	system-architect-84e9e5	
+system-architecture	system-architecture	.codex/skills/system-architecture/SKILL.md	system-architecture-8934c1	skills-system-architecture-skill
+system-relace	system-relace	.codex/skills/system-relace/SKILL.md	system-relace-4ba350	
+task-breakdown-developer	task-breakdown-developer	.codex/skills/task-breakdown-developer/SKILL.md	task-breakdown-developer-419269	
+task-completer	task-completer	.codex/skills/task-completer/SKILL.md	task-completer-4772da	
+task-troubleshooter	task-troubleshooter	.codex/skills/task-troubleshooter/SKILL.md	task-troubleshooter-09cadc	
+tech-lead	tech-lead	.codex/skills/tech-lead/SKILL.md	tech-lead-fa1d62	
+tech-lead-filter-files-prompt	tech-lead-filter-files-prompt	.codex/skills/tech-lead-filter-files-prompt/SKILL.md	tech-lead-filter-files-prompt-a505b4	
+tech-lead-planner	tech-lead-planner	.codex/skills/tech-lead-planner/SKILL.md	tech-lead-planner-078185	
+tech-lead-system-prompt	tech-lead-system-prompt	.codex/skills/tech-lead-system-prompt/SKILL.md	tech-lead-system-prompt-e16543	
+tech-writer	tech-writer	.codex/skills/tech-writer/SKILL.md	tech-writer-929a43	
+tech-writer-system-prompt	tech-writer-system-prompt	.codex/skills/tech-writer-system-prompt/SKILL.md	tech-writer-system-prompt-d245d8	
+technologies	technologies	.codex/skills/technologies/SKILL.md	technologies-80d65d	
+telemetry-kusto-analyst	telemetry-kusto-analyst	.codex/skills/telemetry-kusto-analyst/SKILL.md	telemetry-kusto-analyst-38bb69	
+tell-me-more	tell-me-more	.codex/skills/tell-me-more/SKILL.md	tell-me-more-d84e1e	
+terraform-azurerm-set-diff-analyzer	terraform-azurerm-set-diff-analyzer	.codex/skills/terraform-azurerm-set-diff-analyzer/SKILL.md	terraform-azurerm-set-diff-analyzer-d1fefb	
+testing-strategy	testing-strategy	.codex/skills/testing-strategy/SKILL.md	testing-strategy-84fb48	skills-testing-strategy-skill
+text-data-isolation	text-data-isolation	.codex/skills/text-data-isolation/SKILL.md	text-data-isolation-85899d	skills-text-data-isolation-skill
+text-data-isolation-github-original	text-data-isolation-github-original	.codex/skills/text-data-isolation-github-original/SKILL.md	text-data-isolation-github-original-1bf365	
+thinkpdf	thinkpdf	.codex/skills/thinkpdf/SKILL.md	thinkpdf-6df01e	
+thinkpdf-offline-mcp	thinkpdf-offline-mcp	.codex/skills/thinkpdf-offline-mcp/SKILL.md	thinkpdf-offline-mcp	
+token-usage-monitor	token-usage-monitor	.codex/skills/token-usage-monitor/SKILL.md	token-usage-monitor-df2629	
+tpilotx-cli	tpilotx-cli	.codex/skills/tpilotx-cli/SKILL.md	tpilotx-cli-89a761	
+transcribe	transcribe	.codex/skills/transcribe/SKILL.md	transcribe-71faee	-curated-transcribe-skill
+troubleshooter	troubleshooter	.codex/skills/troubleshooter/SKILL.md	troubleshooter-25cbd3	
+tui-exit-shutdown	tui-exit-shutdown	.codex/skills/tui-exit-shutdown/SKILL.md	tui-exit-shutdown-b94549	skills-tui-exit-shutdown-skill
+type-safety-enforcer	type-safety-enforcer	.codex/skills/type-safety-enforcer/SKILL.md	type-safety-enforcer-f3b4d5	
+uc24-image-workflow	uc24-image-workflow	.codex/skills/uc24-image-workflow/SKILL.md	uc24-image-workflow-b060d5	skills-uc24-image-workflow-skill
+unity-asset-recovery	unity-asset-recovery	.codex/skills/unity-asset-recovery/SKILL.md	unity-asset-recovery-5eacb9	skills-unity-asset-recovery-skill
+update-instructions-prompt	update-instructions-prompt	.codex/skills/update-instructions-prompt/SKILL.md	update-instructions-prompt-fb8f88	
+user-feedback	user-feedback	.codex/skills/user-feedback/SKILL.md	user-feedback-140747	
+vercel-deploy	vercel-deploy	.codex/skills/vercel-deploy/SKILL.md	vercel-deploy-26adab	-curated-vercel-deploy-skill
+vibe-coding	vibe-coding	.codex/skills/vibe-coding/SKILL.md	vibe-coding-4e2476	skills-vibe-coding-skill
+vscode-ext-commands	vscode-ext-commands	.codex/skills/vscode-ext-commands/SKILL.md	vscode-ext-commands-1a8c10	
+vscode-ext-localization	vscode-ext-localization	.codex/skills/vscode-ext-localization/SKILL.md	vscode-ext-localization-ee0d1c	
+web-design-reviewer	web-design-reviewer	.codex/skills/web-design-reviewer/SKILL.md	web-design-reviewer-920981	
+webapp-testing	webapp-testing	.codex/skills/webapp-testing/SKILL.md	webapp-testing-012a95	
+winapp-cli	winapp-cli	.codex/skills/winapp-cli/SKILL.md	winapp-cli-cf7d9b	
+wizard	wizard	.codex/skills/wizard/SKILL.md	wizard-7d510f	
+workiq-copilot	workiq-copilot	.codex/skills/workiq-copilot/SKILL.md	workiq-copilot-aa0f14	
+workspace-backup	workspace-backup	.codex/skills/workspace-backup/SKILL.md	workspace-backup-3e96e9	skills-workspace-backup-skill
+writing-rules	writing-rules	.codex/skills/writing-rules/SKILL.md	writing-hookify-rules	skills-writing-rules-skill
+yeet	yeet	.codex/skills/yeet/SKILL.md	yeet-eee056	-curated-yeet-skill

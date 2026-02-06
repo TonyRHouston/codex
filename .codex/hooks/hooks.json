@@ -1,0 +1,16 @@
+{
+  "description": "Workspace hooks for stable skill routing",
+  "hooks": {
+    "UserPromptSubmit": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": ".codex/hooks/pre_task_validate_skills.sh"
+          }
+        ]
+      }
+    ]
+  }
+}

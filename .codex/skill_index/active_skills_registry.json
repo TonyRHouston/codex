@@ -1,0 +1,2750 @@
+{
+  "summary": {
+    "raw_skill_dirs": 404,
+    "valid_skill_dirs": 403,
+    "active_canonical_skills": 321,
+    "excluded_internal_dirs": 1,
+    "invalid_skill_dirs": 0
+  },
+  "excluded_internal": [
+    {
+      "dir": ".system",
+      "path": ".codex/skills/.system/SKILL.md",
+      "reason": "internal skill namespace"
+    }
+  ],
+  "skills": [
+    {
+      "canonical": "actions-debugging",
+      "preferred_dir": "actions-debugging",
+      "preferred_path": ".codex/skills/actions-debugging/SKILL.md",
+      "preferred_frontmatter_name": "actions-debugging-722487",
+      "description": "Use this skill when the user needs help with actions debugging. It provides",
+      "aliases": [
+        "tools-copilot-toolkit-skills-actions-debugging-skill"
+      ]
+    },
+    {
+      "canonical": "add-new-feature",
+      "preferred_dir": "add-new-feature",
+      "preferred_path": ".codex/skills/add-new-feature/SKILL.md",
+      "preferred_frontmatter_name": "add-new-feature-2d9f08",
+      "description": "Use this skill when the user needs help with add new feature. It provides",
+      "aliases": []
+    },
+    {
+      "canonical": "add-to-specification",
+      "preferred_dir": "add-to-specification",
+      "preferred_path": ".codex/skills/add-to-specification/SKILL.md",
+      "preferred_frontmatter_name": "add-to-specification-833834",
+      "description": "Use this skill when the user needs help with add to specification. It",
+      "aliases": []
+    },
+    {
+      "canonical": "agent-builder",
+      "preferred_dir": "agent-builder",
+      "preferred_path": ".codex/skills/agent-builder/SKILL.md",
+      "preferred_frontmatter_name": "agent-builder-92e98b",
+      "description": "Design and build AI agents for any domain. Use when users:",
+      "aliases": [
+        "skills-agent-builder-skill"
+      ]
+    },
+    {
+      "canonical": "agent-configuration",
+      "preferred_dir": "agent-configuration",
+      "preferred_path": ".codex/skills/agent-configuration/SKILL.md",
+      "preferred_frontmatter_name": "agent-configuration-78bcf6",
+      "description": "Use this skill when the user needs help with agent configuration. It",
+      "aliases": []
+    },
+    {
+      "canonical": "agent-customization",
+      "preferred_dir": "agent-customization",
+      "preferred_path": ".codex/skills/agent-customization/SKILL.md",
+      "preferred_frontmatter_name": "agent-customization-c830d4",
+      "description": "Use this skill when the user needs help with agent customization. It",
+      "aliases": []
+    },
+    {
+      "canonical": "agent-development",
+      "preferred_dir": "agent-development",
+      "preferred_path": ".codex/skills/agent-development/SKILL.md",
+      "preferred_frontmatter_name": "agent-development",
+      "description": "This skill should be used when the user asks to \"create an agent\", \"add",
+      "aliases": [
+        "skills-agent-development-skill"
+      ]
+    },
+    {
+      "canonical": "agent-orchestration",
+      "preferred_dir": "agent-orchestration",
+      "preferred_path": ".codex/skills/agent-orchestration/SKILL.md",
+      "preferred_frontmatter_name": "agent-orchestration-984e3f",
+      "description": "Use this skill when the user needs help with agent orchestration. It",
+      "aliases": []
+    },
+    {
+      "canonical": "agent-workflow-builder_ai_toolkit",
+      "preferred_dir": "agent-workflow-builder_ai_toolkit",
+      "preferred_path": ".codex/skills/agent-workflow-builder_ai_toolkit/SKILL.md",
+      "preferred_frontmatter_name": "agent-workflow-builder-ai-toolkit",
+      "description": "Generates, enhances, develops, and deploys AI agent applications and",
+      "aliases": []
+    },
+    {
+      "canonical": "agentic-eval",
+      "preferred_dir": "agentic-eval",
+      "preferred_path": ".codex/skills/agentic-eval/SKILL.md",
+      "preferred_frontmatter_name": "agentic-eval-40bffa",
+      "description": "Patterns and techniques for evaluating and improving AI agent outputs.",
+      "aliases": []
+    },
+    {
+      "canonical": "agents-overview",
+      "preferred_dir": "agents-overview",
+      "preferred_path": ".codex/skills/agents-overview/SKILL.md",
+      "preferred_frontmatter_name": "agents-overview-866945",
+      "description": "Use this skill when the user needs help with agents overview. It provides",
+      "aliases": []
+    },
+    {
+      "canonical": "ai-asset-cataloger",
+      "preferred_dir": "ai-asset-cataloger",
+      "preferred_path": ".codex/skills/ai-asset-cataloger/SKILL.md",
+      "preferred_frontmatter_name": "ai-asset-cataloger-bd9810",
+      "description": "Use this skill when the user needs help with ai asset cataloger. It provides",
+      "aliases": []
+    },
+    {
+      "canonical": "ai-logic",
+      "preferred_dir": "ai-logic",
+      "preferred_path": ".codex/skills/ai-logic/SKILL.md",
+      "preferred_frontmatter_name": "ai-logic-8ac66a",
+      "description": "Use this skill when the user needs help with ai logic. It provides practical",
+      "aliases": []
+    },
+    {
+      "canonical": "ai-pdf-reader",
+      "preferred_dir": "ai-pdf-reader",
+      "preferred_path": ".codex/skills/ai-pdf-reader/SKILL.md",
+      "preferred_frontmatter_name": "ai-pdf-reader-3cf50a",
+      "description": "Use this skill when the user needs help with ai pdf reader. It provides",
+      "aliases": []
+    },
+    {
+      "canonical": "algorithms-optimization",
+      "preferred_dir": "algorithms-optimization",
+      "preferred_path": ".codex/skills/algorithms-optimization/SKILL.md",
+      "preferred_frontmatter_name": "algorithms-optimization-b670cb",
+      "description": "Select optimal algorithms and data structures with rigorous complexity",
+      "aliases": [
+        "skills-algorithms-optimization-skill"
+      ]
+    },
+    {
+      "canonical": "analyze-project",
+      "preferred_dir": "analyze-project",
+      "preferred_path": ".codex/skills/analyze-project/SKILL.md",
+      "preferred_frontmatter_name": "analyze-project-69f2ae",
+      "description": "Use this skill when the user needs help with analyze project. It provides",
+      "aliases": []
+    },
+    {
+      "canonical": "api-design",
+      "preferred_dir": "api-design",
+      "preferred_path": ".codex/skills/api-design/SKILL.md",
+      "preferred_frontmatter_name": "api-design-5cbcbd",
+      "description": "Design maintainable APIs with clear contracts. Use when defining endpoints,",
+      "aliases": [
+        "skills-api-design-skill"
+      ]
+    },
+    {
+      "canonical": "appinsights-instrumentation",
+      "preferred_dir": "appinsights-instrumentation",
+      "preferred_path": ".codex/skills/appinsights-instrumentation/SKILL.md",
+      "preferred_frontmatter_name": "appinsights-instrumentation-3e9336",
+      "description": "Use this skill when the user needs help with appinsights instrumentation.",
+      "aliases": []
+    },
+    {
+      "canonical": "architect",
+      "preferred_dir": "architect",
+      "preferred_path": ".codex/skills/architect/SKILL.md",
+      "preferred_frontmatter_name": "architect-0b9520",
+      "description": "Use this skill when the user needs help with architect. It provides practical",
+      "aliases": []
+    },
+    {
+      "canonical": "architect-system-prompt",
+      "preferred_dir": "architect-system-prompt",
+      "preferred_path": ".codex/skills/architect-system-prompt/SKILL.md",
+      "preferred_frontmatter_name": "architect-system-prompt-ecb4ac",
+      "description": "Use this skill when the user needs help with architect system prompt.",
+      "aliases": []
+    },
+    {
+      "canonical": "ask-a-question",
+      "preferred_dir": "ask-a-question",
+      "preferred_path": ".codex/skills/ask-a-question/SKILL.md",
+      "preferred_frontmatter_name": "ask-a-question-827b86",
+      "description": "Use this skill when the user needs help with ask a question. It provides",
+      "aliases": []
+    },
+    {
+      "canonical": "ask-questions",
+      "preferred_dir": "ask-questions",
+      "preferred_path": ".codex/skills/ask-questions/SKILL.md",
+      "preferred_frontmatter_name": "ask-questions-52b8b4",
+      "description": "Use this skill when the user needs help with ask questions. It provides",
+      "aliases": []
+    },
+    {
+      "canonical": "atlas",
+      "preferred_dir": "atlas",
+      "preferred_path": ".codex/skills/atlas/SKILL.md",
+      "preferred_frontmatter_name": "atlas-263b37",
+      "description": "macOS-only AppleScript control for the ChatGPT Atlas desktop app. Use",
+      "aliases": [
+        "-curated-atlas-skill"
+      ]
+    },
+    {
+      "canonical": "azure-deployment-preflight",
+      "preferred_dir": "azure-deployment-preflight",
+      "preferred_path": ".codex/skills/azure-deployment-preflight/SKILL.md",
+      "preferred_frontmatter_name": "azure-deployment-preflight-063fcc",
+      "description": "Performs comprehensive preflight validation of Bicep deployments to Azure,",
+      "aliases": []
+    },
+    {
+      "canonical": "azure-devops-cli",
+      "preferred_dir": "azure-devops-cli",
+      "preferred_path": ".codex/skills/azure-devops-cli/SKILL.md",
+      "preferred_frontmatter_name": "azure-devops-cli-db5bf2",
+      "description": "Manage Azure DevOps resources via CLI including projects, repos, pipelines,",
+      "aliases": []
+    },
+    {
+      "canonical": "azure-resource-visualizer",
+      "preferred_dir": "azure-resource-visualizer",
+      "preferred_path": ".codex/skills/azure-resource-visualizer/SKILL.md",
+      "preferred_frontmatter_name": "azure-resource-visualizer-3c5ee7",
+      "description": "Analyze Azure resource groups and generate detailed Mermaid architecture",
+      "aliases": []
+    },
+    {
+      "canonical": "azure-role-selector",
+      "preferred_dir": "azure-role-selector",
+      "preferred_path": ".codex/skills/azure-role-selector/SKILL.md",
+      "preferred_frontmatter_name": "azure-role-selector-b86148",
+      "description": "Use this skill when the user needs help with azure role selector. It",
+      "aliases": []
+    },
+    {
+      "canonical": "azure-static-web-apps",
+      "preferred_dir": "azure-static-web-apps",
+      "preferred_path": ".codex/skills/azure-static-web-apps/SKILL.md",
+      "preferred_frontmatter_name": "azure-static-web-apps-ee6066",
+      "description": "Helps create, configure, and deploy Azure Static Web Apps using the SWA",
+      "aliases": []
+    },
+    {
+      "canonical": "backend-services",
+      "preferred_dir": "backend-services",
+      "preferred_path": ".codex/skills/backend-services/SKILL.md",
+      "preferred_frontmatter_name": "backend-services-e79f62",
+      "description": "Use this skill when the user needs help with backend services. It provides",
+      "aliases": [
+        "skills-backend-services-skill"
+      ]
+    },
+    {
+      "canonical": "base",
+      "preferred_dir": "base",
+      "preferred_path": ".codex/skills/base/SKILL.md",
+      "preferred_frontmatter_name": "base-ad80ac",
+      "description": "Use this skill when the user needs help with base. It provides practical",
+      "aliases": []
+    },
+    {
+      "canonical": "binary-analysis-playbook",
+      "preferred_dir": "binary-analysis-playbook",
+      "preferred_path": ".codex/skills/binary-analysis-playbook/SKILL.md",
+      "preferred_frontmatter_name": "binary-analysis-playbook-2c9c00",
+      "description": "Use this skill when the user needs help with binary analysis playbook.",
+      "aliases": []
+    },
+    {
+      "canonical": "breakdown",
+      "preferred_dir": "breakdown",
+      "preferred_path": ".codex/skills/breakdown/SKILL.md",
+      "preferred_frontmatter_name": "breakdown-c6656c",
+      "description": "Use this skill when the user needs help with breakdown. It provides practical",
+      "aliases": []
+    },
+    {
+      "canonical": "breakdown-code-instructions",
+      "preferred_dir": "breakdown-code-instructions",
+      "preferred_path": ".codex/skills/breakdown-code-instructions/SKILL.md",
+      "preferred_frontmatter_name": "breakdown-code-instructions-106d91",
+      "description": "Use this skill when the user needs help with breakdown code instructions.",
+      "aliases": []
+    },
+    {
+      "canonical": "bug-found-or-add-logs",
+      "preferred_dir": "bug-found-or-add-logs",
+      "preferred_path": ".codex/skills/bug-found-or-add-logs/SKILL.md",
+      "preferred_frontmatter_name": "bug-found-or-add-logs-ab13ec",
+      "description": "Use this skill when the user needs help with bug found or add logs. It",
+      "aliases": []
+    },
+    {
+      "canonical": "bug-hunter",
+      "preferred_dir": "bug-hunter",
+      "preferred_path": ".codex/skills/bug-hunter/SKILL.md",
+      "preferred_frontmatter_name": "bug-hunter-3d6e09",
+      "description": "Use this skill when the user needs help with bug hunter. It provides",
+      "aliases": []
+    },
+    {
+      "canonical": "bug-hunter-iteration-prompt",
+      "preferred_dir": "bug-hunter-iteration-prompt",
+      "preferred_path": ".codex/skills/bug-hunter-iteration-prompt/SKILL.md",
+      "preferred_frontmatter_name": "bug-hunter-iteration-prompt-900df7",
+      "description": "Use this skill when the user needs help with bug hunter iteration prompt.",
+      "aliases": []
+    },
+    {
+      "canonical": "bug-hunter-pro",
+      "preferred_dir": "bug-hunter-pro",
+      "preferred_path": ".codex/skills/bug-hunter-pro/SKILL.md",
+      "preferred_frontmatter_name": "bug-hunter-pro-9c00cc",
+      "description": "Use this skill when the user needs help with bug hunter pro. It provides",
+      "aliases": []
+    },
+    {
+      "canonical": "bug-hunter-system-prompt",
+      "preferred_dir": "bug-hunter-system-prompt",
+      "preferred_path": ".codex/skills/bug-hunter-system-prompt/SKILL.md",
+      "preferred_frontmatter_name": "bug-hunter-system-prompt-ebca16",
+      "description": "Use this skill when the user needs help with bug hunter system prompt.",
+      "aliases": []
+    },
+    {
+      "canonical": "bug-investigation",
+      "preferred_dir": "bug-investigation",
+      "preferred_path": ".codex/skills/bug-investigation/SKILL.md",
+      "preferred_frontmatter_name": "bug-investigation-871246",
+      "description": "Use this skill when the user needs help with bug investigation. It provides",
+      "aliases": [
+        "skills-bug-investigation-skill"
+      ]
+    },
+    {
+      "canonical": "bug-report",
+      "preferred_dir": "bug-report",
+      "preferred_path": ".codex/skills/bug-report/SKILL.md",
+      "preferred_frontmatter_name": "bug-report-04f934",
+      "description": "Use this skill when the user needs help with bug report. It provides",
+      "aliases": []
+    },
+    {
+      "canonical": "bug-report-analyzer",
+      "preferred_dir": "bug-report-analyzer",
+      "preferred_path": ".codex/skills/bug-report-analyzer/SKILL.md",
+      "preferred_frontmatter_name": "bug-report-analyzer-b256ff",
+      "description": "Use this skill when the user needs help with bug report analyzer. It",
+      "aliases": []
+    },
+    {
+      "canonical": "bug-report-review-prompt",
+      "preferred_dir": "bug-report-review-prompt",
+      "preferred_path": ".codex/skills/bug-report-review-prompt/SKILL.md",
+      "preferred_frontmatter_name": "bug-report-review-prompt-2423d6",
+      "description": "Use this skill when the user needs help with bug report review prompt.",
+      "aliases": []
+    },
+    {
+      "canonical": "build-champ-prompt",
+      "preferred_dir": "build-champ-prompt",
+      "preferred_path": ".codex/skills/build-champ-prompt/SKILL.md",
+      "preferred_frontmatter_name": "build-champ-prompt-62b925",
+      "description": "Use this skill when the user needs help with build champ prompt. It provides",
+      "aliases": []
+    },
+    {
+      "canonical": "build-frontend",
+      "preferred_dir": "build-frontend",
+      "preferred_path": ".codex/skills/build-frontend/SKILL.md",
+      "preferred_frontmatter_name": "build-frontend-e5a69d",
+      "description": "Use this skill when the user needs help with build frontend. It provides",
+      "aliases": []
+    },
+    {
+      "canonical": "build-full-specification",
+      "preferred_dir": "build-full-specification",
+      "preferred_path": ".codex/skills/build-full-specification/SKILL.md",
+      "preferred_frontmatter_name": "build-full-specification-b41a14",
+      "description": "Use this skill when the user needs help with build full specification.",
+      "aliases": []
+    },
+    {
+      "canonical": "build-triage-master",
+      "preferred_dir": "build-triage-master",
+      "preferred_path": ".codex/skills/build-triage-master/SKILL.md",
+      "preferred_frontmatter_name": "build-triage-master-1f9ebd",
+      "description": "Use this skill when the user needs help with build triage master. It",
+      "aliases": []
+    },
+    {
+      "canonical": "cfg-disassembly-mapper",
+      "preferred_dir": "cfg-disassembly-mapper",
+      "preferred_path": ".codex/skills/cfg-disassembly-mapper/SKILL.md",
+      "preferred_frontmatter_name": "cfg-disassembly-mapper-7b3133",
+      "description": "Use this skill when the user needs help with cfg disassembly mapper.",
+      "aliases": []
+    },
+    {
+      "canonical": "change-notification",
+      "preferred_dir": "change-notification",
+      "preferred_path": ".codex/skills/change-notification/SKILL.md",
+      "preferred_frontmatter_name": "change-notification-844064",
+      "description": "Use this skill when the user needs help with change notification. It",
+      "aliases": []
+    },
+    {
+      "canonical": "chat",
+      "preferred_dir": "chat",
+      "preferred_path": ".codex/skills/chat/SKILL.md",
+      "preferred_frontmatter_name": "chat-f6143a",
+      "description": "Use this skill when the user needs help with chat. It provides practical",
+      "aliases": []
+    },
+    {
+      "canonical": "chat-agent-system-prompt",
+      "preferred_dir": "chat-agent-system-prompt",
+      "preferred_path": ".codex/skills/chat-agent-system-prompt/SKILL.md",
+      "preferred_frontmatter_name": "chat-agent-system-prompt-02ec56",
+      "description": "Use this skill when the user needs help with chat agent system prompt.",
+      "aliases": []
+    },
+    {
+      "canonical": "checklist-driven-delivery",
+      "preferred_dir": "checklist-driven-delivery",
+      "preferred_path": ".codex/skills/checklist-driven-delivery/SKILL.md",
+      "preferred_frontmatter_name": "checklist-driven-delivery-336a70",
+      "description": "Use checklist-based workflows to ensure complete implementation, review,",
+      "aliases": [
+        "skills-checklist-driven-delivery-skill"
+      ]
+    },
+    {
+      "canonical": "chrome-devtools",
+      "preferred_dir": "chrome-devtools",
+      "preferred_path": ".codex/skills/chrome-devtools/SKILL.md",
+      "preferred_frontmatter_name": "chrome-devtools-99bddc",
+      "description": "Use this skill when the user needs help with chrome devtools. It provides",
+      "aliases": []
+    },
+    {
+      "canonical": "chrome-screen-ai",
+      "preferred_dir": "chrome-screen-ai",
+      "preferred_path": ".codex/skills/chrome-screen-ai/SKILL.md",
+      "preferred_frontmatter_name": "chrome-screen-ai-020f6d",
+      "description": "Use this skill when the user needs help with chrome screen ai. It provides",
+      "aliases": []
+    },
+    {
+      "canonical": "chromium-docs",
+      "preferred_dir": "chromium-docs",
+      "preferred_path": ".codex/skills/chromium-docs/SKILL.md",
+      "preferred_frontmatter_name": "chromium-docs-7086de",
+      "description": "Use this skill when the user needs help with chromium docs. It provides",
+      "aliases": []
+    },
+    {
+      "canonical": "claude-code",
+      "preferred_dir": "claude-code",
+      "preferred_path": ".codex/skills/claude-code/SKILL.md",
+      "preferred_frontmatter_name": "claude-code-263266",
+      "description": "Use this skill when the user needs help with claude code. It provides",
+      "aliases": []
+    },
+    {
+      "canonical": "claude-code-action",
+      "preferred_dir": "claude-code-action",
+      "preferred_path": ".codex/skills/claude-code-action/SKILL.md",
+      "preferred_frontmatter_name": "claude-code-action-217885",
+      "description": "Use this skill when the user needs help with claude code action. It provides",
+      "aliases": []
+    },
+    {
+      "canonical": "claude-code-base-action",
+      "preferred_dir": "claude-code-base-action",
+      "preferred_path": ".codex/skills/claude-code-base-action/SKILL.md",
+      "preferred_frontmatter_name": "claude-code-base-action-692ddf",
+      "description": "Use this skill when the user needs help with claude code base action.",
+      "aliases": []
+    },
+    {
+      "canonical": "claude-code-plugins",
+      "preferred_dir": "claude-code-plugins",
+      "preferred_path": ".codex/skills/claude-code-plugins/SKILL.md",
+      "preferred_frontmatter_name": "claude-code-plugins-671e78",
+      "description": "Use this skill when the user needs help with claude code plugins. It",
+      "aliases": []
+    },
+    {
+      "canonical": "claude-opus-4-5-migration",
+      "preferred_dir": "claude-opus-4-5-migration",
+      "preferred_path": ".codex/skills/claude-opus-4-5-migration/SKILL.md",
+      "preferred_frontmatter_name": "claude-opus-4-5-migration-602bd8",
+      "description": "Migrate prompts and code from Claude Sonnet 4.0, Sonnet 4.5, or Opus",
+      "aliases": [
+        "skills-claude-opus-4-5-migration-skill"
+      ]
+    },
+    {
+      "canonical": "cloudflare-deploy",
+      "preferred_dir": "cloudflare-deploy",
+      "preferred_path": ".codex/skills/cloudflare-deploy/SKILL.md",
+      "preferred_frontmatter_name": "cloudflare-deploy-ebfc82",
+      "description": "Deploy applications and infrastructure to Cloudflare using Workers, Pages,",
+      "aliases": [
+        "-curated-cloudflare-deploy-skill"
+      ]
+    },
+    {
+      "canonical": "code-linting",
+      "preferred_dir": "code-linting",
+      "preferred_path": ".codex/skills/code-linting/SKILL.md",
+      "preferred_frontmatter_name": "code-linting-4079e5",
+      "description": "Use this skill when the user needs help with code linting. It provides",
+      "aliases": []
+    },
+    {
+      "canonical": "code-monkey",
+      "preferred_dir": "code-monkey",
+      "preferred_path": ".codex/skills/code-monkey/SKILL.md",
+      "preferred_frontmatter_name": "code-monkey-fe4d91",
+      "description": "Use this skill when the user needs help with code monkey. It provides",
+      "aliases": []
+    },
+    {
+      "canonical": "code-monkey-breakdown-prompt",
+      "preferred_dir": "code-monkey-breakdown-prompt",
+      "preferred_path": ".codex/skills/code-monkey-breakdown-prompt/SKILL.md",
+      "preferred_frontmatter_name": "code-monkey-breakdown-prompt-8b7ad4",
+      "description": "Use this skill when the user needs help with code monkey breakdown prompt.",
+      "aliases": []
+    },
+    {
+      "canonical": "code-monkey-iteration-prompt",
+      "preferred_dir": "code-monkey-iteration-prompt",
+      "preferred_path": ".codex/skills/code-monkey-iteration-prompt/SKILL.md",
+      "preferred_frontmatter_name": "code-monkey-iteration-prompt-a0d7fc",
+      "description": "Use this skill when the user needs help with code monkey iteration prompt.",
+      "aliases": []
+    },
+    {
+      "canonical": "code-monkey-system-prompt",
+      "preferred_dir": "code-monkey-system-prompt",
+      "preferred_path": ".codex/skills/code-monkey-system-prompt/SKILL.md",
+      "preferred_frontmatter_name": "code-monkey-system-prompt-b70b57",
+      "description": "Use this skill when the user needs help with code monkey system prompt.",
+      "aliases": []
+    },
+    {
+      "canonical": "code-review",
+      "preferred_dir": "code-review",
+      "preferred_path": ".codex/skills/code-review/SKILL.md",
+      "preferred_frontmatter_name": "code-review-abde6e",
+      "description": "Perform high-signal code reviews with focus on correctness, security,",
+      "aliases": [
+        "skills-code-review-skill"
+      ]
+    },
+    {
+      "canonical": "code-review-structured",
+      "preferred_dir": "code-review-structured",
+      "preferred_path": ".codex/skills/code-review-structured/SKILL.md",
+      "preferred_frontmatter_name": "code-review-structured-abc390",
+      "description": "Use this skill when the user needs help with code review structured.",
+      "aliases": [
+        "skills-code-review-structured-skill"
+      ]
+    },
+    {
+      "canonical": "codenotify-prompt",
+      "preferred_dir": "codenotify-prompt",
+      "preferred_path": ".codex/skills/codenotify-prompt/SKILL.md",
+      "preferred_frontmatter_name": "codenotify-prompt-191ba2",
+      "description": "Use this skill when the user needs help with codenotify prompt. It provides",
+      "aliases": []
+    },
+    {
+      "canonical": "codex-tool-catalog",
+      "preferred_dir": "codex-tool-catalog",
+      "preferred_path": ".codex/skills/codex-tool-catalog/SKILL.md",
+      "preferred_frontmatter_name": "codex-tool-catalog-73e91f",
+      "description": "Use this skill when the user needs help with codex tool catalog. It provides",
+      "aliases": []
+    },
+    {
+      "canonical": "coding-rules",
+      "preferred_dir": "coding-rules",
+      "preferred_path": ".codex/skills/coding-rules/SKILL.md",
+      "preferred_frontmatter_name": "coding-rules-cb3323",
+      "description": "Use this skill when the user needs help with coding rules. It provides",
+      "aliases": []
+    },
+    {
+      "canonical": "coding-tools",
+      "preferred_dir": "coding-tools",
+      "preferred_path": ".codex/skills/coding-tools/SKILL.md",
+      "preferred_frontmatter_name": "coding-tools-d1f49b",
+      "description": "Use this skill when the user needs help with coding tools. It provides",
+      "aliases": []
+    },
+    {
+      "canonical": "command-development",
+      "preferred_dir": "command-development",
+      "preferred_path": ".codex/skills/command-development/SKILL.md",
+      "preferred_frontmatter_name": "command-development",
+      "description": "This skill should be used when the user asks to \"create a slash command\",",
+      "aliases": [
+        "skills-command-development-skill"
+      ]
+    },
+    {
+      "canonical": "command-executor",
+      "preferred_dir": "command-executor",
+      "preferred_path": ".codex/skills/command-executor/SKILL.md",
+      "preferred_frontmatter_name": "command-executor-1488a5",
+      "description": "Use this skill when the user needs help with command executor. It provides",
+      "aliases": []
+    },
+    {
+      "canonical": "commit",
+      "preferred_dir": "commit",
+      "preferred_path": ".codex/skills/commit/SKILL.md",
+      "preferred_frontmatter_name": "commit-40d441",
+      "description": "Use this skill when the user needs help with commit. It provides practical",
+      "aliases": []
+    },
+    {
+      "canonical": "component-architecture",
+      "preferred_dir": "component-architecture",
+      "preferred_path": ".codex/skills/component-architecture/SKILL.md",
+      "preferred_frontmatter_name": "component-architecture-eba386",
+      "description": "Use this skill when the user needs help with component architecture.",
+      "aliases": []
+    },
+    {
+      "canonical": "component-prompt",
+      "preferred_dir": "component-prompt",
+      "preferred_path": ".codex/skills/component-prompt/SKILL.md",
+      "preferred_frontmatter_name": "component-prompt-cf0e58",
+      "description": "Use this skill when the user needs help with component prompt. It provides",
+      "aliases": []
+    },
+    {
+      "canonical": "configure-template",
+      "preferred_dir": "configure-template",
+      "preferred_path": ".codex/skills/configure-template/SKILL.md",
+      "preferred_frontmatter_name": "configure-template-f740d5",
+      "description": "Use this skill when the user needs help with configure template. It provides",
+      "aliases": []
+    },
+    {
+      "canonical": "convo",
+      "preferred_dir": "convo",
+      "preferred_path": ".codex/skills/convo/SKILL.md",
+      "preferred_frontmatter_name": "convo-1d1f43",
+      "description": "Use this skill when the user needs help with convo. It provides practical",
+      "aliases": []
+    },
+    {
+      "canonical": "copilot-sdk",
+      "preferred_dir": "copilot-sdk",
+      "preferred_path": ".codex/skills/copilot-sdk/SKILL.md",
+      "preferred_frontmatter_name": "copilot-sdk-243720",
+      "description": "Build agentic applications with GitHub Copilot SDK. Use when embedding",
+      "aliases": []
+    },
+    {
+      "canonical": "create-docs-queries",
+      "preferred_dir": "create-docs-queries",
+      "preferred_path": ".codex/skills/create-docs-queries/SKILL.md",
+      "preferred_frontmatter_name": "create-docs-queries-d65659",
+      "description": "Use this skill when the user needs help with create docs queries. It",
+      "aliases": []
+    },
+    {
+      "canonical": "create-rag-query",
+      "preferred_dir": "create-rag-query",
+      "preferred_path": ".codex/skills/create-rag-query/SKILL.md",
+      "preferred_frontmatter_name": "create-rag-query-506156",
+      "description": "Use this skill when the user needs help with create rag query. It provides",
+      "aliases": []
+    },
+    {
+      "canonical": "create-readme",
+      "preferred_dir": "create-readme",
+      "preferred_path": ".codex/skills/create-readme/SKILL.md",
+      "preferred_frontmatter_name": "create-readme-d67595",
+      "description": "Use this skill when the user needs help with create readme. It provides",
+      "aliases": []
+    },
+    {
+      "canonical": "crypto-pattern-id",
+      "preferred_dir": "crypto-pattern-id",
+      "preferred_path": ".codex/skills/crypto-pattern-id/SKILL.md",
+      "preferred_frontmatter_name": "crypto-pattern-id-f4aee1",
+      "description": "Use this skill when the user needs help with crypto pattern id. It provides",
+      "aliases": []
+    },
+    {
+      "canonical": "data-about-logs",
+      "preferred_dir": "data-about-logs",
+      "preferred_path": ".codex/skills/data-about-logs/SKILL.md",
+      "preferred_frontmatter_name": "data-about-logs-936695",
+      "description": "Use this skill when the user needs help with data about logs. It provides",
+      "aliases": []
+    },
+    {
+      "canonical": "data-engineering",
+      "preferred_dir": "data-engineering",
+      "preferred_path": ".codex/skills/data-engineering/SKILL.md",
+      "preferred_frontmatter_name": "data-engineering-7ade47",
+      "description": "Use this skill when the user needs help with data engineering. It provides",
+      "aliases": []
+    },
+    {
+      "canonical": "data-prompt",
+      "preferred_dir": "data-prompt",
+      "preferred_path": ".codex/skills/data-prompt/SKILL.md",
+      "preferred_frontmatter_name": "data-prompt-db4658",
+      "description": "Use this skill when the user needs help with data prompt. It provides",
+      "aliases": []
+    },
+    {
+      "canonical": "database-design",
+      "preferred_dir": "database-design",
+      "preferred_path": ".codex/skills/database-design/SKILL.md",
+      "preferred_frontmatter_name": "database-design-4660c1",
+      "description": "Design data models, schemas, and storage strategies. Use when choosing",
+      "aliases": [
+        "skills-database-design-skill"
+      ]
+    },
+    {
+      "canonical": "debug",
+      "preferred_dir": "debug",
+      "preferred_path": ".codex/skills/debug/SKILL.md",
+      "preferred_frontmatter_name": "debug-f290c0",
+      "description": "Use this skill when the user needs help with debug. It provides practical",
+      "aliases": []
+    },
+    {
+      "canonical": "debugging",
+      "preferred_dir": "debugging",
+      "preferred_path": ".codex/skills/debugging/SKILL.md",
+      "preferred_frontmatter_name": "debugging-56a102",
+      "description": "Expert debugging for complex failures across languages, stacks, and",
+      "aliases": [
+        "skills-debugging-skill"
+      ]
+    },
+    {
+      "canonical": "deep-planning",
+      "preferred_dir": "deep-planning",
+      "preferred_path": ".codex/skills/deep-planning/SKILL.md",
+      "preferred_frontmatter_name": "deep-planning-0f20a0",
+      "description": "Use this skill when the user needs help with deep planning. It provides",
+      "aliases": []
+    },
+    {
+      "canonical": "default-issue-review-prompt",
+      "preferred_dir": "default-issue-review-prompt",
+      "preferred_path": ".codex/skills/default-issue-review-prompt/SKILL.md",
+      "preferred_frontmatter_name": "default-issue-review-prompt-180632",
+      "description": "Use this skill when the user needs help with default issue review prompt.",
+      "aliases": []
+    },
+    {
+      "canonical": "define-user-review-goal",
+      "preferred_dir": "define-user-review-goal",
+      "preferred_path": ".codex/skills/define-user-review-goal/SKILL.md",
+      "preferred_frontmatter_name": "define-user-review-goal-e7652a",
+      "description": "Use this skill when the user needs help with define user review goal.",
+      "aliases": []
+    },
+    {
+      "canonical": "describe-file",
+      "preferred_dir": "describe-file",
+      "preferred_path": ".codex/skills/describe-file/SKILL.md",
+      "preferred_frontmatter_name": "describe-file-bcdcd1",
+      "description": "Use this skill when the user needs help with describe file. It provides",
+      "aliases": []
+    },
+    {
+      "canonical": "develop-web-game",
+      "preferred_dir": "develop-web-game",
+      "preferred_path": ".codex/skills/develop-web-game/SKILL.md",
+      "preferred_frontmatter_name": "develop-web-game-16efad",
+      "description": "Use when Codex is building or iterating on a web game (HTML/JS) and",
+      "aliases": [
+        "-curated-develop-web-game-skill"
+      ]
+    },
+    {
+      "canonical": "developer",
+      "preferred_dir": "developer",
+      "preferred_path": ".codex/skills/developer/SKILL.md",
+      "preferred_frontmatter_name": "developer-11c1c9",
+      "description": "Use this skill when the user needs help with developer. It provides practical",
+      "aliases": []
+    },
+    {
+      "canonical": "developer-breakdown-prompt",
+      "preferred_dir": "developer-breakdown-prompt",
+      "preferred_path": ".codex/skills/developer-breakdown-prompt/SKILL.md",
+      "preferred_frontmatter_name": "developer-breakdown-prompt-9a3ba1",
+      "description": "Use this skill when the user needs help with developer breakdown prompt.",
+      "aliases": []
+    },
+    {
+      "canonical": "developer-filter-files-prompt",
+      "preferred_dir": "developer-filter-files-prompt",
+      "preferred_path": ".codex/skills/developer-filter-files-prompt/SKILL.md",
+      "preferred_frontmatter_name": "developer-filter-files-prompt-d9a062",
+      "description": "Use this skill when the user needs help with developer filter files prompt.",
+      "aliases": []
+    },
+    {
+      "canonical": "developer-iteration-prompt",
+      "preferred_dir": "developer-iteration-prompt",
+      "preferred_path": ".codex/skills/developer-iteration-prompt/SKILL.md",
+      "preferred_frontmatter_name": "developer-iteration-prompt-164e2e",
+      "description": "Use this skill when the user needs help with developer iteration prompt.",
+      "aliases": []
+    },
+    {
+      "canonical": "developer-system-prompt",
+      "preferred_dir": "developer-system-prompt",
+      "preferred_path": ".codex/skills/developer-system-prompt/SKILL.md",
+      "preferred_frontmatter_name": "developer-system-prompt-b905be",
+      "description": "Use this skill when the user needs help with developer system prompt.",
+      "aliases": []
+    },
+    {
+      "canonical": "devops-ci-cd",
+      "preferred_dir": "devops-ci-cd",
+      "preferred_path": ".codex/skills/devops-ci-cd/SKILL.md",
+      "preferred_frontmatter_name": "devops-ci-cd-c021f0",
+      "description": "Design CI/CD pipelines and DevOps workflows. Use when automating builds,",
+      "aliases": [
+        "skills-devops-ci-cd-skill"
+      ]
+    },
+    {
+      "canonical": "diff-validator",
+      "preferred_dir": "diff-validator",
+      "preferred_path": ".codex/skills/diff-validator/SKILL.md",
+      "preferred_frontmatter_name": "diff-validator-20835c",
+      "description": "Use this skill when the user needs help with diff validator. It provides",
+      "aliases": []
+    },
+    {
+      "canonical": "disk-execution-env",
+      "preferred_dir": "disk-execution-env",
+      "preferred_path": ".codex/skills/disk-execution-env/SKILL.md",
+      "preferred_frontmatter_name": "disk-execution-env-76d7d8",
+      "description": "Use this skill when the user needs help with disk execution env. It provides",
+      "aliases": []
+    },
+    {
+      "canonical": "doc",
+      "preferred_dir": "doc",
+      "preferred_path": ".codex/skills/doc/SKILL.md",
+      "preferred_frontmatter_name": "doc-7d9d93",
+      "description": "Use when the task involves reading, creating, or editing `.docx` documents,",
+      "aliases": [
+        "-curated-doc-skill"
+      ]
+    },
+    {
+      "canonical": "doc-snippets",
+      "preferred_dir": "doc-snippets",
+      "preferred_path": ".codex/skills/doc-snippets/SKILL.md",
+      "preferred_frontmatter_name": "doc-snippets-363a27",
+      "description": "Use this skill when the user needs help with doc snippets. It provides",
+      "aliases": []
+    },
+    {
+      "canonical": "documentation-update",
+      "preferred_dir": "documentation-update",
+      "preferred_path": ".codex/skills/documentation-update/SKILL.md",
+      "preferred_frontmatter_name": "documentation-update-24d570",
+      "description": "Use this skill when the user needs help with documentation update. It",
+      "aliases": []
+    },
+    {
+      "canonical": "dynamic-instrumentation",
+      "preferred_dir": "dynamic-instrumentation",
+      "preferred_path": ".codex/skills/dynamic-instrumentation/SKILL.md",
+      "preferred_frontmatter_name": "dynamic-instrumentation-3d0d90",
+      "description": "Use this skill when the user needs help with dynamic instrumentation.",
+      "aliases": []
+    },
+    {
+      "canonical": "environment-setup",
+      "preferred_dir": "environment-setup",
+      "preferred_path": ".codex/skills/environment-setup/SKILL.md",
+      "preferred_frontmatter_name": "environment-setup-d662c2",
+      "description": "Use this skill when the user needs help with environment setup. It provides",
+      "aliases": []
+    },
+    {
+      "canonical": "epic-breakdown",
+      "preferred_dir": "epic-breakdown",
+      "preferred_path": ".codex/skills/epic-breakdown/SKILL.md",
+      "preferred_frontmatter_name": "epic-breakdown-523935",
+      "description": "Use this skill when the user needs help with epic breakdown. It provides",
+      "aliases": []
+    },
+    {
+      "canonical": "error-handler",
+      "preferred_dir": "error-handler",
+      "preferred_path": ".codex/skills/error-handler/SKILL.md",
+      "preferred_frontmatter_name": "error-handler-16735e",
+      "description": "Use this skill when the user needs help with error handler. It provides",
+      "aliases": []
+    },
+    {
+      "canonical": "execution-order",
+      "preferred_dir": "execution-order",
+      "preferred_path": ".codex/skills/execution-order/SKILL.md",
+      "preferred_frontmatter_name": "execution-order-aab3cb",
+      "description": "Use this skill when the user needs help with execution order. It provides",
+      "aliases": []
+    },
+    {
+      "canonical": "executor",
+      "preferred_dir": "executor",
+      "preferred_path": ".codex/skills/executor/SKILL.md",
+      "preferred_frontmatter_name": "executor-9b6688",
+      "description": "Use this skill when the user needs help with executor. It provides practical",
+      "aliases": []
+    },
+    {
+      "canonical": "external-docs",
+      "preferred_dir": "external-docs",
+      "preferred_path": ".codex/skills/external-docs/SKILL.md",
+      "preferred_frontmatter_name": "external-docs-482eb9",
+      "description": "Use this skill when the user needs help with external docs. It provides",
+      "aliases": []
+    },
+    {
+      "canonical": "external-docs-system-prompt",
+      "preferred_dir": "external-docs-system-prompt",
+      "preferred_path": ".codex/skills/external-docs-system-prompt/SKILL.md",
+      "preferred_frontmatter_name": "external-docs-system-prompt-9209bb",
+      "description": "Use this skill when the user needs help with external docs system prompt.",
+      "aliases": []
+    },
+    {
+      "canonical": "fast-planning",
+      "preferred_dir": "fast-planning",
+      "preferred_path": ".codex/skills/fast-planning/SKILL.md",
+      "preferred_frontmatter_name": "fast-planning-536e92",
+      "description": "Use this skill when the user needs help with fast planning. It provides",
+      "aliases": []
+    },
+    {
+      "canonical": "features-list",
+      "preferred_dir": "features-list",
+      "preferred_path": ".codex/skills/features-list/SKILL.md",
+      "preferred_frontmatter_name": "features-list-3e74ac",
+      "description": "Use this skill when the user needs help with features list. It provides",
+      "aliases": []
+    },
+    {
+      "canonical": "figma",
+      "preferred_dir": "figma",
+      "preferred_path": ".codex/skills/figma/SKILL.md",
+      "preferred_frontmatter_name": "figma-1ef69b",
+      "description": "Use the Figma MCP server to fetch design context, screenshots, variables,",
+      "aliases": [
+        "-curated-figma-skill"
+      ]
+    },
+    {
+      "canonical": "figma-implement-design",
+      "preferred_dir": "figma-implement-design",
+      "preferred_path": ".codex/skills/figma-implement-design/SKILL.md",
+      "preferred_frontmatter_name": "figma-implement-design-30c52c",
+      "description": "Translate Figma nodes into production-ready code with 1:1 visual fidelity",
+      "aliases": [
+        "-curated-figma-implement-design-skill"
+      ]
+    },
+    {
+      "canonical": "file-naming",
+      "preferred_dir": "file-naming",
+      "preferred_path": ".codex/skills/file-naming/SKILL.md",
+      "preferred_frontmatter_name": "file-naming-f75897",
+      "description": "Use this skill when the user needs help with file naming. It provides",
+      "aliases": []
+    },
+    {
+      "canonical": "file-size-limit",
+      "preferred_dir": "file-size-limit",
+      "preferred_path": ".codex/skills/file-size-limit/SKILL.md",
+      "preferred_frontmatter_name": "file-size-limit-258fc2",
+      "description": "Use this skill when the user needs help with file size limit. It provides",
+      "aliases": []
+    },
+    {
+      "canonical": "files",
+      "preferred_dir": "files",
+      "preferred_path": ".codex/skills/files/SKILL.md",
+      "preferred_frontmatter_name": "files-aed20c",
+      "description": "Use this skill when the user needs help with files. It provides practical",
+      "aliases": []
+    },
+    {
+      "canonical": "files-descriptions",
+      "preferred_dir": "files-descriptions",
+      "preferred_path": ".codex/skills/files-descriptions/SKILL.md",
+      "preferred_frontmatter_name": "files-descriptions-1837eb",
+      "description": "Use this skill when the user needs help with files descriptions. It provides",
+      "aliases": []
+    },
+    {
+      "canonical": "files-dict-manager",
+      "preferred_dir": "files-dict-manager",
+      "preferred_path": ".codex/skills/files-dict-manager/SKILL.md",
+      "preferred_frontmatter_name": "files-dict-manager-638444",
+      "description": "Use this skill when the user needs help with files dict manager. It provides",
+      "aliases": []
+    },
+    {
+      "canonical": "files-list",
+      "preferred_dir": "files-list",
+      "preferred_path": ".codex/skills/files-list/SKILL.md",
+      "preferred_frontmatter_name": "files-list-56e5d6",
+      "description": "Use this skill when the user needs help with files list. It provides",
+      "aliases": []
+    },
+    {
+      "canonical": "files-list-relevant",
+      "preferred_dir": "files-list-relevant",
+      "preferred_path": ".codex/skills/files-list-relevant/SKILL.md",
+      "preferred_frontmatter_name": "files-list-relevant-5f16d2",
+      "description": "Use this skill when the user needs help with files list relevant. It",
+      "aliases": []
+    },
+    {
+      "canonical": "filter-files",
+      "preferred_dir": "filter-files",
+      "preferred_path": ".codex/skills/filter-files/SKILL.md",
+      "preferred_frontmatter_name": "filter-files-da3e4f",
+      "description": "Use this skill when the user needs help with filter files. It provides",
+      "aliases": []
+    },
+    {
+      "canonical": "fixissueno-prompt",
+      "preferred_dir": "fixissueno-prompt",
+      "preferred_path": ".codex/skills/fixissueno-prompt/SKILL.md",
+      "preferred_frontmatter_name": "fixissueno-prompt-f465d9",
+      "description": "Use this skill when the user needs help with fixissueno prompt. It provides",
+      "aliases": []
+    },
+    {
+      "canonical": "frontend",
+      "preferred_dir": "frontend",
+      "preferred_path": ".codex/skills/frontend/SKILL.md",
+      "preferred_frontmatter_name": "frontend-c0f2e7",
+      "description": "Use this skill when the user needs help with frontend. It provides practical",
+      "aliases": []
+    },
+    {
+      "canonical": "frontend-builder",
+      "preferred_dir": "frontend-builder",
+      "preferred_path": ".codex/skills/frontend-builder/SKILL.md",
+      "preferred_frontmatter_name": "frontend-builder-b89a6f",
+      "description": "Use this skill when the user needs help with frontend builder. It provides",
+      "aliases": []
+    },
+    {
+      "canonical": "frontend-design",
+      "preferred_dir": "frontend-design",
+      "preferred_path": ".codex/skills/frontend-design/SKILL.md",
+      "preferred_frontmatter_name": "frontend-design-ee6a99",
+      "description": "Create distinctive, production-grade frontend interfaces with high design",
+      "aliases": [
+        "skills-frontend-design-skill"
+      ]
+    },
+    {
+      "canonical": "frontend-engineering",
+      "preferred_dir": "frontend-engineering",
+      "preferred_path": ".codex/skills/frontend-engineering/SKILL.md",
+      "preferred_frontmatter_name": "frontend-engineering-1268bc",
+      "description": "Use this skill when the user needs help with frontend engineering. It",
+      "aliases": [
+        "skills-frontend-engineering-skill"
+      ]
+    },
+    {
+      "canonical": "frontend-system-prompt",
+      "preferred_dir": "frontend-system-prompt",
+      "preferred_path": ".codex/skills/frontend-system-prompt/SKILL.md",
+      "preferred_frontmatter_name": "frontend-system-prompt-0941b1",
+      "description": "Use this skill when the user needs help with frontend system prompt.",
+      "aliases": []
+    },
+    {
+      "canonical": "frontend-wizard",
+      "preferred_dir": "frontend-wizard",
+      "preferred_path": ".codex/skills/frontend-wizard/SKILL.md",
+      "preferred_frontmatter_name": "frontend-wizard-231434",
+      "description": "Use this skill when the user needs help with frontend wizard. It provides",
+      "aliases": []
+    },
+    {
+      "canonical": "gdb-memory-dumper",
+      "preferred_dir": "gdb-memory-dumper",
+      "preferred_path": ".codex/skills/gdb-memory-dumper/SKILL.md",
+      "preferred_frontmatter_name": "gdb-memory-dumper-8046da",
+      "description": "Use this skill when the user needs help with gdb memory dumper. It provides",
+      "aliases": []
+    },
+    {
+      "canonical": "get-alternative-solutions",
+      "preferred_dir": "get-alternative-solutions",
+      "preferred_path": ".codex/skills/get-alternative-solutions/SKILL.md",
+      "preferred_frontmatter_name": "get-alternative-solutions-102915",
+      "description": "Use this skill when the user needs help with get alternative solutions.",
+      "aliases": []
+    },
+    {
+      "canonical": "get-bug-reproduction-instructions",
+      "preferred_dir": "get-bug-reproduction-instructions",
+      "preferred_path": ".codex/skills/get-bug-reproduction-instructions/SKILL.md",
+      "preferred_frontmatter_name": "get-bug-reproduction-instructions-2c583d",
+      "description": "Use this skill when the user needs help with get bug reproduction instructions.",
+      "aliases": []
+    },
+    {
+      "canonical": "get-entrypoints",
+      "preferred_dir": "get-entrypoints",
+      "preferred_path": ".codex/skills/get-entrypoints/SKILL.md",
+      "preferred_frontmatter_name": "get-entrypoints-deb9de",
+      "description": "Use this skill when the user needs help with get entrypoints. It provides",
+      "aliases": []
+    },
+    {
+      "canonical": "get-route-files",
+      "preferred_dir": "get-route-files",
+      "preferred_path": ".codex/skills/get-route-files/SKILL.md",
+      "preferred_frontmatter_name": "get-route-files-11f0e1",
+      "description": "Use this skill when the user needs help with get route files. It provides",
+      "aliases": []
+    },
+    {
+      "canonical": "get-run-command",
+      "preferred_dir": "get-run-command",
+      "preferred_path": ".codex/skills/get-run-command/SKILL.md",
+      "preferred_frontmatter_name": "get-run-command-725cb2",
+      "description": "Use this skill when the user needs help with get run command. It provides",
+      "aliases": []
+    },
+    {
+      "canonical": "gh-address-comments",
+      "preferred_dir": "gh-address-comments",
+      "preferred_path": ".codex/skills/gh-address-comments/SKILL.md",
+      "preferred_frontmatter_name": "gh-address-comments-a9cb77",
+      "description": "Use this skill when the user needs help with gh address comments. It",
+      "aliases": [
+        "-curated-gh-address-comments-skill"
+      ]
+    },
+    {
+      "canonical": "gh-cli",
+      "preferred_dir": "gh-cli",
+      "preferred_path": ".codex/skills/gh-cli/SKILL.md",
+      "preferred_frontmatter_name": "gh-cli-d2b9ad",
+      "description": "Use this skill when the user needs help with gh cli. It provides practical",
+      "aliases": []
+    },
+    {
+      "canonical": "gh-fix-ci",
+      "preferred_dir": "gh-fix-ci",
+      "preferred_path": ".codex/skills/gh-fix-ci/SKILL.md",
+      "preferred_frontmatter_name": "gh-fix-ci-c8b037",
+      "description": "Use when a user asks to debug or fix failing GitHub PR checks that run",
+      "aliases": [
+        "-curated-gh-fix-ci-skill"
+      ]
+    },
+    {
+      "canonical": "git",
+      "preferred_dir": "git",
+      "preferred_path": ".codex/skills/git/SKILL.md",
+      "preferred_frontmatter_name": "git-d65bc5",
+      "description": "Use this skill when the user needs help with git. It provides practical",
+      "aliases": []
+    },
+    {
+      "canonical": "git-automation",
+      "preferred_dir": "git-automation",
+      "preferred_path": ".codex/skills/git-automation/SKILL.md",
+      "preferred_frontmatter_name": "git-automation-d9340b",
+      "description": "Use this skill when the user needs help with git automation. It provides",
+      "aliases": []
+    },
+    {
+      "canonical": "git-commit",
+      "preferred_dir": "git-commit",
+      "preferred_path": ".codex/skills/git-commit/SKILL.md",
+      "preferred_frontmatter_name": "git-commit-133cb6",
+      "description": "Execute git commit with conventional commit message analysis, intelligent",
+      "aliases": []
+    },
+    {
+      "canonical": "github-actions-debugging",
+      "preferred_dir": "github-actions-debugging",
+      "preferred_path": ".codex/skills/github-actions-debugging/SKILL.md",
+      "preferred_frontmatter_name": "github-actions-debugging-000570",
+      "description": "Use this skill when the user needs help with github actions debugging.",
+      "aliases": []
+    },
+    {
+      "canonical": "github-issues",
+      "preferred_dir": "github-issues",
+      "preferred_path": ".codex/skills/github-issues/SKILL.md",
+      "preferred_frontmatter_name": "github-issues-c8671b",
+      "description": "Create, update, and manage GitHub issues using MCP tools. Use this skill",
+      "aliases": []
+    },
+    {
+      "canonical": "github-mcp-server-cli",
+      "preferred_dir": "github-mcp-server-cli",
+      "preferred_path": ".codex/skills/github-mcp-server-cli/SKILL.md",
+      "preferred_frontmatter_name": "github-mcp-server-cli-29b7f0",
+      "description": "Use this skill when the user needs help with github mcp server cli. It",
+      "aliases": []
+    },
+    {
+      "canonical": "gpt-engineer-acp",
+      "preferred_dir": "gpt-engineer-acp",
+      "preferred_path": ".codex/skills/gpt-engineer-acp/SKILL.md",
+      "preferred_frontmatter_name": "gpt-engineer-acp-e1d639",
+      "description": "Use this skill when the user needs help with gpt engineer acp. It provides",
+      "aliases": []
+    },
+    {
+      "canonical": "gpt-engineer-core",
+      "preferred_dir": "gpt-engineer-core",
+      "preferred_path": ".codex/skills/gpt-engineer-core/SKILL.md",
+      "preferred_frontmatter_name": "gpt-engineer-core-438553",
+      "description": "Use this skill when the user needs help with gpt engineer core. It provides",
+      "aliases": []
+    },
+    {
+      "canonical": "hook-development",
+      "preferred_dir": "hook-development",
+      "preferred_path": ".codex/skills/hook-development/SKILL.md",
+      "preferred_frontmatter_name": "hook-development",
+      "description": "This skill should be used when the user asks to \"create a hook\", \"add",
+      "aliases": [
+        "skills-hook-development-skill"
+      ]
+    },
+    {
+      "canonical": "human-input",
+      "preferred_dir": "human-input",
+      "preferred_path": ".codex/skills/human-input/SKILL.md",
+      "preferred_frontmatter_name": "human-input-78e7dc",
+      "description": "Use this skill when the user needs help with human input. It provides",
+      "aliases": []
+    },
+    {
+      "canonical": "human-intervention-explanation",
+      "preferred_dir": "human-intervention-explanation",
+      "preferred_path": ".codex/skills/human-intervention-explanation/SKILL.md",
+      "preferred_frontmatter_name": "human-intervention-explanation-0a1347",
+      "description": "Use this skill when the user needs help with human intervention explanation.",
+      "aliases": []
+    },
+    {
+      "canonical": "image-manipulation-image-magick",
+      "preferred_dir": "image-manipulation-image-magick",
+      "preferred_path": ".codex/skills/image-manipulation-image-magick/SKILL.md",
+      "preferred_frontmatter_name": "image-manipulation-image-magick-bb10ca",
+      "description": "Process and manipulate images using ImageMagick. Supports resizing, format",
+      "aliases": []
+    },
+    {
+      "canonical": "imagegen",
+      "preferred_dir": "imagegen",
+      "preferred_path": ".codex/skills/imagegen/SKILL.md",
+      "preferred_frontmatter_name": "imagegen-588fed",
+      "description": "Use when the user asks to generate or edit images via the OpenAI Image",
+      "aliases": [
+        "-curated-imagegen-skill"
+      ]
+    },
+    {
+      "canonical": "implement-changes",
+      "preferred_dir": "implement-changes",
+      "preferred_path": ".codex/skills/implement-changes/SKILL.md",
+      "preferred_frontmatter_name": "implement-changes-7f75a5",
+      "description": "Use this skill when the user needs help with implement changes. It provides",
+      "aliases": []
+    },
+    {
+      "canonical": "implement-prompt",
+      "preferred_dir": "implement-prompt",
+      "preferred_path": ".codex/skills/implement-prompt/SKILL.md",
+      "preferred_frontmatter_name": "implement-prompt-0182ac",
+      "description": "Use this skill when the user needs help with implement prompt. It provides",
+      "aliases": []
+    },
+    {
+      "canonical": "importer",
+      "preferred_dir": "importer",
+      "preferred_path": ".codex/skills/importer/SKILL.md",
+      "preferred_frontmatter_name": "importer-50b5e2",
+      "description": "Use this skill when the user needs help with importer. It provides practical",
+      "aliases": []
+    },
+    {
+      "canonical": "instructions-from-human-hint",
+      "preferred_dir": "instructions-from-human-hint",
+      "preferred_path": ".codex/skills/instructions-from-human-hint/SKILL.md",
+      "preferred_frontmatter_name": "instructions-from-human-hint-4a9f01",
+      "description": "Use this skill when the user needs help with instructions from human",
+      "aliases": []
+    },
+    {
+      "canonical": "internal-overview",
+      "preferred_dir": "internal-overview",
+      "preferred_path": ".codex/skills/internal-overview/SKILL.md",
+      "preferred_frontmatter_name": "internal-overview-59b1d5",
+      "description": "Use this skill when the user needs help with internal overview. It provides",
+      "aliases": []
+    },
+    {
+      "canonical": "is-relevant-for-docs-search",
+      "preferred_dir": "is-relevant-for-docs-search",
+      "preferred_path": ".codex/skills/is-relevant-for-docs-search/SKILL.md",
+      "preferred_frontmatter_name": "is-relevant-for-docs-search-2a902f",
+      "description": "Use this skill when the user needs help with is relevant for docs search.",
+      "aliases": []
+    },
+    {
+      "canonical": "issue-resolution",
+      "preferred_dir": "issue-resolution",
+      "preferred_path": ".codex/skills/issue-resolution/SKILL.md",
+      "preferred_frontmatter_name": "issue-resolution-ce8386",
+      "description": "Use this skill when the user needs help with issue resolution. It provides",
+      "aliases": []
+    },
+    {
+      "canonical": "issue-triage",
+      "preferred_dir": "issue-triage",
+      "preferred_path": ".codex/skills/issue-triage/SKILL.md",
+      "preferred_frontmatter_name": "issue-triage-bb8d48",
+      "description": "Use this skill when the user needs help with issue triage. It provides",
+      "aliases": []
+    },
+    {
+      "canonical": "iterate-frontend",
+      "preferred_dir": "iterate-frontend",
+      "preferred_path": ".codex/skills/iterate-frontend/SKILL.md",
+      "preferred_frontmatter_name": "iterate-frontend-989243",
+      "description": "Use this skill when the user needs help with iterate frontend. It provides",
+      "aliases": []
+    },
+    {
+      "canonical": "iteration",
+      "preferred_dir": "iteration",
+      "preferred_path": ".codex/skills/iteration/SKILL.md",
+      "preferred_frontmatter_name": "iteration-13c503",
+      "description": "Use this skill when the user needs help with iteration. It provides practical",
+      "aliases": []
+    },
+    {
+      "canonical": "json-validation",
+      "preferred_dir": "json-validation",
+      "preferred_path": ".codex/skills/json-validation/SKILL.md",
+      "preferred_frontmatter_name": "json-validation-04a300",
+      "description": "Use this skill when the user needs help with json validation. It provides",
+      "aliases": []
+    },
+    {
+      "canonical": "jupyter-notebook",
+      "preferred_dir": "jupyter-notebook",
+      "preferred_path": ".codex/skills/jupyter-notebook/SKILL.md",
+      "preferred_frontmatter_name": "jupyter-notebook-7fc061",
+      "description": "Use when the user asks to create, scaffold, or edit Jupyter notebooks",
+      "aliases": [
+        "-curated-jupyter-notebook-skill"
+      ]
+    },
+    {
+      "canonical": "kode-cli",
+      "preferred_dir": "kode-cli",
+      "preferred_path": ".codex/skills/kode-cli/SKILL.md",
+      "preferred_frontmatter_name": "kode-cli-bf39e7",
+      "description": "Use this skill when the user needs help with kode cli. It provides practical",
+      "aliases": []
+    },
+    {
+      "canonical": "legacy-circuit-mockups",
+      "preferred_dir": "legacy-circuit-mockups",
+      "preferred_path": ".codex/skills/legacy-circuit-mockups/SKILL.md",
+      "preferred_frontmatter_name": "legacy-circuit-mockups-5d90c6",
+      "description": "Generate breadboard circuit mockups and visual diagrams using HTML5 Canvas",
+      "aliases": []
+    },
+    {
+      "canonical": "legacy-handler",
+      "preferred_dir": "legacy-handler",
+      "preferred_path": ".codex/skills/legacy-handler/SKILL.md",
+      "preferred_frontmatter_name": "legacy-handler-d1e75a",
+      "description": "Use this skill when the user needs help with legacy handler. It provides",
+      "aliases": []
+    },
+    {
+      "canonical": "linear",
+      "preferred_dir": "linear",
+      "preferred_path": ".codex/skills/linear/SKILL.md",
+      "preferred_frontmatter_name": "linear-1d58ec",
+      "description": "Manage issues, projects & team workflows in Linear. Use when the user",
+      "aliases": [
+        "-curated-linear-skill"
+      ]
+    },
+    {
+      "canonical": "log-data",
+      "preferred_dir": "log-data",
+      "preferred_path": ".codex/skills/log-data/SKILL.md",
+      "preferred_frontmatter_name": "log-data-a9a3f5",
+      "description": "Use this skill when the user needs help with log data. It provides practical",
+      "aliases": []
+    },
+    {
+      "canonical": "log-extraction",
+      "preferred_dir": "log-extraction",
+      "preferred_path": ".codex/skills/log-extraction/SKILL.md",
+      "preferred_frontmatter_name": "log-extraction-688068",
+      "description": "Use this skill when the user needs help with log extraction. It provides",
+      "aliases": [
+        "tools-copilot-toolkit-skills-log-extraction-skill"
+      ]
+    },
+    {
+      "canonical": "make-skill-template",
+      "preferred_dir": "make-skill-template",
+      "preferred_path": ".codex/skills/make-skill-template/SKILL.md",
+      "preferred_frontmatter_name": "make-skill-template-eeb9fa",
+      "description": "Create new Agent Skills for GitHub Copilot from prompts or by duplicating",
+      "aliases": []
+    },
+    {
+      "canonical": "markdown-to-html",
+      "preferred_dir": "markdown-to-html",
+      "preferred_path": ".codex/skills/markdown-to-html/SKILL.md",
+      "preferred_frontmatter_name": "markdown-to-html-20c527",
+      "description": "Convert Markdown files to HTML similar to `marked.js`, `pandoc`, `gomarkdown/markdown`,",
+      "aliases": []
+    },
+    {
+      "canonical": "mcp",
+      "preferred_dir": "mcp",
+      "preferred_path": ".codex/skills/mcp/SKILL.md",
+      "preferred_frontmatter_name": "mcp",
+      "description": "Index and router skill for MCP work. Selects the right MCP sub-skill for local setup, remote integration, or troubleshooting.",
+      "aliases": []
+    },
+    {
+      "canonical": "mcp-builder",
+      "preferred_dir": "mcp-builder",
+      "preferred_path": ".codex/skills/mcp-builder/SKILL.md",
+      "preferred_frontmatter_name": "mcp-builder-1a14cf",
+      "description": "Build MCP (Model Context Protocol) servers that give Claude new capabilities.",
+      "aliases": []
+    },
+    {
+      "canonical": "mcp-cli",
+      "preferred_dir": "mcp-cli",
+      "preferred_path": ".codex/skills/mcp-cli/SKILL.md",
+      "preferred_frontmatter_name": "mcp-cli-29be11",
+      "description": "Interface for MCP (Model Context Protocol) servers via CLI. Use when",
+      "aliases": []
+    },
+    {
+      "canonical": "mcp-click",
+      "preferred_dir": "mcp-click",
+      "preferred_path": ".codex/skills/mcp-click/SKILL.md",
+      "preferred_frontmatter_name": "mcp-click-da20fa",
+      "description": "Operate the Click MCP server for Click-based CLI automation. Use when",
+      "aliases": [
+        "skills-mcp-click-skill"
+      ]
+    },
+    {
+      "canonical": "mcp-datagen",
+      "preferred_dir": "mcp-datagen",
+      "preferred_path": ".codex/skills/mcp-datagen/SKILL.md",
+      "preferred_frontmatter_name": "mcp-datagen-5a0bc7",
+      "description": "Operate the Data Generation MCP server for synthetic data creation.",
+      "aliases": [
+        "skills-mcp-datagen-skill"
+      ]
+    },
+    {
+      "canonical": "mcp-everything",
+      "preferred_dir": "mcp-everything",
+      "preferred_path": ".codex/skills/mcp-everything/SKILL.md",
+      "preferred_frontmatter_name": "mcp-everything-639ad4",
+      "description": "Operate the Everything MCP server for testing MCP capabilities (tools,",
+      "aliases": [
+        "skills-mcp-everything-skill"
+      ]
+    },
+    {
+      "canonical": "mcp-fetch",
+      "preferred_dir": "mcp-fetch",
+      "preferred_path": ".codex/skills/mcp-fetch/SKILL.md",
+      "preferred_frontmatter_name": "mcp-fetch-d6e812",
+      "description": "Use this skill when the user needs help with mcp fetch. It provides practical",
+      "aliases": [
+        "skills-mcp-fetch-skill"
+      ]
+    },
+    {
+      "canonical": "mcp-filesystem",
+      "preferred_dir": "mcp-filesystem",
+      "preferred_path": ".codex/skills/mcp-filesystem/SKILL.md",
+      "preferred_frontmatter_name": "mcp-filesystem-3b8dec",
+      "description": "Use this skill when the user needs help with mcp filesystem. It provides",
+      "aliases": [
+        "skills-mcp-filesystem-skill"
+      ]
+    },
+    {
+      "canonical": "mcp-ftp",
+      "preferred_dir": "mcp-ftp",
+      "preferred_path": ".codex/skills/mcp-ftp/SKILL.md",
+      "preferred_frontmatter_name": "mcp-ftp-3d3e8e",
+      "description": "Operate the FTP MCP server, including gcloud-ftp Google Drive integration.",
+      "aliases": [
+        "skills-mcp-ftp-skill"
+      ]
+    },
+    {
+      "canonical": "mcp-git",
+      "preferred_dir": "mcp-git",
+      "preferred_path": ".codex/skills/mcp-git/SKILL.md",
+      "preferred_frontmatter_name": "mcp-git-a8911a",
+      "description": "Use this skill when the user needs help with mcp git. It provides practical",
+      "aliases": [
+        "skills-mcp-git-skill"
+      ]
+    },
+    {
+      "canonical": "mcp-integration",
+      "preferred_dir": "mcp-integration",
+      "preferred_path": ".codex/skills/mcp-integration/SKILL.md",
+      "preferred_frontmatter_name": "mcp-integration",
+      "description": "This skill should be used when the user asks to \"add MCP server\", \"integrate",
+      "aliases": [
+        "skills-mcp-integration-skill"
+      ]
+    },
+    {
+      "canonical": "mcp-local",
+      "preferred_dir": "mcp-local",
+      "preferred_path": ".codex/skills/mcp-local/SKILL.md",
+      "preferred_frontmatter_name": "mcp-local",
+      "description": "Configure, run, and troubleshoot local MCP servers (stdio) for offline and workstation-hosted workflows.",
+      "aliases": []
+    },
+    {
+      "canonical": "mcp-memory",
+      "preferred_dir": "mcp-memory",
+      "preferred_path": ".codex/skills/mcp-memory/SKILL.md",
+      "preferred_frontmatter_name": "mcp-memory-256f36",
+      "description": "Use this skill when the user needs help with mcp memory. It provides",
+      "aliases": [
+        "skills-mcp-memory-skill"
+      ]
+    },
+    {
+      "canonical": "mcp-remote",
+      "preferred_dir": "mcp-remote",
+      "preferred_path": ".codex/skills/mcp-remote/SKILL.md",
+      "preferred_frontmatter_name": "mcp-remote",
+      "description": "Configure and operate remote or service-backed MCP integrations, including auth, scopes, network transport, and hosted endpoints.",
+      "aliases": []
+    },
+    {
+      "canonical": "mcp-sequentialthinking",
+      "preferred_dir": "mcp-sequentialthinking",
+      "preferred_path": ".codex/skills/mcp-sequentialthinking/SKILL.md",
+      "preferred_frontmatter_name": "mcp-sequentialthinking-b005d0",
+      "description": "Operate the Sequential Thinking MCP server for structured reasoning",
+      "aliases": [
+        "skills-mcp-sequentialthinking-skill"
+      ]
+    },
+    {
+      "canonical": "mcp-time",
+      "preferred_dir": "mcp-time",
+      "preferred_path": ".codex/skills/mcp-time/SKILL.md",
+      "preferred_frontmatter_name": "mcp-time-555c71",
+      "description": "Operate the Time MCP server for current time and timezone conversions.",
+      "aliases": [
+        "skills-mcp-time-skill"
+      ]
+    },
+    {
+      "canonical": "mcp-troubleshooting",
+      "preferred_dir": "mcp-troubleshooting",
+      "preferred_path": ".codex/skills/mcp-troubleshooting/SKILL.md",
+      "preferred_frontmatter_name": "mcp-troubleshooting",
+      "description": "Diagnose MCP discovery, startup, auth, and tool invocation failures across both local and remote MCP servers.",
+      "aliases": []
+    },
+    {
+      "canonical": "mcpcurl",
+      "preferred_dir": "mcpcurl",
+      "preferred_path": ".codex/skills/mcpcurl/SKILL.md",
+      "preferred_frontmatter_name": "mcpcurl-7ca7ef",
+      "description": "Use this skill when the user needs help with mcpcurl. It provides practical",
+      "aliases": []
+    },
+    {
+      "canonical": "media-writer",
+      "preferred_dir": "media-writer",
+      "preferred_path": ".codex/skills/media-writer/SKILL.md",
+      "preferred_frontmatter_name": "media-writer-37fd81",
+      "description": "Create platform-native content that resonates with each community's culture.",
+      "aliases": [
+        "skills-media-writer-skill"
+      ]
+    },
+    {
+      "canonical": "microsoft-code-reference",
+      "preferred_dir": "microsoft-code-reference",
+      "preferred_path": ".codex/skills/microsoft-code-reference/SKILL.md",
+      "preferred_frontmatter_name": "microsoft-code-reference-35d488",
+      "description": "Look up Microsoft API references, find working code samples, and verify",
+      "aliases": []
+    },
+    {
+      "canonical": "microsoft-docs",
+      "preferred_dir": "microsoft-docs",
+      "preferred_path": ".codex/skills/microsoft-docs/SKILL.md",
+      "preferred_frontmatter_name": "microsoft-docs-6e3f98",
+      "description": "Use this skill when the user needs help with microsoft docs. It provides",
+      "aliases": []
+    },
+    {
+      "canonical": "mixins",
+      "preferred_dir": "mixins",
+      "preferred_path": ".codex/skills/mixins/SKILL.md",
+      "preferred_frontmatter_name": "mixins-c785c0",
+      "description": "Use this skill when the user needs help with mixins. It provides practical",
+      "aliases": []
+    },
+    {
+      "canonical": "need-auth",
+      "preferred_dir": "need-auth",
+      "preferred_path": ".codex/skills/need-auth/SKILL.md",
+      "preferred_frontmatter_name": "need-auth-57e28f",
+      "description": "Use this skill when the user needs help with need auth. It provides practical",
+      "aliases": []
+    },
+    {
+      "canonical": "netlify-deploy",
+      "preferred_dir": "netlify-deploy",
+      "preferred_path": ".codex/skills/netlify-deploy/SKILL.md",
+      "preferred_frontmatter_name": "netlify-deploy-440153",
+      "description": "Deploy web projects to Netlify using the Netlify CLI (`npx netlify`).",
+      "aliases": [
+        "-curated-netlify-deploy-skill"
+      ]
+    },
+    {
+      "canonical": "no-any-prompt",
+      "preferred_dir": "no-any-prompt",
+      "preferred_path": ".codex/skills/no-any-prompt/SKILL.md",
+      "preferred_frontmatter_name": "no-any-prompt-b32f34",
+      "description": "Use this skill when the user needs help with no any prompt. It provides",
+      "aliases": []
+    },
+    {
+      "canonical": "notion-knowledge-capture",
+      "preferred_dir": "notion-knowledge-capture",
+      "preferred_path": ".codex/skills/notion-knowledge-capture/SKILL.md",
+      "preferred_frontmatter_name": "notion-knowledge-capture-c97e2c",
+      "description": "Capture conversations and decisions into structured Notion pages; use",
+      "aliases": [
+        "-curated-notion-knowledge-capture-skill"
+      ]
+    },
+    {
+      "canonical": "notion-meeting-intelligence",
+      "preferred_dir": "notion-meeting-intelligence",
+      "preferred_path": ".codex/skills/notion-meeting-intelligence/SKILL.md",
+      "preferred_frontmatter_name": "notion-meeting-intelligence-117fec",
+      "description": "Prepare meeting materials with Notion context and Codex research; use",
+      "aliases": [
+        "-curated-notion-meeting-intelligence-skill"
+      ]
+    },
+    {
+      "canonical": "notion-research-documentation",
+      "preferred_dir": "notion-research-documentation",
+      "preferred_path": ".codex/skills/notion-research-documentation/SKILL.md",
+      "preferred_frontmatter_name": "notion-research-documentation-d673db",
+      "description": "Research across Notion and synthesize into structured documentation;",
+      "aliases": [
+        "-curated-notion-research-documentation-skill"
+      ]
+    },
+    {
+      "canonical": "notion-spec-to-implementation",
+      "preferred_dir": "notion-spec-to-implementation",
+      "preferred_path": ".codex/skills/notion-spec-to-implementation/SKILL.md",
+      "preferred_frontmatter_name": "notion-spec-to-implementation-1143e6",
+      "description": "Turn Notion specs into implementation plans, tasks, and progress tracking;",
+      "aliases": [
+        "-curated-notion-spec-to-implementation-skill"
+      ]
+    },
+    {
+      "canonical": "nuget-manager",
+      "preferred_dir": "nuget-manager",
+      "preferred_path": ".codex/skills/nuget-manager/SKILL.md",
+      "preferred_frontmatter_name": "nuget-manager-cd7462",
+      "description": "Manage NuGet packages in .NET projects/solutions. Use this skill when",
+      "aliases": []
+    },
+    {
+      "canonical": "observability-monitoring",
+      "preferred_dir": "observability-monitoring",
+      "preferred_path": ".codex/skills/observability-monitoring/SKILL.md",
+      "preferred_frontmatter_name": "observability-monitoring-626f69",
+      "description": "Design observability and monitoring for systems. Use when adding metrics,",
+      "aliases": [
+        "skills-observability-monitoring-skill"
+      ]
+    },
+    {
+      "canonical": "openai-docs",
+      "preferred_dir": "openai-docs",
+      "preferred_path": ".codex/skills/openai-docs/SKILL.md",
+      "preferred_frontmatter_name": "openai-docs-efd12e",
+      "description": "Use when the user asks how to build with OpenAI products or APIs and",
+      "aliases": [
+        "-curated-openai-docs-skill"
+      ]
+    },
+    {
+      "canonical": "orchestrator",
+      "preferred_dir": "orchestrator",
+      "preferred_path": ".codex/skills/orchestrator/SKILL.md",
+      "preferred_frontmatter_name": "orchestrator-829a76",
+      "description": "Use this skill when the user needs help with orchestrator. It provides",
+      "aliases": []
+    },
+    {
+      "canonical": "overview",
+      "preferred_dir": "tools-overview",
+      "preferred_path": ".codex/skills/tools-overview/SKILL.md",
+      "preferred_frontmatter_name": "tools-overview-fe85a1",
+      "description": "Use this skill when the user needs help with tools overview. It provides",
+      "aliases": []
+    },
+    {
+      "canonical": "packer-compression-triage",
+      "preferred_dir": "packer-compression-triage",
+      "preferred_path": ".codex/skills/packer-compression-triage/SKILL.md",
+      "preferred_frontmatter_name": "packer-compression-triage-5b663c",
+      "description": "Use this skill when the user needs help with packer compression triage.",
+      "aliases": []
+    },
+    {
+      "canonical": "parse-task",
+      "preferred_dir": "parse-task",
+      "preferred_path": ".codex/skills/parse-task/SKILL.md",
+      "preferred_frontmatter_name": "parse-task-523cca",
+      "description": "Use this skill when the user needs help with parse task. It provides",
+      "aliases": []
+    },
+    {
+      "canonical": "pdf",
+      "preferred_dir": "pdf",
+      "preferred_path": ".codex/skills/pdf/SKILL.md",
+      "preferred_frontmatter_name": "pdf-863b9f",
+      "description": "Use when tasks involve reading, creating, or reviewing PDF files where",
+      "aliases": [
+        "-curated-pdf-skill"
+      ]
+    },
+    {
+      "canonical": "pdf-io",
+      "preferred_dir": "pdf-io",
+      "preferred_path": ".codex/skills/pdf-io/SKILL.md",
+      "preferred_frontmatter_name": "pdf-io-937983",
+      "description": "Read, inspect, extract, create, and modify PDF files (.pdf) including",
+      "aliases": [
+        "skills-pdf-io-skill"
+      ]
+    },
+    {
+      "canonical": "performance-optimization",
+      "preferred_dir": "performance-optimization",
+      "preferred_path": ".codex/skills/performance-optimization/SKILL.md",
+      "preferred_frontmatter_name": "performance-optimization-3dd300",
+      "description": "Identify and fix performance bottlenecks in code or systems. Use when",
+      "aliases": [
+        "skills-performance-optimization-skill"
+      ]
+    },
+    {
+      "canonical": "plan",
+      "preferred_dir": "plan",
+      "preferred_path": ".codex/skills/plan/SKILL.md",
+      "preferred_frontmatter_name": "plan-05516c",
+      "description": "Use this skill when the user needs help with plan. It provides practical",
+      "aliases": []
+    },
+    {
+      "canonical": "plan-deep-prompt",
+      "preferred_dir": "plan-deep-prompt",
+      "preferred_path": ".codex/skills/plan-deep-prompt/SKILL.md",
+      "preferred_frontmatter_name": "plan-deep-prompt-8bb9bc",
+      "description": "Use this skill when the user needs help with plan deep prompt. It provides",
+      "aliases": []
+    },
+    {
+      "canonical": "plan-fast-prompt",
+      "preferred_dir": "plan-fast-prompt",
+      "preferred_path": ".codex/skills/plan-fast-prompt/SKILL.md",
+      "preferred_frontmatter_name": "plan-fast-prompt-296f85",
+      "description": "Use this skill when the user needs help with plan fast prompt. It provides",
+      "aliases": []
+    },
+    {
+      "canonical": "plan-prompt",
+      "preferred_dir": "plan-prompt",
+      "preferred_path": ".codex/skills/plan-prompt/SKILL.md",
+      "preferred_frontmatter_name": "plan-prompt-76bf89",
+      "description": "Use this skill when the user needs help with plan prompt. It provides",
+      "aliases": []
+    },
+    {
+      "canonical": "plantuml-ascii",
+      "preferred_dir": "plantuml-ascii",
+      "preferred_path": ".codex/skills/plantuml-ascii/SKILL.md",
+      "preferred_frontmatter_name": "plantuml-ascii-45e6f9",
+      "description": "Generate ASCII art diagrams using PlantUML text mode. Use when user",
+      "aliases": []
+    },
+    {
+      "canonical": "playwright",
+      "preferred_dir": "playwright",
+      "preferred_path": ".codex/skills/playwright/SKILL.md",
+      "preferred_frontmatter_name": "playwright-3c305d",
+      "description": "Use when the task requires automating a real browser from the terminal",
+      "aliases": [
+        "-curated-playwright-skill"
+      ]
+    },
+    {
+      "canonical": "plugin-settings",
+      "preferred_dir": "plugin-settings",
+      "preferred_path": ".codex/skills/plugin-settings/SKILL.md",
+      "preferred_frontmatter_name": "plugin-settings",
+      "description": "This skill should be used when the user asks about \"plugin settings\",",
+      "aliases": [
+        "skills-plugin-settings-skill"
+      ]
+    },
+    {
+      "canonical": "plugin-structure",
+      "preferred_dir": "plugin-structure",
+      "preferred_path": ".codex/skills/plugin-structure/SKILL.md",
+      "preferred_frontmatter_name": "plugin-structure",
+      "description": "This skill should be used when the user asks to \"create a plugin\", \"scaffold",
+      "aliases": [
+        "skills-plugin-structure-skill"
+      ]
+    },
+    {
+      "canonical": "prd",
+      "preferred_dir": "prd",
+      "preferred_path": ".codex/skills/prd/SKILL.md",
+      "preferred_frontmatter_name": "prd-534c8e",
+      "description": "Use this skill when the user needs help with prd. It provides practical",
+      "aliases": []
+    },
+    {
+      "canonical": "principled-implementation",
+      "preferred_dir": "principled-implementation",
+      "preferred_path": ".codex/skills/principled-implementation/SKILL.md",
+      "preferred_frontmatter_name": "principled-implementation-4db55e",
+      "description": "Use this skill when the user needs help with principled implementation.",
+      "aliases": []
+    },
+    {
+      "canonical": "problem-explanation",
+      "preferred_dir": "problem-explanation",
+      "preferred_path": ".codex/skills/problem-explanation/SKILL.md",
+      "preferred_frontmatter_name": "problem-explanation-cf792f",
+      "description": "Use this skill when the user needs help with problem explanation. It",
+      "aliases": []
+    },
+    {
+      "canonical": "problem-solver",
+      "preferred_dir": "problem-solver",
+      "preferred_path": ".codex/skills/problem-solver/SKILL.md",
+      "preferred_frontmatter_name": "problem-solver-be6ec8",
+      "description": "Use this skill when the user needs help with problem solver. It provides",
+      "aliases": []
+    },
+    {
+      "canonical": "problem-solver-iteration-prompt",
+      "preferred_dir": "problem-solver-iteration-prompt",
+      "preferred_path": ".codex/skills/problem-solver-iteration-prompt/SKILL.md",
+      "preferred_frontmatter_name": "problem-solver-iteration-prompt-ae100e",
+      "description": "Use this skill when the user needs help with problem solver iteration",
+      "aliases": []
+    },
+    {
+      "canonical": "problem-solver-system-prompt",
+      "preferred_dir": "problem-solver-system-prompt",
+      "preferred_path": ".codex/skills/problem-solver-system-prompt/SKILL.md",
+      "preferred_frontmatter_name": "problem-solver-system-prompt-86637d",
+      "description": "Use this skill when the user needs help with problem solver system prompt.",
+      "aliases": []
+    },
+    {
+      "canonical": "project-configurator",
+      "preferred_dir": "project-configurator",
+      "preferred_path": ".codex/skills/project-configurator/SKILL.md",
+      "preferred_frontmatter_name": "project-configurator-7b6bca",
+      "description": "Use this skill when the user needs help with project configurator. It",
+      "aliases": []
+    },
+    {
+      "canonical": "project-details",
+      "preferred_dir": "project-details",
+      "preferred_path": ".codex/skills/project-details/SKILL.md",
+      "preferred_frontmatter_name": "project-details-12b1e7",
+      "description": "Use this skill when the user needs help with project details. It provides",
+      "aliases": []
+    },
+    {
+      "canonical": "project-name",
+      "preferred_dir": "project-name",
+      "preferred_path": ".codex/skills/project-name/SKILL.md",
+      "preferred_frontmatter_name": "project-name-5a618d",
+      "description": "Use this skill when the user needs help with project name. It provides",
+      "aliases": []
+    },
+    {
+      "canonical": "project-tasks",
+      "preferred_dir": "project-tasks",
+      "preferred_path": ".codex/skills/project-tasks/SKILL.md",
+      "preferred_frontmatter_name": "project-tasks-19c1dd",
+      "description": "Use this skill when the user needs help with project tasks. It provides",
+      "aliases": []
+    },
+    {
+      "canonical": "prompt-complexity",
+      "preferred_dir": "prompt-complexity",
+      "preferred_path": ".codex/skills/prompt-complexity/SKILL.md",
+      "preferred_frontmatter_name": "prompt-complexity-b0be35",
+      "description": "Use this skill when the user needs help with prompt complexity. It provides",
+      "aliases": []
+    },
+    {
+      "canonical": "prompt-design",
+      "preferred_dir": "prompt-design",
+      "preferred_path": ".codex/skills/prompt-design/SKILL.md",
+      "preferred_frontmatter_name": "prompt-design-6035c2",
+      "description": "Design effective custom prompts and instruction files for agents. Use",
+      "aliases": [
+        "skills-prompt-design-skill"
+      ]
+    },
+    {
+      "canonical": "ran-command",
+      "preferred_dir": "ran-command",
+      "preferred_path": ".codex/skills/ran-command/SKILL.md",
+      "preferred_frontmatter_name": "ran-command-66c94c",
+      "description": "Use this skill when the user needs help with ran command. It provides",
+      "aliases": []
+    },
+    {
+      "canonical": "re-index",
+      "preferred_dir": "re-index",
+      "preferred_path": ".codex/skills/re-index/SKILL.md",
+      "preferred_frontmatter_name": "re-index",
+      "description": "Index and router skill for reverse-engineering tasks. Selects the correct RE sub-skill for static analysis, dynamic analysis, memory/syscall triage, or packed binaries.",
+      "aliases": []
+    },
+    {
+      "canonical": "re-toolkit",
+      "preferred_dir": "re-toolkit",
+      "preferred_path": ".codex/skills/re-toolkit/SKILL.md",
+      "preferred_frontmatter_name": "re-toolkit-53597e",
+      "description": "Use this skill when the user needs help with re toolkit. It provides",
+      "aliases": []
+    },
+    {
+      "canonical": "refactor",
+      "preferred_dir": "refactor",
+      "preferred_path": ".codex/skills/refactor/SKILL.md",
+      "preferred_frontmatter_name": "refactor-957c48",
+      "description": "Use this skill when the user needs help with refactor. It provides practical",
+      "aliases": []
+    },
+    {
+      "canonical": "refactoring",
+      "preferred_dir": "refactoring",
+      "preferred_path": ".codex/skills/refactoring/SKILL.md",
+      "preferred_frontmatter_name": "refactoring-540919",
+      "description": "Plan and execute safe refactors with regression control. Use when changing",
+      "aliases": [
+        "skills-refactoring-skill"
+      ]
+    },
+    {
+      "canonical": "relative-paths",
+      "preferred_dir": "relative-paths",
+      "preferred_path": ".codex/skills/relative-paths/SKILL.md",
+      "preferred_frontmatter_name": "relative-paths-cfdc16",
+      "description": "Use this skill when the user needs help with relative paths. It provides",
+      "aliases": []
+    },
+    {
+      "canonical": "relevant-files-navigator",
+      "preferred_dir": "relevant-files-navigator",
+      "preferred_path": ".codex/skills/relevant-files-navigator/SKILL.md",
+      "preferred_frontmatter_name": "relevant-files-navigator-dda69d",
+      "description": "Use this skill when the user needs help with relevant files navigator.",
+      "aliases": []
+    },
+    {
+      "canonical": "remove-mock",
+      "preferred_dir": "remove-mock",
+      "preferred_path": ".codex/skills/remove-mock/SKILL.md",
+      "preferred_frontmatter_name": "remove-mock-5edfa8",
+      "description": "Use this skill when the user needs help with remove mock. It provides",
+      "aliases": []
+    },
+    {
+      "canonical": "render-deploy",
+      "preferred_dir": "render-deploy",
+      "preferred_path": ".codex/skills/render-deploy/SKILL.md",
+      "preferred_frontmatter_name": "render-deploy-b24bfb",
+      "description": "Deploy applications to Render by analyzing codebases, generating render.yaml",
+      "aliases": [
+        "-curated-render-deploy-skill"
+      ]
+    },
+    {
+      "canonical": "response",
+      "preferred_dir": "response",
+      "preferred_path": ".codex/skills/response/SKILL.md",
+      "preferred_frontmatter_name": "response-1023be",
+      "description": "Use this skill when the user needs help with response. It provides practical",
+      "aliases": []
+    },
+    {
+      "canonical": "reverse-engineering",
+      "preferred_dir": "reverse-engineering",
+      "preferred_path": ".codex/skills/reverse-engineering/SKILL.md",
+      "preferred_frontmatter_name": "reverse-engineering-cffe6d",
+      "description": "Analyze existing systems, binaries, or legacy code to infer behavior",
+      "aliases": [
+        "skills-reverse-engineering-skill"
+      ]
+    },
+    {
+      "canonical": "review-changes",
+      "preferred_dir": "review-changes",
+      "preferred_path": ".codex/skills/review-changes/SKILL.md",
+      "preferred_frontmatter_name": "review-changes-a9019c",
+      "description": "Use this skill when the user needs help with review changes. It provides",
+      "aliases": []
+    },
+    {
+      "canonical": "review-feedback",
+      "preferred_dir": "review-feedback",
+      "preferred_path": ".codex/skills/review-feedback/SKILL.md",
+      "preferred_frontmatter_name": "review-feedback-3f50a0",
+      "description": "Use this skill when the user needs help with review feedback. It provides",
+      "aliases": []
+    },
+    {
+      "canonical": "review-spec",
+      "preferred_dir": "review-spec",
+      "preferred_path": ".codex/skills/review-spec/SKILL.md",
+      "preferred_frontmatter_name": "review-spec-ca89a1",
+      "description": "Use this skill when the user needs help with review spec. It provides",
+      "aliases": []
+    },
+    {
+      "canonical": "scoutqa-test",
+      "preferred_dir": "scoutqa-test",
+      "preferred_path": ".codex/skills/scoutqa-test/SKILL.md",
+      "preferred_frontmatter_name": "scoutqa-test-710e05",
+      "description": "This skill should be used when the user asks to \"test this website\",",
+      "aliases": []
+    },
+    {
+      "canonical": "screenshot",
+      "preferred_dir": "screenshot",
+      "preferred_path": ".codex/skills/screenshot/SKILL.md",
+      "preferred_frontmatter_name": "screenshot-22a258",
+      "description": "Use when the user explicitly asks for a desktop or system screenshot",
+      "aliases": [
+        "-curated-screenshot-skill"
+      ]
+    },
+    {
+      "canonical": "security-best-practices",
+      "preferred_dir": "security-best-practices",
+      "preferred_path": ".codex/skills/security-best-practices/SKILL.md",
+      "preferred_frontmatter_name": "security-best-practices-55b7c4",
+      "description": "Perform language and framework specific security best-practice reviews",
+      "aliases": [
+        "-curated-security-best-practices-skill"
+      ]
+    },
+    {
+      "canonical": "security-ownership-map",
+      "preferred_dir": "security-ownership-map",
+      "preferred_path": ".codex/skills/security-ownership-map/SKILL.md",
+      "preferred_frontmatter_name": "security-ownership-map-94f300",
+      "description": "Analyze git repositories to build a security ownership topology (people-to-file),",
+      "aliases": [
+        "-curated-security-ownership-map-skill"
+      ]
+    },
+    {
+      "canonical": "security-review",
+      "preferred_dir": "security-review",
+      "preferred_path": ".codex/skills/security-review/SKILL.md",
+      "preferred_frontmatter_name": "security-review-757015",
+      "description": "Use this skill when the user needs help with security review. It provides",
+      "aliases": [
+        "skills-security-review-skill"
+      ]
+    },
+    {
+      "canonical": "security-threat-model",
+      "preferred_dir": "security-threat-model",
+      "preferred_path": ".codex/skills/security-threat-model/SKILL.md",
+      "preferred_frontmatter_name": "security-threat-model-c8d1e9",
+      "description": "Repository-grounded threat modeling that enumerates trust boundaries,",
+      "aliases": [
+        "-curated-security-threat-model-skill"
+      ]
+    },
+    {
+      "canonical": "select-docset",
+      "preferred_dir": "select-docset",
+      "preferred_path": ".codex/skills/select-docset/SKILL.md",
+      "preferred_frontmatter_name": "select-docset-26ca0b",
+      "description": "Use this skill when the user needs help with select docset. It provides",
+      "aliases": []
+    },
+    {
+      "canonical": "select-templates",
+      "preferred_dir": "select-templates",
+      "preferred_path": ".codex/skills/select-templates/SKILL.md",
+      "preferred_frontmatter_name": "select-templates-9cf6e0",
+      "description": "Use this skill when the user needs help with select templates. It provides",
+      "aliases": []
+    },
+    {
+      "canonical": "sentry",
+      "preferred_dir": "sentry",
+      "preferred_path": ".codex/skills/sentry/SKILL.md",
+      "preferred_frontmatter_name": "sentry-2972aa",
+      "description": "Use when the user asks to inspect Sentry issues or events, summarize",
+      "aliases": [
+        "-curated-sentry-skill"
+      ]
+    },
+    {
+      "canonical": "setup-environment-prompt",
+      "preferred_dir": "setup-environment-prompt",
+      "preferred_path": ".codex/skills/setup-environment-prompt/SKILL.md",
+      "preferred_frontmatter_name": "setup-environment-prompt-6aeb4b",
+      "description": "Use this skill when the user needs help with setup environment prompt.",
+      "aliases": []
+    },
+    {
+      "canonical": "shareskill",
+      "preferred_dir": "shareSkill",
+      "preferred_path": ".codex/skills/shareSkill/SKILL.md",
+      "preferred_frontmatter_name": "shareskill",
+      "description": "Use this skill when the user needs help with shareSkill. It provides",
+      "aliases": []
+    },
+    {
+      "canonical": "simple-agent",
+      "preferred_dir": "simple-agent",
+      "preferred_path": ".codex/skills/simple-agent/SKILL.md",
+      "preferred_frontmatter_name": "simple-agent-bf4266",
+      "description": "Use this skill when the user needs help with simple agent. It provides",
+      "aliases": []
+    },
+    {
+      "canonical": "skill",
+      "preferred_dir": "skill",
+      "preferred_path": ".codex/skills/skill/SKILL.md",
+      "preferred_frontmatter_name": "skill-71c9c2",
+      "description": "Automates browser interactions for web testing, form filling, screenshots,",
+      "aliases": []
+    },
+    {
+      "canonical": "skill-creator",
+      "preferred_dir": "skill-creator",
+      "preferred_path": ".codex/skills/skill-creator/SKILL.md",
+      "preferred_frontmatter_name": "skill-creator",
+      "description": "Guide for creating effective skills. This skill should be used when users want to create a new skill (or update an existing skill) that extends Codex's capabilities with specialized knowledge, workflows, or tool integrations.",
+      "aliases": []
+    },
+    {
+      "canonical": "skill-creator-2",
+      "preferred_dir": "skill-creator-2",
+      "preferred_path": ".codex/skills/skill-creator-2/SKILL.md",
+      "preferred_frontmatter_name": "skill-creator-2-d76a3c",
+      "description": "Use this skill when the user needs help with skill creator 2. It provides",
+      "aliases": []
+    },
+    {
+      "canonical": "skill-development",
+      "preferred_dir": "skill-development",
+      "preferred_path": ".codex/skills/skill-development/SKILL.md",
+      "preferred_frontmatter_name": "skill-development",
+      "description": "This skill should be used when the user wants to \"create a skill\", \"add",
+      "aliases": []
+    },
+    {
+      "canonical": "skill-development-2",
+      "preferred_dir": "skill-development-2",
+      "preferred_path": ".codex/skills/skill-development-2/SKILL.md",
+      "preferred_frontmatter_name": "skill-development-2-92a85b",
+      "description": "This skill should be used when the user wants to \"create a skill\", \"add",
+      "aliases": []
+    },
+    {
+      "canonical": "skill-function-deduper",
+      "preferred_dir": "skill-function-deduper",
+      "preferred_path": ".codex/skills/skill-function-deduper/SKILL.md",
+      "preferred_frontmatter_name": "skill-function-deduper-ec3b5b",
+      "description": "Use this skill when the user needs help with skill function deduper.",
+      "aliases": []
+    },
+    {
+      "canonical": "skill-installer",
+      "preferred_dir": "skill-installer",
+      "preferred_path": ".codex/skills/skill-installer/SKILL.md",
+      "preferred_frontmatter_name": "skill-installer",
+      "description": "Install Codex skills into $CODEX_HOME/skills from a curated list or a GitHub repo path. Use when a user asks to list installable skills, install a curated skill, or install a skill from another repo (including private repos).",
+      "aliases": [
+        "skills-skill-installer-skill"
+      ]
+    },
+    {
+      "canonical": "skill-installer-2",
+      "preferred_dir": "skill-installer-2",
+      "preferred_path": ".codex/skills/skill-installer-2/SKILL.md",
+      "preferred_frontmatter_name": "skill-installer-2-25dce0",
+      "description": "Install Codex skills into $CODEX_HOME/skills from a curated list or a",
+      "aliases": []
+    },
+    {
+      "canonical": "skill-judge",
+      "preferred_dir": "skill-judge",
+      "preferred_path": ".codex/skills/skill-judge/SKILL.md",
+      "preferred_frontmatter_name": "skill-judge-06cc39",
+      "description": "Evaluate Agent Skill design quality against official specifications and",
+      "aliases": [
+        "skills-skill-judge-skill"
+      ]
+    },
+    {
+      "canonical": "skill-marketplace",
+      "preferred_dir": "skill-marketplace",
+      "preferred_path": ".codex/skills/skill-marketplace/SKILL.md",
+      "preferred_frontmatter_name": "skill-marketplace-e9320c",
+      "description": "Use this skill when the user needs help with skill marketplace. It provides",
+      "aliases": []
+    },
+    {
+      "canonical": "snowflake-semanticview",
+      "preferred_dir": "snowflake-semanticview",
+      "preferred_path": ".codex/skills/snowflake-semanticview/SKILL.md",
+      "preferred_frontmatter_name": "snowflake-semanticview-017753",
+      "description": "Create, alter, and validate Snowflake semantic views using Snowflake",
+      "aliases": []
+    },
+    {
+      "canonical": "sora",
+      "preferred_dir": "sora",
+      "preferred_path": ".codex/skills/sora/SKILL.md",
+      "preferred_frontmatter_name": "sora-d11309",
+      "description": "Use when the user asks to generate, remix, poll, list, download, or delete",
+      "aliases": [
+        "-curated-sora-skill"
+      ]
+    },
+    {
+      "canonical": "spec-writer",
+      "preferred_dir": "spec-writer",
+      "preferred_path": ".codex/skills/spec-writer/SKILL.md",
+      "preferred_frontmatter_name": "spec-writer-be41fb",
+      "description": "Use this skill when the user needs help with spec writer. It provides",
+      "aliases": []
+    },
+    {
+      "canonical": "spec-writer-system-prompt",
+      "preferred_dir": "spec-writer-system-prompt",
+      "preferred_path": ".codex/skills/spec-writer-system-prompt/SKILL.md",
+      "preferred_frontmatter_name": "spec-writer-system-prompt-04492e",
+      "description": "Use this skill when the user needs help with spec writer system prompt.",
+      "aliases": []
+    },
+    {
+      "canonical": "speech",
+      "preferred_dir": "speech",
+      "preferred_path": ".codex/skills/speech/SKILL.md",
+      "preferred_frontmatter_name": "speech-bc8562",
+      "description": "Use when the user asks for text-to-speech narration or voiceover, accessibility",
+      "aliases": [
+        "-curated-speech-skill"
+      ]
+    },
+    {
+      "canonical": "spreadsheet",
+      "preferred_dir": "spreadsheet",
+      "preferred_path": ".codex/skills/spreadsheet/SKILL.md",
+      "preferred_frontmatter_name": "spreadsheet-268897",
+      "description": "Use when tasks involve creating, editing, analyzing, or formatting spreadsheets",
+      "aliases": [
+        "-curated-spreadsheet-skill"
+      ]
+    },
+    {
+      "canonical": "standard-planning",
+      "preferred_dir": "standard-planning",
+      "preferred_path": ".codex/skills/standard-planning/SKILL.md",
+      "preferred_frontmatter_name": "standard-planning-b39ad7",
+      "description": "Use this skill when the user needs help with standard planning. It provides",
+      "aliases": []
+    },
+    {
+      "canonical": "syscall-io-triage",
+      "preferred_dir": "syscall-io-triage",
+      "preferred_path": ".codex/skills/syscall-io-triage/SKILL.md",
+      "preferred_frontmatter_name": "syscall-io-triage-0a2e58",
+      "description": "Use this skill when the user needs help with syscall io triage. It provides",
+      "aliases": []
+    },
+    {
+      "canonical": "system",
+      "preferred_dir": "system",
+      "preferred_path": ".codex/skills/system/SKILL.md",
+      "preferred_frontmatter_name": "system-b5513b",
+      "description": "Use this skill when the user needs help with system. It provides practical",
+      "aliases": []
+    },
+    {
+      "canonical": "system-architect",
+      "preferred_dir": "system-architect",
+      "preferred_path": ".codex/skills/system-architect/SKILL.md",
+      "preferred_frontmatter_name": "system-architect-84e9e5",
+      "description": "Use this skill when the user needs help with system architect. It provides",
+      "aliases": []
+    },
+    {
+      "canonical": "system-architecture",
+      "preferred_dir": "system-architecture",
+      "preferred_path": ".codex/skills/system-architecture/SKILL.md",
+      "preferred_frontmatter_name": "system-architecture-8934c1",
+      "description": "Architect systems and components with scalability, reliability, and",
+      "aliases": [
+        "skills-system-architecture-skill"
+      ]
+    },
+    {
+      "canonical": "system-relace",
+      "preferred_dir": "system-relace",
+      "preferred_path": ".codex/skills/system-relace/SKILL.md",
+      "preferred_frontmatter_name": "system-relace-4ba350",
+      "description": "Use this skill when the user needs help with system relace. It provides",
+      "aliases": []
+    },
+    {
+      "canonical": "task-breakdown-developer",
+      "preferred_dir": "task-breakdown-developer",
+      "preferred_path": ".codex/skills/task-breakdown-developer/SKILL.md",
+      "preferred_frontmatter_name": "task-breakdown-developer-419269",
+      "description": "Use this skill when the user needs help with task breakdown developer.",
+      "aliases": []
+    },
+    {
+      "canonical": "task-completer",
+      "preferred_dir": "task-completer",
+      "preferred_path": ".codex/skills/task-completer/SKILL.md",
+      "preferred_frontmatter_name": "task-completer-4772da",
+      "description": "Use this skill when the user needs help with task completer. It provides",
+      "aliases": []
+    },
+    {
+      "canonical": "task-troubleshooter",
+      "preferred_dir": "task-troubleshooter",
+      "preferred_path": ".codex/skills/task-troubleshooter/SKILL.md",
+      "preferred_frontmatter_name": "task-troubleshooter-09cadc",
+      "description": "Use this skill when the user needs help with task troubleshooter. It",
+      "aliases": []
+    },
+    {
+      "canonical": "tech-lead",
+      "preferred_dir": "tech-lead",
+      "preferred_path": ".codex/skills/tech-lead/SKILL.md",
+      "preferred_frontmatter_name": "tech-lead-fa1d62",
+      "description": "Use this skill when the user needs help with tech lead. It provides practical",
+      "aliases": []
+    },
+    {
+      "canonical": "tech-lead-filter-files-prompt",
+      "preferred_dir": "tech-lead-filter-files-prompt",
+      "preferred_path": ".codex/skills/tech-lead-filter-files-prompt/SKILL.md",
+      "preferred_frontmatter_name": "tech-lead-filter-files-prompt-a505b4",
+      "description": "Use this skill when the user needs help with tech lead filter files prompt.",
+      "aliases": []
+    },
+    {
+      "canonical": "tech-lead-planner",
+      "preferred_dir": "tech-lead-planner",
+      "preferred_path": ".codex/skills/tech-lead-planner/SKILL.md",
+      "preferred_frontmatter_name": "tech-lead-planner-078185",
+      "description": "Use this skill when the user needs help with tech lead planner. It provides",
+      "aliases": []
+    },
+    {
+      "canonical": "tech-lead-system-prompt",
+      "preferred_dir": "tech-lead-system-prompt",
+      "preferred_path": ".codex/skills/tech-lead-system-prompt/SKILL.md",
+      "preferred_frontmatter_name": "tech-lead-system-prompt-e16543",
+      "description": "Use this skill when the user needs help with tech lead system prompt.",
+      "aliases": []
+    },
+    {
+      "canonical": "tech-writer",
+      "preferred_dir": "tech-writer",
+      "preferred_path": ".codex/skills/tech-writer/SKILL.md",
+      "preferred_frontmatter_name": "tech-writer-929a43",
+      "description": "Use this skill when the user needs help with tech writer. It provides",
+      "aliases": []
+    },
+    {
+      "canonical": "tech-writer-system-prompt",
+      "preferred_dir": "tech-writer-system-prompt",
+      "preferred_path": ".codex/skills/tech-writer-system-prompt/SKILL.md",
+      "preferred_frontmatter_name": "tech-writer-system-prompt-d245d8",
+      "description": "Use this skill when the user needs help with tech writer system prompt.",
+      "aliases": []
+    },
+    {
+      "canonical": "technologies",
+      "preferred_dir": "technologies",
+      "preferred_path": ".codex/skills/technologies/SKILL.md",
+      "preferred_frontmatter_name": "technologies-80d65d",
+      "description": "Use this skill when the user needs help with technologies. It provides",
+      "aliases": []
+    },
+    {
+      "canonical": "telemetry-kusto-analyst",
+      "preferred_dir": "telemetry-kusto-analyst",
+      "preferred_path": ".codex/skills/telemetry-kusto-analyst/SKILL.md",
+      "preferred_frontmatter_name": "telemetry-kusto-analyst-38bb69",
+      "description": "Use this skill when the user needs help with telemetry kusto analyst.",
+      "aliases": []
+    },
+    {
+      "canonical": "tell-me-more",
+      "preferred_dir": "tell-me-more",
+      "preferred_path": ".codex/skills/tell-me-more/SKILL.md",
+      "preferred_frontmatter_name": "tell-me-more-d84e1e",
+      "description": "Use this skill when the user needs help with tell me more. It provides",
+      "aliases": []
+    },
+    {
+      "canonical": "terraform-azurerm-set-diff-analyzer",
+      "preferred_dir": "terraform-azurerm-set-diff-analyzer",
+      "preferred_path": ".codex/skills/terraform-azurerm-set-diff-analyzer/SKILL.md",
+      "preferred_frontmatter_name": "terraform-azurerm-set-diff-analyzer-d1fefb",
+      "description": "Analyze Terraform plan JSON output for AzureRM Provider to distinguish",
+      "aliases": []
+    },
+    {
+      "canonical": "testing-strategy",
+      "preferred_dir": "testing-strategy",
+      "preferred_path": ".codex/skills/testing-strategy/SKILL.md",
+      "preferred_frontmatter_name": "testing-strategy-84fb48",
+      "description": "Design robust test strategies, coverage plans, and test suites. Use",
+      "aliases": [
+        "skills-testing-strategy-skill"
+      ]
+    },
+    {
+      "canonical": "text-data-isolation",
+      "preferred_dir": "text-data-isolation",
+      "preferred_path": ".codex/skills/text-data-isolation/SKILL.md",
+      "preferred_frontmatter_name": "text-data-isolation-85899d",
+      "description": "Use this skill when the user needs help with text data isolation. It",
+      "aliases": [
+        "skills-text-data-isolation-skill"
+      ]
+    },
+    {
+      "canonical": "text-data-isolation-github-original",
+      "preferred_dir": "text-data-isolation-github-original",
+      "preferred_path": ".codex/skills/text-data-isolation-github-original/SKILL.md",
+      "preferred_frontmatter_name": "text-data-isolation-github-original-1bf365",
+      "description": "Use this skill when the user needs help with text data isolation github",
+      "aliases": []
+    },
+    {
+      "canonical": "thinkpdf",
+      "preferred_dir": "thinkpdf",
+      "preferred_path": ".codex/skills/thinkpdf/SKILL.md",
+      "preferred_frontmatter_name": "thinkpdf-6df01e",
+      "description": "Use this skill when the user needs help with thinkpdf. It provides practical",
+      "aliases": []
+    },
+    {
+      "canonical": "thinkpdf-offline-mcp",
+      "preferred_dir": "thinkpdf-offline-mcp",
+      "preferred_path": ".codex/skills/thinkpdf-offline-mcp/SKILL.md",
+      "preferred_frontmatter_name": "thinkpdf-offline-mcp",
+      "description": "Create a Codex-ready offline MCP server configuration for ThinkPDF and run it locally over stdio without network dependencies.",
+      "aliases": []
+    },
+    {
+      "canonical": "token-usage-monitor",
+      "preferred_dir": "token-usage-monitor",
+      "preferred_path": ".codex/skills/token-usage-monitor/SKILL.md",
+      "preferred_frontmatter_name": "token-usage-monitor-df2629",
+      "description": "Use this skill when the user needs help with token usage monitor. It",
+      "aliases": []
+    },
+    {
+      "canonical": "tpilotx-cli",
+      "preferred_dir": "tpilotx-cli",
+      "preferred_path": ".codex/skills/tpilotx-cli/SKILL.md",
+      "preferred_frontmatter_name": "tpilotx-cli-89a761",
+      "description": "Use this skill when the user needs help with tpilotx cli. It provides",
+      "aliases": []
+    },
+    {
+      "canonical": "transcribe",
+      "preferred_dir": "transcribe",
+      "preferred_path": ".codex/skills/transcribe/SKILL.md",
+      "preferred_frontmatter_name": "transcribe-71faee",
+      "description": "Transcribe audio files to text with optional diarization and known-speaker",
+      "aliases": [
+        "-curated-transcribe-skill"
+      ]
+    },
+    {
+      "canonical": "troubleshooter",
+      "preferred_dir": "troubleshooter",
+      "preferred_path": ".codex/skills/troubleshooter/SKILL.md",
+      "preferred_frontmatter_name": "troubleshooter-25cbd3",
+      "description": "Use this skill when the user needs help with troubleshooter. It provides",
+      "aliases": []
+    },
+    {
+      "canonical": "tui-exit-shutdown",
+      "preferred_dir": "tui-exit-shutdown",
+      "preferred_path": ".codex/skills/tui-exit-shutdown/SKILL.md",
+      "preferred_frontmatter_name": "tui-exit-shutdown-b94549",
+      "description": "Guide exit, shutdown, and interrupt flows for the Copilot TUI. Use when",
+      "aliases": [
+        "skills-tui-exit-shutdown-skill"
+      ]
+    },
+    {
+      "canonical": "type-safety-enforcer",
+      "preferred_dir": "type-safety-enforcer",
+      "preferred_path": ".codex/skills/type-safety-enforcer/SKILL.md",
+      "preferred_frontmatter_name": "type-safety-enforcer-f3b4d5",
+      "description": "Use this skill when the user needs help with type safety enforcer. It",
+      "aliases": []
+    },
+    {
+      "canonical": "uc24-image-workflow",
+      "preferred_dir": "uc24-image-workflow",
+      "preferred_path": ".codex/skills/uc24-image-workflow/SKILL.md",
+      "preferred_frontmatter_name": "uc24-image-workflow-b060d5",
+      "description": "Ubuntu Core 24 image creation workflow guidance. Use when asked to build",
+      "aliases": [
+        "skills-uc24-image-workflow-skill"
+      ]
+    },
+    {
+      "canonical": "unity-asset-recovery",
+      "preferred_dir": "unity-asset-recovery",
+      "preferred_path": ".codex/skills/unity-asset-recovery/SKILL.md",
+      "preferred_frontmatter_name": "unity-asset-recovery-5eacb9",
+      "description": "Recover high-fidelity Unity assets and scenes from legacy projects.",
+      "aliases": [
+        "skills-unity-asset-recovery-skill"
+      ]
+    },
+    {
+      "canonical": "update-instructions-prompt",
+      "preferred_dir": "update-instructions-prompt",
+      "preferred_path": ".codex/skills/update-instructions-prompt/SKILL.md",
+      "preferred_frontmatter_name": "update-instructions-prompt-fb8f88",
+      "description": "Use this skill when the user needs help with update instructions prompt.",
+      "aliases": []
+    },
+    {
+      "canonical": "user-feedback",
+      "preferred_dir": "user-feedback",
+      "preferred_path": ".codex/skills/user-feedback/SKILL.md",
+      "preferred_frontmatter_name": "user-feedback-140747",
+      "description": "Use this skill when the user needs help with user feedback. It provides",
+      "aliases": []
+    },
+    {
+      "canonical": "vercel-deploy",
+      "preferred_dir": "vercel-deploy",
+      "preferred_path": ".codex/skills/vercel-deploy/SKILL.md",
+      "preferred_frontmatter_name": "vercel-deploy-26adab",
+      "description": "Deploy applications and websites to Vercel. Use when the user requests",
+      "aliases": [
+        "-curated-vercel-deploy-skill"
+      ]
+    },
+    {
+      "canonical": "vibe-coding",
+      "preferred_dir": "vibe-coding",
+      "preferred_path": ".codex/skills/vibe-coding/SKILL.md",
+      "preferred_frontmatter_name": "vibe-coding-4e2476",
+      "description": "Use this skill when the user needs help with vibe coding. It provides",
+      "aliases": [
+        "skills-vibe-coding-skill"
+      ]
+    },
+    {
+      "canonical": "vscode-ext-commands",
+      "preferred_dir": "vscode-ext-commands",
+      "preferred_path": ".codex/skills/vscode-ext-commands/SKILL.md",
+      "preferred_frontmatter_name": "vscode-ext-commands-1a8c10",
+      "description": "Use this skill when the user needs help with vscode ext commands. It",
+      "aliases": []
+    },
+    {
+      "canonical": "vscode-ext-localization",
+      "preferred_dir": "vscode-ext-localization",
+      "preferred_path": ".codex/skills/vscode-ext-localization/SKILL.md",
+      "preferred_frontmatter_name": "vscode-ext-localization-ee0d1c",
+      "description": "Use this skill when the user needs help with vscode ext localization.",
+      "aliases": []
+    },
+    {
+      "canonical": "web-design-reviewer",
+      "preferred_dir": "web-design-reviewer",
+      "preferred_path": ".codex/skills/web-design-reviewer/SKILL.md",
+      "preferred_frontmatter_name": "web-design-reviewer-920981",
+      "description": "This skill enables visual inspection of websites running locally or remotely",
+      "aliases": []
+    },
+    {
+      "canonical": "webapp-testing",
+      "preferred_dir": "webapp-testing",
+      "preferred_path": ".codex/skills/webapp-testing/SKILL.md",
+      "preferred_frontmatter_name": "webapp-testing-012a95",
+      "description": "Use this skill when the user needs help with webapp testing. It provides",
+      "aliases": []
+    },
+    {
+      "canonical": "winapp-cli",
+      "preferred_dir": "winapp-cli",
+      "preferred_path": ".codex/skills/winapp-cli/SKILL.md",
+      "preferred_frontmatter_name": "winapp-cli-cf7d9b",
+      "description": "Windows App Development CLI (winapp) for building, packaging, and deploying",
+      "aliases": []
+    },
+    {
+      "canonical": "wizard",
+      "preferred_dir": "wizard",
+      "preferred_path": ".codex/skills/wizard/SKILL.md",
+      "preferred_frontmatter_name": "wizard-7d510f",
+      "description": "Use this skill when the user needs help with wizard. It provides practical",
+      "aliases": []
+    },
+    {
+      "canonical": "workiq-copilot",
+      "preferred_dir": "workiq-copilot",
+      "preferred_path": ".codex/skills/workiq-copilot/SKILL.md",
+      "preferred_frontmatter_name": "workiq-copilot-aa0f14",
+      "description": "Use this skill when the user needs help with workiq copilot. It provides",
+      "aliases": []
+    },
+    {
+      "canonical": "workspace-backup",
+      "preferred_dir": "workspace-backup",
+      "preferred_path": ".codex/skills/workspace-backup/SKILL.md",
+      "preferred_frontmatter_name": "workspace-backup-3e96e9",
+      "description": "Backup large workspaces to Google Drive via gcloud ADC + Drive API.",
+      "aliases": [
+        "skills-workspace-backup-skill"
+      ]
+    },
+    {
+      "canonical": "writing-rules",
+      "preferred_dir": "writing-rules",
+      "preferred_path": ".codex/skills/writing-rules/SKILL.md",
+      "preferred_frontmatter_name": "writing-hookify-rules",
+      "description": "This skill should be used when the user asks to \"create a hookify rule\",",
+      "aliases": [
+        "skills-writing-rules-skill"
+      ]
+    },
+    {
+      "canonical": "yeet",
+      "preferred_dir": "yeet",
+      "preferred_path": ".codex/skills/yeet/SKILL.md",
+      "preferred_frontmatter_name": "yeet-eee056",
+      "description": "Use only when the user explicitly asks to stage, commit, push, and open",
+      "aliases": [
+        "-curated-yeet-skill"
+      ]
+    }
+  ]
+}
