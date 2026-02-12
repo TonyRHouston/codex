@@ -1,15 +1,13 @@
 name: Issue Deduplicator
-
 on:
   issues:
     types:
-      - opened
-      - labeled
-
+    - opened
+    - labeled
+  workflow_dispatch: {}
 jobs:
   gather-duplicates:
     name: Identify potential duplicates
-    # Prevent runs on forks (requires OpenAI API key, wastes Actions minutes)
     if: github.repository == 'openai/codex' && (github.event.action == 'opened' || (github.event.action == 'labeled' && github.event.label.name == 'codex-deduplicate'))
     runs-on: ubuntu-latest
     permissions:
@@ -17,66 +15,18 @@ jobs:
     outputs:
       codex_output: ${{ steps.codex.outputs.final-message }}
     steps:
-      - uses: actions/checkout@v6
-
-      - name: Prepare Codex inputs
-        env:
-          GH_TOKEN: ${{ github.token }}
-        run: |
-          set -eo pipefail
-
-          CURRENT_ISSUE_FILE=codex-current-issue.json
-          EXISTING_ISSUES_FILE=codex-existing-issues.json
-
-          gh issue list --repo "${{ github.repository }}" \
-            --json number,title,body,createdAt \
-            --limit 1000 \
-            --state all \
-            --search "sort:created-desc" \
-            | jq '.' \
-            > "$EXISTING_ISSUES_FILE"
-
-          gh issue view "${{ github.event.issue.number }}" \
-            --repo "${{ github.repository }}" \
-            --json number,title,body \
-            | jq '.' \
-            > "$CURRENT_ISSUE_FILE"
-
-      - id: codex
-        uses: openai/codex-action@main
-        with:
-          openai-api-key: ${{ secrets.CODEX_OPENAI_API_KEY }}
-          allow-users: "*"
-          prompt: |
-            You are an assistant that triages new GitHub issues by identifying potential duplicates.
-
-            You will receive the following JSON files located in the current working directory:
-            - `codex-current-issue.json`: JSON object describing the newly created issue (fields: number, title, body).
-            - `codex-existing-issues.json`: JSON array of recent issues (each element includes number, title, body, createdAt).
-
-            Instructions:
-            - Compare the current issue against the existing issues to find up to five that appear to describe the same underlying problem or request.
-            - Focus on the underlying intent and context of each issue—such as reported symptoms, feature requests, reproduction steps, or error messages—rather than relying solely on string similarity or synthetic metrics.
-            - After your analysis, validate your results in 1-2 lines explaining your decision to return the selected matches.
-            - When unsure, prefer returning fewer matches.
-            - Include at most five numbers.
-
-          output-schema: |
-            {
-              "type": "object",
-              "properties": {
-                "issues": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
-                },
-                "reason": { "type": "string" }
-              },
-              "required": ["issues", "reason"],
-              "additionalProperties": false
-            }
-
+    - uses: actions/checkout@v6
+    - name: Prepare Codex inputs
+      env:
+        GH_TOKEN: ${{ github.token }}
+      run: "set -eo pipefail\n\nCURRENT_ISSUE_FILE=codex-current-issue.json\nEXISTING_ISSUES_FILE=codex-existing-issues.json\n\ngh issue list --repo \"${{ github.repository }}\" \\\n  --json number,title,body,createdAt \\\n  --limit 1000 \\\n  --state all \\\n  --search \"sort:created-desc\" \\\n  | jq '.' \\\n  > \"$EXISTING_ISSUES_FILE\"\n\ngh issue view \"${{ github.event.issue.number }}\" \\\n  --repo \"${{ github.repository }}\" \\\n  --json number,title,body \\\n  | jq '.' \\\n  > \"$CURRENT_ISSUE_FILE\"\n"
+    - id: codex
+      uses: openai/codex-action@main
+      with:
+        openai-api-key: ${{ secrets.CODEX_OPENAI_API_KEY }}
+        allow-users: '*'
+        prompt: "You are an assistant that triages new GitHub issues by identifying potential duplicates.\n\nYou will receive the following JSON files located in the current working directory:\n- `codex-current-issue.json`: JSON object describing the newly created issue (fields: number, title, body).\n- `codex-existing-issues.json`: JSON array of recent issues (each element includes number, title, body, createdAt).\n\nInstructions:\n- Compare the current issue against the existing issues to find up to five that appear to describe the same underlying problem or request.\n- Focus on the underlying intent and context of each issue\u2014such as reported symptoms, feature requests, reproduction steps, or error messages\u2014rather than relying solely on string similarity or synthetic metrics.\n- After your analysis, validate your results in 1-2 lines explaining your decision to return the selected matches.\n- When unsure, prefer returning fewer matches.\n- Include at most five numbers.\n"
+        output-schema: "{\n  \"type\": \"object\",\n  \"properties\": {\n    \"issues\": {\n      \"type\": \"array\",\n      \"items\": {\n        \"type\": \"string\"\n      }\n    },\n    \"reason\": { \"type\": \"string\" }\n  },\n  \"required\": [\"issues\", \"reason\"],\n  \"additionalProperties\": false\n}\n"
   comment-on-issue:
     name: Comment with potential duplicates
     needs: gather-duplicates
@@ -86,55 +36,21 @@ jobs:
       contents: read
       issues: write
     steps:
-      - name: Comment on issue
-        uses: actions/github-script@v8
-        env:
-          CODEX_OUTPUT: ${{ needs.gather-duplicates.outputs.codex_output }}
-        with:
-          github-token: ${{ github.token }}
-          script: |
-            const raw = process.env.CODEX_OUTPUT ?? '';
-            let parsed;
-            try {
-              parsed = JSON.parse(raw);
-            } catch (error) {
-              core.info(`Codex output was not valid JSON. Raw output: ${raw}`);
-              core.info(`Parse error: ${error.message}`);
-              return;
-            }
+    - name: Comment on issue
+      uses: actions/github-script@v8
+      env:
+        CODEX_OUTPUT: ${{ needs.gather-duplicates.outputs.codex_output }}
+      with:
+        github-token: ${{ github.token }}
+        script: "const raw = process.env.CODEX_OUTPUT ?? '';\nlet parsed;\ntry {\n  parsed = JSON.parse(raw);\n} catch (error) {\n  core.info(`Codex output was not valid JSON. Raw output: ${raw}`);\n  core.info(`Parse error: ${error.message}`);\n  return;\n}\n\nconst issues = Array.isArray(parsed?.issues) ? parsed.issues : [];\nconst currentIssueNumber = String(context.payload.issue.number);\n\nconsole.log(`Current issue number: ${currentIssueNumber}`);\nconsole.log(issues);\n\nconst filteredIssues = issues.filter((value) => String(value) !== currentIssueNumber);\n\nif (filteredIssues.length === 0) {\n  core.info('Codex reported no potential duplicates.');\n  return;\n}\n\nconst lines = [\n  'Potential duplicates detected. Please review them and close your issue if it is a duplicate.',\n  '',\n  ...filteredIssues.map((value) => `- #${String(value)}`),\n  '',\n  '*Powered by [Codex Action](https://github.com/openai/codex-action)*'];\n\nawait github.rest.issues.createComment({\n  owner: context.repo.owner,\n\
+          \  repo: context.repo.repo,\n  issue_number: context.payload.issue.number,\n  body: lines.join(\"\\n\"),\n});\n"
+    - name: Remove codex-deduplicate label
+      if: ${{ always() && github.event.action == 'labeled' && github.event.label.name == 'codex-deduplicate' }}
+      env:
+        GH_TOKEN: ${{ github.token }}
+        GH_REPO: ${{ github.repository }}
+      run: 'gh issue edit "${{ github.event.issue.number }}" --remove-label codex-deduplicate || true
 
-            const issues = Array.isArray(parsed?.issues) ? parsed.issues : [];
-            const currentIssueNumber = String(context.payload.issue.number);
+        echo "Attempted to remove label: codex-deduplicate"
 
-            console.log(`Current issue number: ${currentIssueNumber}`);
-            console.log(issues);
-
-            const filteredIssues = issues.filter((value) => String(value) !== currentIssueNumber);
-
-            if (filteredIssues.length === 0) {
-              core.info('Codex reported no potential duplicates.');
-              return;
-            }
-
-            const lines = [
-              'Potential duplicates detected. Please review them and close your issue if it is a duplicate.',
-              '',
-              ...filteredIssues.map((value) => `- #${String(value)}`),
-              '',
-              '*Powered by [Codex Action](https://github.com/openai/codex-action)*'];
-
-            await github.rest.issues.createComment({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              issue_number: context.payload.issue.number,
-              body: lines.join("\n"),
-            });
-
-      - name: Remove codex-deduplicate label
-        if: ${{ always() && github.event.action == 'labeled' && github.event.label.name == 'codex-deduplicate' }}
-        env:
-          GH_TOKEN: ${{ github.token }}
-          GH_REPO: ${{ github.repository }}
-        run: |
-          gh issue edit "${{ github.event.issue.number }}" --remove-label codex-deduplicate || true
-          echo "Attempted to remove label: codex-deduplicate"
+        '

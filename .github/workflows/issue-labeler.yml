@@ -1,15 +1,13 @@
 name: Issue Labeler
-
 on:
   issues:
     types:
-      - opened
-      - labeled
-
+    - opened
+    - labeled
+  workflow_dispatch: {}
 jobs:
   gather-labels:
     name: Generate label suggestions
-    # Prevent runs on forks (requires OpenAI API key, wastes Actions minutes)
     if: github.repository == 'openai/codex' && (github.event.action == 'opened' || (github.event.action == 'labeled' && github.event.label.name == 'codex-label'))
     runs-on: ubuntu-latest
     permissions:
@@ -17,74 +15,17 @@ jobs:
     outputs:
       codex_output: ${{ steps.codex.outputs.final-message }}
     steps:
-      - uses: actions/checkout@v6
-
-      - id: codex
-        uses: openai/codex-action@main
-        with:
-          openai-api-key: ${{ secrets.CODEX_OPENAI_API_KEY }}
-          allow-users: "*"
-          prompt: |
-            You are an assistant that reviews GitHub issues for the repository.
-
-            Your job is to choose the most appropriate labels for the issue described later in this prompt.
-            Follow these rules:
-
-            - Add one (and only one) of the following three labels to distinguish the type of issue. Default to "bug" if unsure.
-            1. bug — Reproducible defects in Codex products (CLI, VS Code extension, web, auth).
-            2. enhancement — Feature requests or usability improvements that ask for new capabilities, better ergonomics, or quality-of-life tweaks.
-            3. documentation — Updates or corrections needed in docs/README/config references (broken links, missing examples, outdated keys, clarification requests).
-
-            - If applicable, add one of the following labels to specify which sub-product or product surface the issue relates to.
-            1. CLI — the Codex command line interface.
-            2. extension — VS Code (or other IDE) extension-specific issues.
-            3. app - Issues related to the Codex desktop application.
-            4. codex-web — Issues targeting the Codex web UI/Cloud experience.
-            5. github-action — Issues with the Codex GitHub action.
-            6. iOS — Issues with the Codex iOS app.
-
-            - Additionally add zero or more of the following labels that are relevant to the issue content. Prefer a small set of precise labels over many broad ones.
-            1. windows-os — Bugs or friction specific to Windows environments (always when PowerShell is mentioned, path handling, copy/paste, OS-specific auth or tooling failures).
-            2. mcp — Topics involving Model Context Protocol servers/clients.
-            3. mcp-server — Problems related to the codex mcp-server command, where codex runs as an MCP server.
-            4. azure — Problems or requests tied to Azure OpenAI deployments.
-            5. model-behavior — Undesirable LLM behavior: forgetting goals, refusing work, hallucinating environment details, quota misreports, or other reasoning/performance anomalies.
-            6. code-review — Issues related to the code review feature or functionality.
-            7. auth - Problems related to authentication, login, or access tokens.
-            8. codex-exec - Problems related to the "codex exec" command or functionality.
-            9. context-management - Problems related to compaction, context windows, or available context reporting.
-            10. custom-model - Problems that involve using custom model providers, local models, or OSS models.
-            11. rate-limits - Problems related to token limits, rate limits, or token usage reporting.
-            12. sandbox - Issues related to local sandbox environments or tool call approvals to override sandbox restrictions.
-            13. tool-calls - Problems related to specific tool call invocations including unexpected errors, failures, or hangs.
-            14. TUI - Problems with the terminal user interface (TUI) including keyboard shortcuts, copy & pasting, menus, or screen update issues.
-
-            Issue number: ${{ github.event.issue.number }}
-
-            Issue title:
-            ${{ github.event.issue.title }}
-
-            Issue body:
-            ${{ github.event.issue.body }}
-
-            Repository full name:
-            ${{ github.repository }}
-
-          output-schema: |
-            {
-              "type": "object",
-              "properties": {
-                "labels": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
-                }
-              },
-              "required": ["labels"],
-              "additionalProperties": false
-            }
-
+    - uses: actions/checkout@v6
+    - id: codex
+      uses: openai/codex-action@main
+      with:
+        openai-api-key: ${{ secrets.CODEX_OPENAI_API_KEY }}
+        allow-users: '*'
+        prompt: "You are an assistant that reviews GitHub issues for the repository.\n\nYour job is to choose the most appropriate labels for the issue described later in this prompt.\nFollow these rules:\n\n- Add one (and only one) of the following three labels to distinguish the type of issue. Default to \"bug\" if unsure.\n1. bug \u2014 Reproducible defects in Codex products (CLI, VS Code extension, web, auth).\n2. enhancement \u2014 Feature requests or usability improvements that ask for new capabilities, better ergonomics, or quality-of-life tweaks.\n3. documentation \u2014 Updates or corrections needed in docs/README/config references (broken links, missing examples, outdated keys, clarification requests).\n\n- If applicable, add one of the following labels to specify which sub-product or product surface the issue relates to.\n1. CLI \u2014 the Codex command line interface.\n2. extension \u2014 VS Code (or other IDE) extension-specific issues.\n3. app - Issues related to the Codex\
+          \ desktop application.\n4. codex-web \u2014 Issues targeting the Codex web UI/Cloud experience.\n5. github-action \u2014 Issues with the Codex GitHub action.\n6. iOS \u2014 Issues with the Codex iOS app.\n\n- Additionally add zero or more of the following labels that are relevant to the issue content. Prefer a small set of precise labels over many broad ones.\n1. windows-os \u2014 Bugs or friction specific to Windows environments (always when PowerShell is mentioned, path handling, copy/paste, OS-specific auth or tooling failures).\n2. mcp \u2014 Topics involving Model Context Protocol servers/clients.\n3. mcp-server \u2014 Problems related to the codex mcp-server command, where codex runs as an MCP server.\n4. azure \u2014 Problems or requests tied to Azure OpenAI deployments.\n5. model-behavior \u2014 Undesirable LLM behavior: forgetting goals, refusing work, hallucinating environment details, quota misreports, or other reasoning/performance anomalies.\n6. code-review \u2014\
+          \ Issues related to the code review feature or functionality.\n7. auth - Problems related to authentication, login, or access tokens.\n8. codex-exec - Problems related to the \"codex exec\" command or functionality.\n9. context-management - Problems related to compaction, context windows, or available context reporting.\n10. custom-model - Problems that involve using custom model providers, local models, or OSS models.\n11. rate-limits - Problems related to token limits, rate limits, or token usage reporting.\n12. sandbox - Issues related to local sandbox environments or tool call approvals to override sandbox restrictions.\n13. tool-calls - Problems related to specific tool call invocations including unexpected errors, failures, or hangs.\n14. TUI - Problems with the terminal user interface (TUI) including keyboard shortcuts, copy & pasting, menus, or screen update issues.\n\nIssue number: ${{ github.event.issue.number }}\n\nIssue title:\n${{ github.event.issue.title }}\n\nIssue\
+          \ body:\n${{ github.event.issue.body }}\n\nRepository full name:\n${{ github.repository }}\n"
+        output-schema: "{\n  \"type\": \"object\",\n  \"properties\": {\n    \"labels\": {\n      \"type\": \"array\",\n      \"items\": {\n        \"type\": \"string\"\n      }\n    }\n  },\n  \"required\": [\"labels\"],\n  \"additionalProperties\": false\n}\n"
   apply-labels:
     name: Apply labels from Codex output
     needs: gather-labels
@@ -99,34 +40,12 @@ jobs:
       ISSUE_NUMBER: ${{ github.event.issue.number }}
       CODEX_OUTPUT: ${{ needs.gather-labels.outputs.codex_output }}
     steps:
-      - name: Apply labels
-        run: |
-          json=${CODEX_OUTPUT//$'\r'/}
-          if [ -z "$json" ]; then
-            echo "Codex produced no output. Skipping label application."
-            exit 0
-          fi
+    - name: Apply labels
+      run: "json=${CODEX_OUTPUT//$'\\r'/}\nif [ -z \"$json\" ]; then\n  echo \"Codex produced no output. Skipping label application.\"\n  exit 0\nfi\n\nif ! printf '%s' \"$json\" | jq -e 'type == \"object\" and (.labels | type == \"array\")' >/dev/null 2>&1; then\n  echo \"Codex output did not include a labels array. Raw output: $json\"\n  exit 0\nfi\n\nlabels=$(printf '%s' \"$json\" | jq -r '.labels[] | tostring')\nif [ -z \"$labels\" ]; then\n  echo \"Codex returned an empty array. Nothing to do.\"\n  exit 0\nfi\n\ncmd=(gh issue edit \"$ISSUE_NUMBER\")\nwhile IFS= read -r label; do\n  cmd+=(--add-label \"$label\")\ndone <<< \"$labels\"\n\n\"${cmd[@]}\" || true\n"
+    - name: Remove codex-label trigger
+      if: ${{ always() && github.event.action == 'labeled' && github.event.label.name == 'codex-label' }}
+      run: 'gh issue edit "$ISSUE_NUMBER" --remove-label codex-label || true
 
-          if ! printf '%s' "$json" | jq -e 'type == "object" and (.labels | type == "array")' >/dev/null 2>&1; then
-            echo "Codex output did not include a labels array. Raw output: $json"
-            exit 0
-          fi
+        echo "Attempted to remove label: codex-label"
 
-          labels=$(printf '%s' "$json" | jq -r '.labels[] | tostring')
-          if [ -z "$labels" ]; then
-            echo "Codex returned an empty array. Nothing to do."
-            exit 0
-          fi
-
-          cmd=(gh issue edit "$ISSUE_NUMBER")
-          while IFS= read -r label; do
-            cmd+=(--add-label "$label")
-          done <<< "$labels"
-
-          "${cmd[@]}" || true
-
-      - name: Remove codex-label trigger
-        if: ${{ always() && github.event.action == 'labeled' && github.event.label.name == 'codex-label' }}
-        run: |
-          gh issue edit "$ISSUE_NUMBER" --remove-label codex-label || true
-          echo "Attempted to remove label: codex-label"
+        '
