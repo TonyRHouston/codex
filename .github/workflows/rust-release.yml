@@ -1,8 +1,5 @@
 name: rust-release
 on:
-  push:
-    tags:
-    - rust-v*.*.*
   workflow_dispatch: {}
 concurrency:
   group: ${{ github.workflow }}
@@ -162,8 +159,8 @@ jobs:
       uses: ./.github/actions/macos-code-sign
       with:
         target: ${{ matrix.target }}
-        sign-binaries: true
-        sign-dmg: false
+        sign-binaries: !!bool 'true'
+        sign-dmg: !!bool 'false'
         apple-certificate: ${{ secrets.APPLE_CERTIFICATE_P12 }}
         apple-certificate-password: ${{ secrets.APPLE_CERTIFICATE_PASSWORD }}
         apple-notarization-key-p8: ${{ secrets.APPLE_NOTARIZATION_KEY_P8 }}
@@ -179,8 +176,8 @@ jobs:
       uses: ./.github/actions/macos-code-sign
       with:
         target: ${{ matrix.target }}
-        sign-binaries: false
-        sign-dmg: true
+        sign-binaries: !!bool 'false'
+        sign-dmg: !!bool 'true'
         apple-certificate: ${{ secrets.APPLE_CERTIFICATE_P12 }}
         apple-certificate-password: ${{ secrets.APPLE_CERTIFICATE_PASSWORD }}
         apple-notarization-key-p8: ${{ secrets.APPLE_NOTARIZATION_KEY_P8 }}
