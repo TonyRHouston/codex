@@ -1,5 +1,6 @@
 use crate::config::Config;
 use crate::features::Feature;
+use crate::path_utils::normalize_for_path_comparison;
 use crate::rollout::list::Cursor;
 use crate::rollout::list::ThreadSortKey;
 use crate::rollout::metadata;
@@ -14,7 +15,7 @@ use codex_protocol::protocol::RolloutItem;
 use codex_protocol::protocol::SessionSource;
 use codex_state::DB_METRIC_COMPARE_ERROR;
 pub use codex_state::LogEntry;
-use codex_state::STATE_DB_FILENAME;
+use codex_state::STATE_DB_VERSION;
 use codex_state::ThreadMetadataBuilder;
 use serde_json::Value;
 use std::path::Path;
@@ -32,13 +33,11 @@ pub(crate) async fn init_if_enabled(
     config: &Config,
     otel: Option<&OtelManager>,
 ) -> Option<StateDbHandle> {
-    let state_path = config.codex_home.join(STATE_DB_FILENAME);
     if !config.features.enabled(Feature::Sqlite) {
         return None;
     }
-    let existed = tokio::fs::try_exists(&state_path).await.unwrap_or(false);
     let runtime = match codex_state::StateRuntime::init(
-        config.codex_home.clone(),
+        config.sqlite_home.clone(),
         config.model_provider_id.clone(),
         otel.cloned(),
     )
@@ -48,7 +47,7 @@ pub(crate) async fn init_if_enabled(
         Err(err) => {
             warn!(
                 "failed to initialize state runtime at {}: {err}",
-                config.codex_home.display()
+                config.sqlite_home.display()
             );
             if let Some(otel) = otel {
                 otel.counter("codex.db.init", 1, &[("status", "init_error")]);
@@ -56,17 +55,23 @@ pub(crate) async fn init_if_enabled(
             return None;
         }
     };
-    if !existed {
-        let runtime_for_backfill = Arc::clone(&runtime);
-        let config_for_backfill = config.clone();
-        let otel_for_backfill = otel.cloned();
-        tokio::task::spawn(async move {
-            metadata::backfill_sessions(
-                runtime_for_backfill.as_ref(),
-                &config_for_backfill,
-                otel_for_backfill.as_ref(),
-            )
-            .await;
+    let backfill_state = match runtime.get_backfill_state().await {
+        Ok(state) => state,
+        Err(err) => {
+            warn!(
+                "failed to read backfill state at {}: {err}",
+                config.codex_home.display()
+            );
+            return None;
+        }
+    };
+    if backfill_state.status != codex_state::BackfillStatus::Complete {
+        let runtime_for_backfill = runtime.clone();
+        let config = config.clone();
+        let otel = otel.cloned();
+        tokio::spawn(async move {
+            metadata::backfill_sessions(runtime_for_backfill.as_ref(), &config, otel.as_ref())
+                .await;
         });
     }
     Some(runtime)
@@ -74,26 +79,27 @@ pub(crate) async fn init_if_enabled(
 
 /// Get the DB if the feature is enabled and the DB exists.
 pub async fn get_state_db(config: &Config, otel: Option<&OtelManager>) -> Option<StateDbHandle> {
-    let state_path = config.codex_home.join(STATE_DB_FILENAME);
+    let state_path = codex_state::state_db_path(config.sqlite_home.as_path());
     if !config.features.enabled(Feature::Sqlite)
         || !tokio::fs::try_exists(&state_path).await.unwrap_or(false)
     {
         return None;
     }
-    codex_state::StateRuntime::init(
-        config.codex_home.clone(),
+    let runtime = codex_state::StateRuntime::init(
+        config.sqlite_home.clone(),
         config.model_provider_id.clone(),
         otel.cloned(),
     )
     .await
-    .ok()
+    .ok()?;
+    require_backfill_complete(runtime, config.sqlite_home.as_path()).await
 }
 
 /// Open the state runtime when the SQLite file exists, without feature gating.
 ///
 /// This is used for parity checks during the SQLite migration phase.
 pub async fn open_if_present(codex_home: &Path, default_provider: &str) -> Option<StateDbHandle> {
-    let db_path = codex_home.join(STATE_DB_FILENAME);
+    let db_path = codex_state::state_db_path(codex_home);
     if !tokio::fs::try_exists(&db_path).await.unwrap_or(false) {
         return None;
     }
@@ -104,7 +110,31 @@ pub async fn open_if_present(codex_home: &Path, default_provider: &str) -> Optio
     )
     .await
     .ok()?;
-    Some(runtime)
+    require_backfill_complete(runtime, codex_home).await
+}
+
+async fn require_backfill_complete(
+    runtime: StateDbHandle,
+    codex_home: &Path,
+) -> Option<StateDbHandle> {
+    match runtime.get_backfill_state().await {
+        Ok(state) if state.status == codex_state::BackfillStatus::Complete => Some(runtime),
+        Ok(state) => {
+            warn!(
+                "state db backfill not complete at {} (status: {})",
+                codex_home.display(),
+                state.status.as_str()
+            );
+            None
+        }
+        Err(err) => {
+            warn!(
+                "failed to read backfill state at {}: {err}",
+                codex_home.display()
+            );
+            None
+        }
+    }
 }
 
 fn cursor_to_anchor(cursor: Option<&Cursor>) -> Option<codex_state::Anchor> {
@@ -125,6 +155,10 @@ fn cursor_to_anchor(cursor: Option<&Cursor>) -> Option<codex_state::Anchor> {
     }
     .with_nanosecond(0)?;
     Some(codex_state::Anchor { ts, id })
+}
+
+fn normalize_cwd_for_state_db(cwd: &Path) -> PathBuf {
+    normalize_for_path_comparison(cwd).unwrap_or_else(|_| cwd.to_path_buf())
 }
 
 /// List thread ids from SQLite for parity checks without rollout scanning.
@@ -192,6 +226,7 @@ pub async fn list_threads_db(
     allowed_sources: &[SessionSource],
     model_providers: Option<&[String]>,
     archived: bool,
+    search_term: Option<&str>,
 ) -> Option<codex_state::ThreadsPage> {
     let ctx = context?;
     if ctx.codex_home() != codex_home {
@@ -223,10 +258,31 @@ pub async fn list_threads_db(
             allowed_sources.as_slice(),
             model_providers.as_deref(),
             archived,
+            search_term,
         )
         .await
     {
-        Ok(page) => Some(page),
+        Ok(mut page) => {
+            let mut valid_items = Vec::with_capacity(page.items.len());
+            for item in page.items {
+                if tokio::fs::try_exists(&item.rollout_path)
+                    .await
+                    .unwrap_or(false)
+                {
+                    valid_items.push(item);
+                } else {
+                    warn!(
+                        "state db list_threads returned stale rollout path for thread {}: {}",
+                        item.id,
+                        item.rollout_path.display()
+                    );
+                    record_discrepancy("list_threads_db", "stale_db_path_dropped");
+                    let _ = ctx.delete_thread(item.id).await;
+                }
+            }
+            page.items = valid_items;
+            Some(page)
+        }
         Err(err) => {
             warn!("state db list_threads failed: {err}");
             None
@@ -288,6 +344,7 @@ pub async fn reconcile_rollout(
     default_provider: &str,
     builder: Option<&ThreadMetadataBuilder>,
     items: &[RolloutItem],
+    archived_only: Option<bool>,
 ) {
     let Some(ctx) = context else {
         return;
@@ -315,7 +372,18 @@ pub async fn reconcile_rollout(
                 return;
             }
         };
-    if let Err(err) = ctx.upsert_thread(&outcome.metadata).await {
+    let mut metadata = outcome.metadata;
+    metadata.cwd = normalize_cwd_for_state_db(&metadata.cwd);
+    match archived_only {
+        Some(true) if metadata.archived_at.is_none() => {
+            metadata.archived_at = Some(metadata.updated_at);
+        }
+        Some(false) => {
+            metadata.archived_at = None;
+        }
+        Some(true) | None => {}
+    }
+    if let Err(err) = ctx.upsert_thread(&metadata).await {
         warn!(
             "state db reconcile_rollout upsert failed {}: {err}",
             rollout_path.display()
@@ -336,6 +404,71 @@ pub async fn reconcile_rollout(
             rollout_path.display()
         );
     }
+}
+
+/// Repair a thread's rollout path after filesystem fallback succeeds.
+pub async fn read_repair_rollout_path(
+    context: Option<&codex_state::StateRuntime>,
+    thread_id: Option<ThreadId>,
+    archived_only: Option<bool>,
+    rollout_path: &Path,
+) {
+    let Some(ctx) = context else {
+        return;
+    };
+
+    // Fast path: update an existing metadata row in place, but avoid writes when
+    // read-repair computes no effective change.
+    let mut saw_existing_metadata = false;
+    if let Some(thread_id) = thread_id
+        && let Ok(Some(metadata)) = ctx.get_thread(thread_id).await
+    {
+        saw_existing_metadata = true;
+        let mut repaired = metadata.clone();
+        repaired.rollout_path = rollout_path.to_path_buf();
+        repaired.cwd = normalize_cwd_for_state_db(&repaired.cwd);
+        match archived_only {
+            Some(true) if repaired.archived_at.is_none() => {
+                repaired.archived_at = Some(repaired.updated_at);
+            }
+            Some(false) => {
+                repaired.archived_at = None;
+            }
+            Some(true) | None => {}
+        }
+        if repaired == metadata {
+            return;
+        }
+        record_discrepancy("read_repair_rollout_path", "upsert_needed");
+        if let Err(err) = ctx.upsert_thread(&repaired).await {
+            warn!(
+                "state db read-repair upsert failed for {}: {err}",
+                rollout_path.display()
+            );
+        } else {
+            return;
+        }
+    }
+
+    // Slow path: when the row is missing/unreadable (or direct upsert failed),
+    // rebuild metadata from rollout contents and reconcile it into SQLite.
+    if !saw_existing_metadata {
+        record_discrepancy("read_repair_rollout_path", "upsert_needed");
+    }
+    let default_provider = crate::rollout::list::read_session_meta_line(rollout_path)
+        .await
+        .ok()
+        .and_then(|meta| meta.meta.model_provider)
+        .unwrap_or_default();
+    reconcile_rollout(
+        Some(ctx),
+        rollout_path,
+        default_provider.as_str(),
+        None,
+        &[],
+        archived_only,
+    )
+    .await;
 }
 
 /// Apply rollout items incrementally to SQLite.
@@ -365,6 +498,7 @@ pub async fn apply_rollout_items(
         },
     };
     builder.rollout_path = rollout_path.to_path_buf();
+    builder.cwd = normalize_cwd_for_state_db(&builder.cwd);
     if let Err(err) = ctx.apply_rollout_items(&builder, items, None).await {
         warn!(
             "state db apply_rollout_items failed during {stage} for {}: {err}",
@@ -382,7 +516,11 @@ pub fn record_discrepancy(stage: &str, reason: &str) {
         let _ = metric.counter(
             DB_METRIC_COMPARE_ERROR,
             1,
-            &[("stage", stage), ("reason", reason)],
+            &[
+                ("stage", stage),
+                ("reason", reason),
+                ("version", &STATE_DB_VERSION.to_string()),
+            ],
         );
     }
 }

@@ -91,6 +91,3 @@ CHANGELOG.ignore.md
 __pycache__/
 *.pyc
 
-
-# temporary directories
-tmp/

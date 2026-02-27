@@ -6,14 +6,14 @@ use std::sync::OnceLock;
 use anyhow::Context;
 use anyhow::Result;
 use codex_core::features::Feature;
-use codex_core::protocol::AskForApproval;
-use codex_core::protocol::EventMsg;
-use codex_core::protocol::ExecCommandSource;
-use codex_core::protocol::Op;
-use codex_core::protocol::SandboxPolicy;
-use codex_protocol::config_types::ReasoningSummary;
+use codex_protocol::protocol::AskForApproval;
+use codex_protocol::protocol::EventMsg;
+use codex_protocol::protocol::ExecCommandSource;
+use codex_protocol::protocol::Op;
+use codex_protocol::protocol::SandboxPolicy;
 use codex_protocol::user_input::UserInput;
 use core_test_support::assert_regex_match;
+use core_test_support::process::process_is_alive;
 use core_test_support::process::wait_for_pid_file;
 use core_test_support::process::wait_for_process_exit;
 use core_test_support::responses::ev_assistant_message;
@@ -208,7 +208,7 @@ async fn unified_exec_intercepts_apply_patch_exec_command() -> Result<()> {
             sandbox_policy: SandboxPolicy::DangerFullAccess,
             model: session_model,
             effort: None,
-            summary: ReasoningSummary::Auto,
+            summary: None,
             collaboration_mode: None,
             personality: None,
         })
@@ -337,7 +337,7 @@ async fn unified_exec_emits_exec_command_begin_event() -> Result<()> {
             sandbox_policy: SandboxPolicy::DangerFullAccess,
             model: session_model,
             effort: None,
-            summary: ReasoningSummary::Auto,
+            summary: None,
             collaboration_mode: None,
             personality: None,
         })
@@ -415,7 +415,7 @@ async fn unified_exec_resolves_relative_workdir() -> Result<()> {
             sandbox_policy: SandboxPolicy::DangerFullAccess,
             model: session_model,
             effort: None,
-            summary: ReasoningSummary::Auto,
+            summary: None,
             collaboration_mode: None,
             personality: None,
         })
@@ -496,7 +496,7 @@ async fn unified_exec_respects_workdir_override() -> Result<()> {
             sandbox_policy: SandboxPolicy::DangerFullAccess,
             model: session_model,
             effort: None,
-            summary: ReasoningSummary::Auto,
+            summary: None,
             collaboration_mode: None,
             personality: None,
         })
@@ -589,7 +589,7 @@ async fn unified_exec_emits_exec_command_end_event() -> Result<()> {
             sandbox_policy: SandboxPolicy::DangerFullAccess,
             model: session_model,
             effort: None,
-            summary: ReasoningSummary::Auto,
+            summary: None,
             collaboration_mode: None,
             personality: None,
         })
@@ -664,7 +664,7 @@ async fn unified_exec_emits_output_delta_for_exec_command() -> Result<()> {
             sandbox_policy: SandboxPolicy::DangerFullAccess,
             model: session_model,
             effort: None,
-            summary: ReasoningSummary::Auto,
+            summary: None,
             collaboration_mode: None,
             personality: None,
         })
@@ -740,7 +740,7 @@ async fn unified_exec_full_lifecycle_with_background_end_event() -> Result<()> {
             sandbox_policy: SandboxPolicy::DangerFullAccess,
             model: session_model,
             effort: None,
-            summary: ReasoningSummary::Auto,
+            summary: None,
             collaboration_mode: None,
             personality: None,
         })
@@ -870,7 +870,7 @@ async fn unified_exec_emits_terminal_interaction_for_write_stdin() -> Result<()>
             sandbox_policy: SandboxPolicy::DangerFullAccess,
             model: session_model,
             effort: None,
-            summary: ReasoningSummary::Auto,
+            summary: None,
             collaboration_mode: None,
             personality: None,
         })
@@ -1007,7 +1007,7 @@ async fn unified_exec_terminal_interaction_captures_delayed_output() -> Result<(
             sandbox_policy: SandboxPolicy::DangerFullAccess,
             model: session_model,
             effort: None,
-            summary: ReasoningSummary::Auto,
+            summary: None,
             collaboration_mode: None,
             personality: None,
         })
@@ -1167,7 +1167,7 @@ async fn unified_exec_emits_one_begin_and_one_end_event() -> Result<()> {
             sandbox_policy: SandboxPolicy::DangerFullAccess,
             model: session_model,
             effort: None,
-            summary: ReasoningSummary::Auto,
+            summary: None,
             collaboration_mode: None,
             personality: None,
         })
@@ -1265,7 +1265,7 @@ async fn exec_command_reports_chunk_and_exit_metadata() -> Result<()> {
             sandbox_policy: SandboxPolicy::DangerFullAccess,
             model: session_model,
             effort: None,
-            summary: ReasoningSummary::Auto,
+            summary: None,
             collaboration_mode: None,
             personality: None,
         })
@@ -1383,7 +1383,7 @@ async fn unified_exec_defaults_to_pipe() -> Result<()> {
             sandbox_policy: SandboxPolicy::DangerFullAccess,
             model: session_model,
             effort: None,
-            summary: ReasoningSummary::Auto,
+            summary: None,
             collaboration_mode: None,
             personality: None,
         })
@@ -1473,7 +1473,7 @@ async fn unified_exec_can_enable_tty() -> Result<()> {
             sandbox_policy: SandboxPolicy::DangerFullAccess,
             model: session_model,
             effort: None,
-            summary: ReasoningSummary::Auto,
+            summary: None,
             collaboration_mode: None,
             personality: None,
         })
@@ -1554,7 +1554,7 @@ async fn unified_exec_respects_early_exit_notifications() -> Result<()> {
             sandbox_policy: SandboxPolicy::DangerFullAccess,
             model: session_model,
             effort: None,
-            summary: ReasoningSummary::Auto,
+            summary: None,
             collaboration_mode: None,
             personality: None,
         })
@@ -1685,7 +1685,7 @@ async fn write_stdin_returns_exit_metadata_and_clears_session() -> Result<()> {
             sandbox_policy: SandboxPolicy::DangerFullAccess,
             model: session_model,
             effort: None,
-            summary: ReasoningSummary::Auto,
+            summary: None,
             collaboration_mode: None,
             personality: None,
         })
@@ -1853,7 +1853,7 @@ async fn unified_exec_emits_end_event_when_session_dies_via_stdin() -> Result<()
             sandbox_policy: SandboxPolicy::DangerFullAccess,
             model: session_model,
             effort: None,
-            summary: ReasoningSummary::Auto,
+            summary: None,
             collaboration_mode: None,
             personality: None,
         })
@@ -1873,7 +1873,7 @@ async fn unified_exec_emits_end_event_when_session_dies_via_stdin() -> Result<()
 }
 
 #[tokio::test(flavor = "multi_thread", worker_threads = 2)]
-async fn unified_exec_closes_long_running_session_at_turn_end() -> Result<()> {
+async fn unified_exec_keeps_long_running_session_after_turn_end() -> Result<()> {
     skip_if_no_network!(Ok(()));
     skip_if_sandbox!(Ok(()));
     skip_if_windows!(Ok(()));
@@ -1921,7 +1921,7 @@ async fn unified_exec_closes_long_running_session_at_turn_end() -> Result<()> {
     codex
         .submit(Op::UserTurn {
             items: vec![UserInput::Text {
-                text: "close unified exec processes on turn end".into(),
+                text: "keep unified exec process after turn end".into(),
                 text_elements: Vec::new(),
             }],
             final_output_json_schema: None,
@@ -1930,7 +1930,7 @@ async fn unified_exec_closes_long_running_session_at_turn_end() -> Result<()> {
             sandbox_policy: SandboxPolicy::DangerFullAccess,
             model: session_model,
             effort: None,
-            summary: ReasoningSummary::Auto,
+            summary: None,
             collaboration_mode: None,
             personality: None,
         })
@@ -1942,7 +1942,7 @@ async fn unified_exec_closes_long_running_session_at_turn_end() -> Result<()> {
     })
     .await;
 
-    let begin_process_id = begin_event
+    let _begin_process_id = begin_event
         .process_id
         .clone()
         .expect("expected process_id for long-running unified exec process");
@@ -1953,28 +1953,91 @@ async fn unified_exec_closes_long_running_session_at_turn_end() -> Result<()> {
         "expected numeric pid, got {pid:?}"
     );
 
-    let mut end_event = None;
-    let mut task_complete = false;
-    loop {
-        let msg = wait_for_event(&codex, |_| true).await;
-        match msg {
-            EventMsg::ExecCommandEnd(ev) if ev.call_id == call_id => end_event = Some(ev),
-            EventMsg::TurnComplete(_) => task_complete = true,
-            _ => {}
-        }
-        if task_complete && end_event.is_some() {
-            break;
-        }
-    }
+    wait_for_event(&codex, |event| matches!(event, EventMsg::TurnComplete(_))).await;
 
-    let end_event = end_event.expect("expected ExecCommandEnd event for unified exec session");
-    assert_eq!(end_event.call_id, call_id);
-    let end_process_id = end_event
-        .process_id
-        .clone()
-        .expect("expected process_id in unified exec end event");
-    assert_eq!(end_process_id, begin_process_id);
+    assert!(
+        process_is_alive(&pid)?,
+        "expected unified exec process to remain alive after turn completion"
+    );
 
+    codex.submit(Op::Shutdown).await?;
+    wait_for_event(&codex, |event| matches!(event, EventMsg::ShutdownComplete)).await;
+    wait_for_process_exit(&pid).await?;
+
+    Ok(())
+}
+
+#[tokio::test(flavor = "multi_thread", worker_threads = 2)]
+async fn unified_exec_interrupt_terminates_long_running_session() -> Result<()> {
+    skip_if_no_network!(Ok(()));
+    skip_if_sandbox!(Ok(()));
+    skip_if_windows!(Ok(()));
+
+    let server = start_mock_server().await;
+
+    let mut builder = test_codex().with_config(|config| {
+        config.use_experimental_unified_exec_tool = true;
+        config.features.enable(Feature::UnifiedExec);
+    });
+    let TestCodex {
+        codex,
+        cwd,
+        session_configured,
+        ..
+    } = builder.build(&server).await?;
+
+    let temp_dir = tempfile::tempdir()?;
+    let pid_path = temp_dir.path().join("uexec_pid_interrupt");
+    let pid_path_str = pid_path.to_string_lossy();
+
+    let call_id = "uexec-long-running-interrupt";
+    let command = format!("printf '%s' $$ > '{pid_path_str}' && exec sleep 3000");
+    let args = json!({
+        "cmd": command,
+        "yield_time_ms": 30000,
+    });
+
+    let responses = vec![sse(vec![
+        ev_response_created("resp-1"),
+        ev_function_call(call_id, "exec_command", &serde_json::to_string(&args)?),
+        ev_completed("resp-1"),
+    ])];
+    mount_sse_sequence(&server, responses).await;
+
+    let session_model = session_configured.model.clone();
+
+    codex
+        .submit(Op::UserTurn {
+            items: vec![UserInput::Text {
+                text: "interrupt long-running unified exec".into(),
+                text_elements: Vec::new(),
+            }],
+            final_output_json_schema: None,
+            cwd: cwd.path().to_path_buf(),
+            approval_policy: AskForApproval::Never,
+            sandbox_policy: SandboxPolicy::DangerFullAccess,
+            model: session_model,
+            effort: None,
+            summary: None,
+            collaboration_mode: None,
+            personality: None,
+        })
+        .await?;
+
+    let _begin_event = wait_for_event_match(&codex, |msg| match msg {
+        EventMsg::ExecCommandBegin(ev) if ev.call_id == call_id => Some(ev.clone()),
+        _ => None,
+    })
+    .await;
+
+    let pid = wait_for_pid_file(&pid_path).await?;
+    assert!(
+        pid.chars().all(|ch| ch.is_ascii_digit()),
+        "expected numeric pid, got {pid:?}"
+    );
+
+    codex.submit(Op::Interrupt).await?;
+    wait_for_event(&codex, |event| matches!(event, EventMsg::TurnAborted(_))).await;
     wait_for_process_exit(&pid).await?;
 
     Ok(())
@@ -2052,7 +2115,7 @@ async fn unified_exec_reuses_session_via_stdin() -> Result<()> {
             sandbox_policy: SandboxPolicy::DangerFullAccess,
             model: session_model,
             effort: None,
-            summary: ReasoningSummary::Auto,
+            summary: None,
             collaboration_mode: None,
             personality: None,
         })
@@ -2187,7 +2250,7 @@ PY
             sandbox_policy: SandboxPolicy::DangerFullAccess,
             model: session_model,
             effort: None,
-            summary: ReasoningSummary::Auto,
+            summary: None,
             collaboration_mode: None,
             personality: None,
         })
@@ -2301,7 +2364,7 @@ async fn unified_exec_timeout_and_followup_poll() -> Result<()> {
             sandbox_policy: SandboxPolicy::DangerFullAccess,
             model: session_model,
             effort: None,
-            summary: ReasoningSummary::Auto,
+            summary: None,
             collaboration_mode: None,
             personality: None,
         })
@@ -2397,7 +2460,7 @@ PY
             sandbox_policy: SandboxPolicy::DangerFullAccess,
             model: session_model,
             effort: None,
-            summary: ReasoningSummary::Auto,
+            summary: None,
             collaboration_mode: None,
             personality: None,
         })
@@ -2476,10 +2539,10 @@ async fn unified_exec_runs_under_sandbox() -> Result<()> {
             cwd: cwd.path().to_path_buf(),
             approval_policy: AskForApproval::Never,
             // Important!
-            sandbox_policy: SandboxPolicy::ReadOnly,
+            sandbox_policy: SandboxPolicy::new_read_only_policy(),
             model: session_model,
             effort: None,
-            summary: ReasoningSummary::Auto,
+            summary: None,
             collaboration_mode: None,
             personality: None,
         })
@@ -2580,10 +2643,10 @@ async fn unified_exec_python_prompt_under_seatbelt() -> Result<()> {
             final_output_json_schema: None,
             cwd: cwd.path().to_path_buf(),
             approval_policy: AskForApproval::Never,
-            sandbox_policy: SandboxPolicy::ReadOnly,
+            sandbox_policy: SandboxPolicy::new_read_only_policy(),
             model: session_model,
             effort: None,
-            summary: ReasoningSummary::Auto,
+            summary: None,
             collaboration_mode: None,
             personality: None,
         })
@@ -2678,7 +2741,7 @@ async fn unified_exec_runs_on_all_platforms() -> Result<()> {
             sandbox_policy: SandboxPolicy::DangerFullAccess,
             model: session_model,
             effort: None,
-            summary: ReasoningSummary::Auto,
+            summary: None,
             collaboration_mode: None,
             personality: None,
         })
@@ -2813,7 +2876,7 @@ async fn unified_exec_prunes_exited_sessions_first() -> Result<()> {
             sandbox_policy: SandboxPolicy::DangerFullAccess,
             model: session_model,
             effort: None,
-            summary: ReasoningSummary::Auto,
+            summary: None,
             collaboration_mode: None,
             personality: None,
         })

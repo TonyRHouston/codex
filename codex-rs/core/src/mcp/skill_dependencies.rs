@@ -32,9 +32,9 @@ const MCP_DEPENDENCY_OPTION_INSTALL: &str = "Install";
 const MCP_DEPENDENCY_OPTION_SKIP: &str = "Continue anyway";
 
 fn is_full_access_mode(turn_context: &TurnContext) -> bool {
-    matches!(turn_context.approval_policy, AskForApproval::Never)
+    matches!(turn_context.approval_policy.value(), AskForApproval::Never)
         && matches!(
-            turn_context.sandbox_policy,
+            turn_context.sandbox_policy.get(),
             SandboxPolicy::DangerFullAccess | SandboxPolicy::ExternalSandbox { .. }
         )
 }
@@ -144,7 +144,7 @@ pub(crate) async fn maybe_prompt_and_install_mcp_dependencies(
         return;
     }
 
-    let config = turn_context.client.config();
+    let config = turn_context.config.clone();
     if mentioned_skills.is_empty() || !config.features.enabled(Feature::SkillMcpDependencyInstall) {
         return;
     }
@@ -241,7 +241,9 @@ pub(crate) async fn maybe_install_mcp_dependencies(
             oauth_config.http_headers,
             oauth_config.env_http_headers,
             &[],
+            server_config.oauth_resource.as_deref(),
             config.mcp_oauth_callback_port,
+            config.mcp_oauth_callback_url.as_deref(),
         )
         .await
         {
@@ -379,12 +381,14 @@ fn mcp_dependency_to_server_config(
                 env_http_headers: None,
             },
             enabled: true,
+            required: false,
             disabled_reason: None,
             startup_timeout_sec: None,
             tool_timeout_sec: None,
             enabled_tools: None,
             disabled_tools: None,
             scopes: None,
+            oauth_resource: None,
         });
     }
 
@@ -402,12 +406,14 @@ fn mcp_dependency_to_server_config(
                 cwd: None,
             },
             enabled: true,
+            required: false,
             disabled_reason: None,
             startup_timeout_sec: None,
             tool_timeout_sec: None,
             enabled_tools: None,
             disabled_tools: None,
             scopes: None,
+            oauth_resource: None,
         });
     }
 
@@ -429,7 +435,10 @@ mod tests {
             short_description: None,
             interface: None,
             dependencies: Some(SkillDependencies { tools }),
-            path: PathBuf::from("skill"),
+            policy: None,
+            permission_profile: None,
+            permissions: None,
+            path_to_skills_md: PathBuf::from("skill"),
             scope: SkillScope::User,
         }
     }
@@ -455,12 +464,14 @@ mod tests {
                     env_http_headers: None,
                 },
                 enabled: true,
+                required: false,
                 disabled_reason: None,
                 startup_timeout_sec: None,
                 tool_timeout_sec: None,
                 enabled_tools: None,
                 disabled_tools: None,
                 scopes: None,
+                oauth_resource: None,
             },
         )]);
 
@@ -502,12 +513,14 @@ mod tests {
                     env_http_headers: None,
                 },
                 enabled: true,
+                required: false,
                 disabled_reason: None,
                 startup_timeout_sec: None,
                 tool_timeout_sec: None,
                 enabled_tools: None,
                 disabled_tools: None,
                 scopes: None,
+                oauth_resource: None,
             },
         )]);
 

@@ -3,6 +3,7 @@ use crate::config::types::Personality;
 use crate::error::Result;
 pub use codex_api::common::ResponseEvent;
 use codex_protocol::models::BaseInstructions;
+use codex_protocol::models::FunctionCallOutputBody;
 use codex_protocol::models::ResponseItem;
 use futures::Stream;
 use serde::Deserialize;
@@ -83,23 +84,19 @@ fn reserialize_shell_outputs(items: &mut [ResponseItem]) {
                 shell_call_ids.insert(call_id.clone());
             }
         }
-        ResponseItem::CustomToolCallOutput { call_id, output } => {
-            if shell_call_ids.remove(call_id)
-                && let Some(structured) = parse_structured_shell_output(output)
-            {
-                *output = structured
-            }
-        }
         ResponseItem::FunctionCall { name, call_id, .. }
             if is_shell_tool_name(name) || name == "apply_patch" =>
         {
             shell_call_ids.insert(call_id.clone());
         }
-        ResponseItem::FunctionCallOutput { call_id, output } => {
+        ResponseItem::FunctionCallOutput { call_id, output }
+        | ResponseItem::CustomToolCallOutput { call_id, output } => {
             if shell_call_ids.remove(call_id)
-                && let Some(structured) = parse_structured_shell_output(&output.content)
+                && let Some(structured) = output
+                    .text_content()
+                    .and_then(parse_structured_shell_output)
             {
-                output.content = structured
+                output.body = FunctionCallOutputBody::Text(structured);
             }
         }
         _ => {}
@@ -237,6 +234,7 @@ mod tests {
     use codex_api::common::OpenAiVerbosity;
     use codex_api::common::TextControls;
     use codex_api::create_text_param_for_request;
+    use codex_protocol::models::FunctionCallOutputPayload;
     use pretty_assertions::assert_eq;
 
     use super::*;
@@ -246,11 +244,11 @@ mod tests {
         let input: Vec<ResponseItem> = vec![];
         let tools: Vec<serde_json::Value> = vec![];
         let req = ResponsesApiRequest {
-            model: "gpt-5.1",
-            instructions: "i",
-            input: &input,
-            tools: &tools,
-            tool_choice: "auto",
+            model: "gpt-5.1".to_string(),
+            instructions: "i".to_string(),
+            input,
+            tools,
+            tool_choice: "auto".to_string(),
             parallel_tool_calls: true,
             reasoning: None,
             store: false,
@@ -287,11 +285,11 @@ mod tests {
             create_text_param_for_request(None, &Some(schema.clone())).expect("text controls");
 
         let req = ResponsesApiRequest {
-            model: "gpt-5.1",
-            instructions: "i",
-            input: &input,
-            tools: &tools,
-            tool_choice: "auto",
+            model: "gpt-5.1".to_string(),
+            instructions: "i".to_string(),
+            input,
+            tools,
+            tool_choice: "auto".to_string(),
             parallel_tool_calls: true,
             reasoning: None,
             store: false,
@@ -323,11 +321,11 @@ mod tests {
         let input: Vec<ResponseItem> = vec![];
         let tools: Vec<serde_json::Value> = vec![];
         let req = ResponsesApiRequest {
-            model: "gpt-5.1",
-            instructions: "i",
-            input: &input,
-            tools: &tools,
-            tool_choice: "auto",
+            model: "gpt-5.1".to_string(),
+            instructions: "i".to_string(),
+            input,
+            tools,
+            tool_choice: "auto".to_string(),
             parallel_tool_calls: true,
             reasoning: None,
             store: false,
@@ -339,5 +337,63 @@ mod tests {
 
         let v = serde_json::to_value(&req).expect("json");
         assert!(v.get("text").is_none());
+    }
+
+    #[test]
+    fn reserializes_shell_outputs_for_function_and_custom_tool_calls() {
+        let raw_output = r#"{"output":"hello","metadata":{"exit_code":0,"duration_seconds":0.5}}"#;
+        let expected_output = "Exit code: 0\nWall time: 0.5 seconds\nOutput:\nhello";
+        let mut items = vec![
+            ResponseItem::FunctionCall {
+                id: None,
+                name: "shell".to_string(),
+                arguments: "{}".to_string(),
+                call_id: "call-1".to_string(),
+            },
+            ResponseItem::FunctionCallOutput {
+                call_id: "call-1".to_string(),
+                output: FunctionCallOutputPayload::from_text(raw_output.to_string()),
+            },
+            ResponseItem::CustomToolCall {
+                id: None,
+                status: None,
+                call_id: "call-2".to_string(),
+                name: "apply_patch".to_string(),
+                input: "*** Begin Patch".to_string(),
+            },
+            ResponseItem::CustomToolCallOutput {
+                call_id: "call-2".to_string(),
+                output: FunctionCallOutputPayload::from_text(raw_output.to_string()),
+            },
+        ];
+
+        reserialize_shell_outputs(&mut items);
+
+        assert_eq!(
+            items,
+            vec![
+                ResponseItem::FunctionCall {
+                    id: None,
+                    name: "shell".to_string(),
+                    arguments: "{}".to_string(),
+                    call_id: "call-1".to_string(),
+                },
+                ResponseItem::FunctionCallOutput {
+                    call_id: "call-1".to_string(),
+                    output: FunctionCallOutputPayload::from_text(expected_output.to_string()),
+                },
+                ResponseItem::CustomToolCall {
+                    id: None,
+                    status: None,
+                    call_id: "call-2".to_string(),
+                    name: "apply_patch".to_string(),
+                    input: "*** Begin Patch".to_string(),
+                },
+                ResponseItem::CustomToolCallOutput {
+                    call_id: "call-2".to_string(),
+                    output: FunctionCallOutputPayload::from_text(expected_output.to_string()),
+                },
+            ]
+        );
     }
 }

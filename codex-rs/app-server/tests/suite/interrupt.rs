@@ -12,7 +12,7 @@ use codex_app_server_protocol::NewConversationResponse;
 use codex_app_server_protocol::RequestId;
 use codex_app_server_protocol::SendUserMessageParams;
 use codex_app_server_protocol::SendUserMessageResponse;
-use codex_core::protocol::TurnAbortReason;
+use codex_protocol::protocol::TurnAbortReason;
 use core_test_support::skip_if_no_network;
 use tempfile::TempDir;
 use tokio::time::timeout;
@@ -147,7 +147,7 @@ fn create_config_toml(codex_home: &Path, server_uri: String) -> std::io::Result<
             r#"
 model = "mock-model"
 approval_policy = "never"
-sandbox_mode = "read-only"
+sandbox_mode = "danger-full-access"
 
 model_provider = "mock_provider"
 

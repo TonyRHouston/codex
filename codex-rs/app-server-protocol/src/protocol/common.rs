@@ -7,6 +7,7 @@ use crate::export::GeneratedSchema;
 use crate::export::write_json_schema;
 use crate::protocol::v1;
 use crate::protocol::v2;
+use codex_experimental_api_macros::ExperimentalApi;
 use schemars::JsonSchema;
 use serde::Deserialize;
 use serde::Serialize;
@@ -190,15 +191,21 @@ client_request_definitions! {
     },
     ThreadResume => "thread/resume" {
         params: v2::ThreadResumeParams,
+        inspect_params: true,
         response: v2::ThreadResumeResponse,
     },
     ThreadFork => "thread/fork" {
         params: v2::ThreadForkParams,
+        inspect_params: true,
         response: v2::ThreadForkResponse,
     },
     ThreadArchive => "thread/archive" {
         params: v2::ThreadArchiveParams,
         response: v2::ThreadArchiveResponse,
+    },
+    ThreadUnsubscribe => "thread/unsubscribe" {
+        params: v2::ThreadUnsubscribeParams,
+        response: v2::ThreadUnsubscribeResponse,
     },
     ThreadSetName => "thread/name/set" {
         params: v2::ThreadSetNameParams,
@@ -211,6 +218,11 @@ client_request_definitions! {
     ThreadCompactStart => "thread/compact/start" {
         params: v2::ThreadCompactStartParams,
         response: v2::ThreadCompactStartResponse,
+    },
+    #[experimental("thread/backgroundTerminals/clean")]
+    ThreadBackgroundTerminalsClean => "thread/backgroundTerminals/clean" {
+        params: v2::ThreadBackgroundTerminalsCleanParams,
+        response: v2::ThreadBackgroundTerminalsCleanResponse,
     },
     ThreadRollback => "thread/rollback" {
         params: v2::ThreadRollbackParams,
@@ -232,11 +244,11 @@ client_request_definitions! {
         params: v2::SkillsListParams,
         response: v2::SkillsListResponse,
     },
-    SkillsRemoteRead => "skills/remote/read" {
+    SkillsRemoteList => "skills/remote/list" {
         params: v2::SkillsRemoteReadParams,
         response: v2::SkillsRemoteReadResponse,
     },
-    SkillsRemoteWrite => "skills/remote/write" {
+    SkillsRemoteExport => "skills/remote/export" {
         params: v2::SkillsRemoteWriteParams,
         response: v2::SkillsRemoteWriteResponse,
     },
@@ -250,11 +262,36 @@ client_request_definitions! {
     },
     TurnStart => "turn/start" {
         params: v2::TurnStartParams,
+        inspect_params: true,
         response: v2::TurnStartResponse,
+    },
+    TurnSteer => "turn/steer" {
+        params: v2::TurnSteerParams,
+        response: v2::TurnSteerResponse,
     },
     TurnInterrupt => "turn/interrupt" {
         params: v2::TurnInterruptParams,
         response: v2::TurnInterruptResponse,
+    },
+    #[experimental("thread/realtime/start")]
+    ThreadRealtimeStart => "thread/realtime/start" {
+        params: v2::ThreadRealtimeStartParams,
+        response: v2::ThreadRealtimeStartResponse,
+    },
+    #[experimental("thread/realtime/appendAudio")]
+    ThreadRealtimeAppendAudio => "thread/realtime/appendAudio" {
+        params: v2::ThreadRealtimeAppendAudioParams,
+        response: v2::ThreadRealtimeAppendAudioResponse,
+    },
+    #[experimental("thread/realtime/appendText")]
+    ThreadRealtimeAppendText => "thread/realtime/appendText" {
+        params: v2::ThreadRealtimeAppendTextParams,
+        response: v2::ThreadRealtimeAppendTextResponse,
+    },
+    #[experimental("thread/realtime/stop")]
+    ThreadRealtimeStop => "thread/realtime/stop" {
+        params: v2::ThreadRealtimeStopParams,
+        response: v2::ThreadRealtimeStopResponse,
     },
     ReviewStart => "review/start" {
         params: v2::ReviewStartParams,
@@ -264,6 +301,10 @@ client_request_definitions! {
     ModelList => "model/list" {
         params: v2::ModelListParams,
         response: v2::ModelListResponse,
+    },
+    ExperimentalFeatureList => "experimentalFeature/list" {
+        params: v2::ExperimentalFeatureListParams,
+        response: v2::ExperimentalFeatureListResponse,
     },
     #[experimental("collaborationMode/list")]
     /// Lists collaboration mode presets.
@@ -293,8 +334,14 @@ client_request_definitions! {
         response: v2::ListMcpServerStatusResponse,
     },
 
+    WindowsSandboxSetupStart => "windowsSandbox/setupStart" {
+        params: v2::WindowsSandboxSetupStartParams,
+        response: v2::WindowsSandboxSetupStartResponse,
+    },
+
     LoginAccount => "account/login/start" {
         params: v2::LoginAccountParams,
+        inspect_params: true,
         response: v2::LoginAccountResponse,
     },
 
@@ -327,6 +374,14 @@ client_request_definitions! {
     ConfigRead => "config/read" {
         params: v2::ConfigReadParams,
         response: v2::ConfigReadResponse,
+    },
+    ExternalAgentConfigDetect => "externalAgentConfig/detect" {
+        params: v2::ExternalAgentConfigDetectParams,
+        response: v2::ExternalAgentConfigDetectResponse,
+    },
+    ExternalAgentConfigImport => "externalAgentConfig/import" {
+        params: v2::ExternalAgentConfigImportParams,
+        response: v2::ExternalAgentConfigImportResponse,
     },
     ConfigValueWrite => "config/value/write" {
         params: v2::ConfigValueWriteParams,
@@ -441,6 +496,21 @@ client_request_definitions! {
         params: FuzzyFileSearchParams,
         response: FuzzyFileSearchResponse,
     },
+    #[experimental("fuzzyFileSearch/sessionStart")]
+    FuzzyFileSearchSessionStart => "fuzzyFileSearch/sessionStart" {
+        params: FuzzyFileSearchSessionStartParams,
+        response: FuzzyFileSearchSessionStartResponse,
+    },
+    #[experimental("fuzzyFileSearch/sessionUpdate")]
+    FuzzyFileSearchSessionUpdate => "fuzzyFileSearch/sessionUpdate" {
+        params: FuzzyFileSearchSessionUpdateParams,
+        response: FuzzyFileSearchSessionUpdateResponse,
+    },
+    #[experimental("fuzzyFileSearch/sessionStop")]
+    FuzzyFileSearchSessionStop => "fuzzyFileSearch/sessionStop" {
+        params: FuzzyFileSearchSessionStopParams,
+        response: FuzzyFileSearchSessionStopResponse,
+    },
     /// Execute a command (argv vector) under the server's sandbox.
     ExecOneOffCommand {
         params: v1::ExecOneOffCommandParams,
@@ -464,6 +534,7 @@ macro_rules! server_request_definitions {
     ) => {
         /// Request initiated from the server and sent to the client.
         #[derive(Serialize, Deserialize, Debug, Clone, PartialEq, JsonSchema, TS)]
+        #[allow(clippy::large_enum_variant)]
         #[serde(tag = "method", rename_all = "camelCase")]
         pub enum ServerRequest {
             $(
@@ -478,6 +549,7 @@ macro_rules! server_request_definitions {
         }
 
         #[derive(Debug, Clone, PartialEq, JsonSchema)]
+        #[allow(clippy::large_enum_variant)]
         pub enum ServerRequestPayload {
             $( $variant($params), )*
         }
@@ -539,7 +611,16 @@ macro_rules! server_notification_definitions {
         ),* $(,)?
     ) => {
         /// Notification sent from the server to the client.
-        #[derive(Serialize, Deserialize, Debug, Clone, JsonSchema, TS, Display)]
+        #[derive(
+            Serialize,
+            Deserialize,
+            Debug,
+            Clone,
+            JsonSchema,
+            TS,
+            Display,
+            ExperimentalApi,
+        )]
         #[serde(tag = "method", content = "params", rename_all = "camelCase")]
         #[strum(serialize_all = "camelCase")]
         pub enum ServerNotification {
@@ -685,10 +766,62 @@ pub struct FuzzyFileSearchResponse {
     pub files: Vec<FuzzyFileSearchResult>,
 }
 
+#[derive(Serialize, Deserialize, Debug, Clone, PartialEq, JsonSchema, TS)]
+#[serde(rename_all = "camelCase")]
+#[ts(rename_all = "camelCase")]
+pub struct FuzzyFileSearchSessionStartParams {
+    pub session_id: String,
+    pub roots: Vec<String>,
+}
+
+#[derive(Serialize, Deserialize, Debug, Clone, PartialEq, JsonSchema, TS, Default)]
+pub struct FuzzyFileSearchSessionStartResponse {}
+
+#[derive(Serialize, Deserialize, Debug, Clone, PartialEq, JsonSchema, TS)]
+#[serde(rename_all = "camelCase")]
+#[ts(rename_all = "camelCase")]
+pub struct FuzzyFileSearchSessionUpdateParams {
+    pub session_id: String,
+    pub query: String,
+}
+
+#[derive(Serialize, Deserialize, Debug, Clone, PartialEq, JsonSchema, TS, Default)]
+pub struct FuzzyFileSearchSessionUpdateResponse {}
+
+#[derive(Serialize, Deserialize, Debug, Clone, PartialEq, JsonSchema, TS)]
+#[serde(rename_all = "camelCase")]
+#[ts(rename_all = "camelCase")]
+pub struct FuzzyFileSearchSessionStopParams {
+    pub session_id: String,
+}
+
+#[derive(Serialize, Deserialize, Debug, Clone, PartialEq, JsonSchema, TS, Default)]
+pub struct FuzzyFileSearchSessionStopResponse {}
+
+#[derive(Serialize, Deserialize, Debug, Clone, PartialEq, JsonSchema, TS)]
+#[serde(rename_all = "camelCase")]
+#[ts(rename_all = "camelCase")]
+pub struct FuzzyFileSearchSessionUpdatedNotification {
+    pub session_id: String,
+    pub query: String,
+    pub files: Vec<FuzzyFileSearchResult>,
+}
+
+#[derive(Serialize, Deserialize, Debug, Clone, PartialEq, JsonSchema, TS)]
+#[serde(rename_all = "camelCase")]
+#[ts(rename_all = "camelCase")]
+pub struct FuzzyFileSearchSessionCompletedNotification {
+    pub session_id: String,
+}
+
 server_notification_definitions! {
     /// NEW NOTIFICATIONS
     Error => "error" (v2::ErrorNotification),
     ThreadStarted => "thread/started" (v2::ThreadStartedNotification),
+    ThreadStatusChanged => "thread/status/changed" (v2::ThreadStatusChangedNotification),
+    ThreadArchived => "thread/archived" (v2::ThreadArchivedNotification),
+    ThreadUnarchived => "thread/unarchived" (v2::ThreadUnarchivedNotification),
+    ThreadClosed => "thread/closed" (v2::ThreadClosedNotification),
     ThreadNameUpdated => "thread/name/updated" (v2::ThreadNameUpdatedNotification),
     ThreadTokenUsageUpdated => "thread/tokenUsage/updated" (v2::ThreadTokenUsageUpdatedNotification),
     TurnStarted => "turn/started" (v2::TurnStartedNotification),
@@ -709,16 +842,31 @@ server_notification_definitions! {
     McpServerOauthLoginCompleted => "mcpServer/oauthLogin/completed" (v2::McpServerOauthLoginCompletedNotification),
     AccountUpdated => "account/updated" (v2::AccountUpdatedNotification),
     AccountRateLimitsUpdated => "account/rateLimits/updated" (v2::AccountRateLimitsUpdatedNotification),
+    AppListUpdated => "app/list/updated" (v2::AppListUpdatedNotification),
     ReasoningSummaryTextDelta => "item/reasoning/summaryTextDelta" (v2::ReasoningSummaryTextDeltaNotification),
     ReasoningSummaryPartAdded => "item/reasoning/summaryPartAdded" (v2::ReasoningSummaryPartAddedNotification),
     ReasoningTextDelta => "item/reasoning/textDelta" (v2::ReasoningTextDeltaNotification),
     /// Deprecated: Use `ContextCompaction` item type instead.
     ContextCompacted => "thread/compacted" (v2::ContextCompactedNotification),
+    ModelRerouted => "model/rerouted" (v2::ModelReroutedNotification),
     DeprecationNotice => "deprecationNotice" (v2::DeprecationNoticeNotification),
     ConfigWarning => "configWarning" (v2::ConfigWarningNotification),
+    FuzzyFileSearchSessionUpdated => "fuzzyFileSearch/sessionUpdated" (FuzzyFileSearchSessionUpdatedNotification),
+    FuzzyFileSearchSessionCompleted => "fuzzyFileSearch/sessionCompleted" (FuzzyFileSearchSessionCompletedNotification),
+    #[experimental("thread/realtime/started")]
+    ThreadRealtimeStarted => "thread/realtime/started" (v2::ThreadRealtimeStartedNotification),
+    #[experimental("thread/realtime/itemAdded")]
+    ThreadRealtimeItemAdded => "thread/realtime/itemAdded" (v2::ThreadRealtimeItemAddedNotification),
+    #[experimental("thread/realtime/outputAudio/delta")]
+    ThreadRealtimeOutputAudioDelta => "thread/realtime/outputAudio/delta" (v2::ThreadRealtimeOutputAudioDeltaNotification),
+    #[experimental("thread/realtime/error")]
+    ThreadRealtimeError => "thread/realtime/error" (v2::ThreadRealtimeErrorNotification),
+    #[experimental("thread/realtime/closed")]
+    ThreadRealtimeClosed => "thread/realtime/closed" (v2::ThreadRealtimeClosedNotification),
 
     /// Notifies the user of world-writable directories on Windows, which cannot be protected by the sandbox.
     WindowsWorldWritableWarning => "windows/worldWritableWarning" (v2::WindowsWorldWritableWarningNotification),
+    WindowsSandboxSetupCompleted => "windowsSandbox/setupCompleted" (v2::WindowsSandboxSetupCompletedNotification),
 
     #[serde(rename = "account/login/completed")]
     #[ts(rename = "account/login/completed")]
@@ -789,6 +937,94 @@ mod tests {
     }
 
     #[test]
+    fn serialize_initialize_with_opt_out_notification_methods() -> Result<()> {
+        let request = ClientRequest::Initialize {
+            request_id: RequestId::Integer(42),
+            params: v1::InitializeParams {
+                client_info: v1::ClientInfo {
+                    name: "codex_vscode".to_string(),
+                    title: Some("Codex VS Code Extension".to_string()),
+                    version: "0.1.0".to_string(),
+                },
+                capabilities: Some(v1::InitializeCapabilities {
+                    experimental_api: true,
+                    opt_out_notification_methods: Some(vec![
+                        "codex/event/session_configured".to_string(),
+                        "item/agentMessage/delta".to_string(),
+                    ]),
+                }),
+            },
+        };
+
+        assert_eq!(
+            json!({
+                "method": "initialize",
+                "id": 42,
+                "params": {
+                    "clientInfo": {
+                        "name": "codex_vscode",
+                        "title": "Codex VS Code Extension",
+                        "version": "0.1.0"
+                    },
+                    "capabilities": {
+                        "experimentalApi": true,
+                        "optOutNotificationMethods": [
+                            "codex/event/session_configured",
+                            "item/agentMessage/delta"
+                        ]
+                    }
+                }
+            }),
+            serde_json::to_value(&request)?,
+        );
+        Ok(())
+    }
+
+    #[test]
+    fn deserialize_initialize_with_opt_out_notification_methods() -> Result<()> {
+        let request: ClientRequest = serde_json::from_value(json!({
+            "method": "initialize",
+            "id": 42,
+            "params": {
+                "clientInfo": {
+                    "name": "codex_vscode",
+                    "title": "Codex VS Code Extension",
+                    "version": "0.1.0"
+                },
+                "capabilities": {
+                    "experimentalApi": true,
+                    "optOutNotificationMethods": [
+                        "codex/event/session_configured",
+                        "item/agentMessage/delta"
+                    ]
+                }
+            }
+        }))?;
+
+        assert_eq!(
+            request,
+            ClientRequest::Initialize {
+                request_id: RequestId::Integer(42),
+                params: v1::InitializeParams {
+                    client_info: v1::ClientInfo {
+                        name: "codex_vscode".to_string(),
+                        title: Some("Codex VS Code Extension".to_string()),
+                        version: "0.1.0".to_string(),
+                    },
+                    capabilities: Some(v1::InitializeCapabilities {
+                        experimental_api: true,
+                        opt_out_notification_methods: Some(vec![
+                            "codex/event/session_configured".to_string(),
+                            "item/agentMessage/delta".to_string(),
+                        ]),
+                    }),
+                },
+            }
+        );
+        Ok(())
+    }
+
+    #[test]
     fn conversation_id_serializes_as_plain_string() -> Result<()> {
         let id = ThreadId::from_string("67e55044-10b1-426f-9247-bb680e5fe0c8")?;
 
@@ -829,6 +1065,7 @@ mod tests {
         let params = v1::ExecCommandApprovalParams {
             conversation_id,
             call_id: "call-42".to_string(),
+            approval_id: Some("approval-42".to_string()),
             command: vec!["echo".to_string(), "hello".to_string()],
             cwd: PathBuf::from("/tmp"),
             reason: Some("because tests".to_string()),
@@ -848,6 +1085,7 @@ mod tests {
                 "params": {
                     "conversationId": "67e55044-10b1-426f-9247-bb680e5fe0c8",
                     "callId": "call-42",
+                    "approvalId": "approval-42",
                     "command": ["echo", "hello"],
                     "cwd": "/tmp",
                     "reason": "because tests",
@@ -985,7 +1223,8 @@ mod tests {
             request_id: RequestId::Integer(5),
             params: v2::LoginAccountParams::ChatgptAuthTokens {
                 access_token: "access-token".to_string(),
-                id_token: "id-token".to_string(),
+                chatgpt_account_id: "org-123".to_string(),
+                chatgpt_plan_type: Some("business".to_string()),
             },
         };
         assert_eq!(
@@ -995,7 +1234,8 @@ mod tests {
                 "params": {
                     "type": "chatgptAuthTokens",
                     "accessToken": "access-token",
-                    "idToken": "id-token"
+                    "chatgptAccountId": "org-123",
+                    "chatgptPlanType": "business"
                 }
             }),
             serde_json::to_value(&request)?,
@@ -1062,7 +1302,8 @@ mod tests {
                 "id": 6,
                 "params": {
                     "limit": null,
-                    "cursor": null
+                    "cursor": null,
+                    "includeHidden": null
                 }
             }),
             serde_json::to_value(&request)?,
@@ -1088,6 +1329,146 @@ mod tests {
     }
 
     #[test]
+    fn serialize_list_apps() -> Result<()> {
+        let request = ClientRequest::AppsList {
+            request_id: RequestId::Integer(8),
+            params: v2::AppsListParams::default(),
+        };
+        assert_eq!(
+            json!({
+                "method": "app/list",
+                "id": 8,
+                "params": {
+                    "cursor": null,
+                    "limit": null,
+                    "threadId": null
+                }
+            }),
+            serde_json::to_value(&request)?,
+        );
+        Ok(())
+    }
+
+    #[test]
+    fn serialize_list_experimental_features() -> Result<()> {
+        let request = ClientRequest::ExperimentalFeatureList {
+            request_id: RequestId::Integer(8),
+            params: v2::ExperimentalFeatureListParams::default(),
+        };
+        assert_eq!(
+            json!({
+                "method": "experimentalFeature/list",
+                "id": 8,
+                "params": {
+                    "cursor": null,
+                    "limit": null
+                }
+            }),
+            serde_json::to_value(&request)?,
+        );
+        Ok(())
+    }
+
+    #[test]
+    fn serialize_thread_background_terminals_clean() -> Result<()> {
+        let request = ClientRequest::ThreadBackgroundTerminalsClean {
+            request_id: RequestId::Integer(8),
+            params: v2::ThreadBackgroundTerminalsCleanParams {
+                thread_id: "thr_123".to_string(),
+            },
+        };
+        assert_eq!(
+            json!({
+                "method": "thread/backgroundTerminals/clean",
+                "id": 8,
+                "params": {
+                    "threadId": "thr_123"
+                }
+            }),
+            serde_json::to_value(&request)?,
+        );
+        Ok(())
+    }
+
+    #[test]
+    fn serialize_thread_realtime_start() -> Result<()> {
+        let request = ClientRequest::ThreadRealtimeStart {
+            request_id: RequestId::Integer(9),
+            params: v2::ThreadRealtimeStartParams {
+                thread_id: "thr_123".to_string(),
+                prompt: "You are on a call".to_string(),
+                session_id: Some("sess_456".to_string()),
+            },
+        };
+        assert_eq!(
+            json!({
+                "method": "thread/realtime/start",
+                "id": 9,
+                "params": {
+                    "threadId": "thr_123",
+                    "prompt": "You are on a call",
+                    "sessionId": "sess_456"
+                }
+            }),
+            serde_json::to_value(&request)?,
+        );
+        Ok(())
+    }
+
+    #[test]
+    fn serialize_thread_status_changed_notification() -> Result<()> {
+        let notification =
+            ServerNotification::ThreadStatusChanged(v2::ThreadStatusChangedNotification {
+                thread_id: "thr_123".to_string(),
+                status: v2::ThreadStatus::Idle,
+            });
+        assert_eq!(
+            json!({
+                "method": "thread/status/changed",
+                "params": {
+                    "threadId": "thr_123",
+                    "status": {
+                        "type": "idle"
+                    },
+                }
+            }),
+            serde_json::to_value(&notification)?,
+        );
+        Ok(())
+    }
+
+    #[test]
+    fn serialize_thread_realtime_output_audio_delta_notification() -> Result<()> {
+        let notification = ServerNotification::ThreadRealtimeOutputAudioDelta(
+            v2::ThreadRealtimeOutputAudioDeltaNotification {
+                thread_id: "thr_123".to_string(),
+                audio: v2::ThreadRealtimeAudioChunk {
+                    data: "AQID".to_string(),
+                    sample_rate: 24_000,
+                    num_channels: 1,
+                    samples_per_channel: Some(512),
+                },
+            },
+        );
+        assert_eq!(
+            json!({
+                "method": "thread/realtime/outputAudio/delta",
+                "params": {
+                    "threadId": "thr_123",
+                    "audio": {
+                        "data": "AQID",
+                        "sampleRate": 24000,
+                        "numChannels": 1,
+                        "samplesPerChannel": 512
+                    }
+                }
+            }),
+            serde_json::to_value(&notification)?,
+        );
+        Ok(())
+    }
+
+    #[test]
     fn mock_experimental_method_is_marked_experimental() {
         let request = ClientRequest::MockExperimentalMethod {
             request_id: RequestId::Integer(1),
@@ -1096,17 +1477,75 @@ mod tests {
         let reason = crate::experimental_api::ExperimentalApi::experimental_reason(&request);
         assert_eq!(reason, Some("mock/experimentalMethod"));
     }
-
     #[test]
-    fn thread_start_mock_field_is_marked_experimental() {
-        let request = ClientRequest::ThreadStart {
+    fn thread_realtime_start_is_marked_experimental() {
+        let request = ClientRequest::ThreadRealtimeStart {
             request_id: RequestId::Integer(1),
-            params: v2::ThreadStartParams {
-                mock_experimental_field: Some("mock".to_string()),
-                ..Default::default()
+            params: v2::ThreadRealtimeStartParams {
+                thread_id: "thr_123".to_string(),
+                prompt: "You are on a call".to_string(),
+                session_id: None,
             },
         };
         let reason = crate::experimental_api::ExperimentalApi::experimental_reason(&request);
-        assert_eq!(reason, Some("thread/start.mockExperimentalField"));
+        assert_eq!(reason, Some("thread/realtime/start"));
+    }
+    #[test]
+    fn thread_realtime_started_notification_is_marked_experimental() {
+        let notification =
+            ServerNotification::ThreadRealtimeStarted(v2::ThreadRealtimeStartedNotification {
+                thread_id: "thr_123".to_string(),
+                session_id: Some("sess_456".to_string()),
+            });
+        let reason = crate::experimental_api::ExperimentalApi::experimental_reason(&notification);
+        assert_eq!(reason, Some("thread/realtime/started"));
+    }
+
+    #[test]
+    fn thread_realtime_output_audio_delta_notification_is_marked_experimental() {
+        let notification = ServerNotification::ThreadRealtimeOutputAudioDelta(
+            v2::ThreadRealtimeOutputAudioDeltaNotification {
+                thread_id: "thr_123".to_string(),
+                audio: v2::ThreadRealtimeAudioChunk {
+                    data: "AQID".to_string(),
+                    sample_rate: 24_000,
+                    num_channels: 1,
+                    samples_per_channel: Some(512),
+                },
+            },
+        );
+        let reason = crate::experimental_api::ExperimentalApi::experimental_reason(&notification);
+        assert_eq!(reason, Some("thread/realtime/outputAudio/delta"));
+    }
+
+    #[test]
+    fn command_execution_request_approval_additional_permissions_is_marked_experimental() {
+        let params = v2::CommandExecutionRequestApprovalParams {
+            thread_id: "thr_123".to_string(),
+            turn_id: "turn_123".to_string(),
+            item_id: "call_123".to_string(),
+            approval_id: None,
+            reason: None,
+            network_approval_context: None,
+            command: Some("cat file".to_string()),
+            cwd: None,
+            command_actions: None,
+            additional_permissions: Some(v2::AdditionalPermissionProfile {
+                network: None,
+                file_system: Some(v2::AdditionalFileSystemPermissions {
+                    read: Some(vec![std::path::PathBuf::from("/tmp/allowed")]),
+                    write: None,
+                }),
+                macos: None,
+            }),
+            proposed_execpolicy_amendment: None,
+            proposed_network_policy_amendments: None,
+            available_decisions: None,
+        };
+        let reason = crate::experimental_api::ExperimentalApi::experimental_reason(&params);
+        assert_eq!(
+            reason,
+            Some("item/commandExecution/requestApproval.additionalPermissions")
+        );
     }
 }
